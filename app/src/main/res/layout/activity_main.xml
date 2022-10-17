@@ -39,4 +39,12 @@
         tools:layout_editor_absoluteX="83dp"
         tools:layout_editor_absoluteY="421dp" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button_2_branch"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="96dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

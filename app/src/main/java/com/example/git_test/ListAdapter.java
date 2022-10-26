@@ -16,7 +16,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder((LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment1_layout,parent,false)));
+        return new MyViewHolder((LayoutInflater.from(parent.getContext()).inflate(R.layout.list_adapter,parent,false)));
     }
 
     @Override

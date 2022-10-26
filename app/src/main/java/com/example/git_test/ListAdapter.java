@@ -12,6 +12,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
 
     String[] list ;
 
+    public ListAdapter(String[] list){
+        this.list = list;
+    }
+
 
     @NonNull
     @Override

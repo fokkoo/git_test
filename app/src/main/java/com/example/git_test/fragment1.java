@@ -21,7 +21,7 @@ public class fragment1 extends Fragment {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment1_layout,container,false);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        recyclerView.setAdapter(new ListAdapter());
+        recyclerView.setAdapter(new ListAdapter(names));
         return view;
     }
 }

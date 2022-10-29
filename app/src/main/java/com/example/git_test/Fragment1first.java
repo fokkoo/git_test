@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class fragment1 extends Fragment {
+public class Fragment1first extends Fragment {
 
     String [] names= {"hello","hi","3,4,4,4,5,6,4"};
 

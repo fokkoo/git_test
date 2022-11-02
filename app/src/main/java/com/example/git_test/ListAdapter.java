@@ -33,7 +33,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
         return list.length;
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
+   static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView textView;
 

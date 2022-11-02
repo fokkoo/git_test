@@ -3,7 +3,6 @@ package com.example.git_test
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 
@@ -32,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initeMyView() {
         findViewById<View>(R.id.button_recycl_view).setOnClickListener{
-            addFragment(Fragment1first());
+            addFragment(Fragment1firstRW());
 
             val toast = Toast.makeText(
                     applicationContext,

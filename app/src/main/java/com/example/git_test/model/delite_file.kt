@@ -1,4 +1,3 @@
-package com.example.git_test.model;
+package com.example.git_test.model
 
-public class delite_file {
-}
+class delite_file 

@@ -1,46 +1,32 @@
-package com.example.git_test;
+package com.example.git_test
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.example.git_test.ListAdapter.MyViewHolder
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
-
-    String[] list ;
-
-    public ListAdapter(String[] list){
-        this.list = list;
+class ListAdapter(var list: Array<String>) : RecyclerView.Adapter<MyViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        return MyViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.list_adapter, parent, false)
+        )
     }
 
-
-    @NonNull
-    @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder((LayoutInflater.from(parent.getContext()).inflate(R.layout.list_adapter,parent,false)));
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.textView.text = list[position]
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.textView.setText(list[position]);
+    override fun getItemCount(): Int {
+        return list.size
     }
 
-    @Override
-    public int getItemCount() {
-        return list.length;
-    }
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var textView: TextView
 
-   static class MyViewHolder extends RecyclerView.ViewHolder{
-
-        TextView textView;
-
-        public MyViewHolder(@NonNull View itemView) {
-
-            super(itemView);
-            textView=itemView.findViewById(R.id.textView);
+        init {
+            textView = itemView.findViewById(R.id.textView)
         }
     }
 }

@@ -1,9 +1,11 @@
 package com.example.git_test.model
 
+import com.example.git_test.Weather
 import com.example.git_test.model.database.HistoryDao
+import com.example.git_test.model.database.HistoryEntity
 
-open class LocalRepository  {
+interface LocalRepository  {
 
-   // fun getAllHistory(): List<Weather>
-  //  fun saveEntity(weather: Weather)
+    fun getAllHistory(): List<HistoryEntity>
+    fun saveEntity(weather: HistoryEntity)
 }

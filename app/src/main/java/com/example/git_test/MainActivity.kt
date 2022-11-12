@@ -6,10 +6,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.git_test.databinding.ActivityMainBinding
+import com.example.git_test.model.DetailViewModel
 
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var viewModel: DetailViewModel
   //  private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +49,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.button_recycl_view).setOnClickListener{
             addFragment(Fragment1firstRW());
 
-          //  viewModel.saveWeather
+            val weather: Weather = Weather(
+                    getDefaultCity(),0,0
+            )
+            viewModel.saveWeather(weather)
 
             val toast = Toast.makeText(
                     applicationContext,

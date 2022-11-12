@@ -5,16 +5,26 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.git_test.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
+
+  //  private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+     //   binding = ActivityMainBinding.inflate(layoutInflater)
+
+     //   setContentView(binding.root)
         setContentView(R.layout.activity_main)
 
         readSettings()
         initeMyView()
 
+
+     //   binding.textView.text = "binding text"
+    //    binding.button3.text = "binding text"
 
     //    FrameLayout layout = new FrameLayout(this);
     //    layout.setLayoutParms(new ViewGroup)
@@ -29,9 +39,15 @@ class MainActivity : AppCompatActivity() {
                 )*/
     }
 
+
+
+    //R.id.button_recycl_view
+    //binding.buttonRecyclView.id
     private fun initeMyView() {
         findViewById<View>(R.id.button_recycl_view).setOnClickListener{
             addFragment(Fragment1firstRW());
+
+          //  viewModel.saveWeather
 
             val toast = Toast.makeText(
                     applicationContext,

@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.git_test.databinding.ActivityMainBinding
 import com.example.git_test.model.DetailViewModel
 
 
@@ -61,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             toast.show()
         }
         findViewById<View>(R.id.button_fragment2).setOnClickListener{
-            addFragment(BlankFragment());
+            addFragment(HistoryFragment());
 
             val toast = Toast.makeText(
                     applicationContext,
@@ -70,7 +69,7 @@ class MainActivity : AppCompatActivity() {
             toast.show()
         }
         findViewById<View>(R.id.Button_History).setOnClickListener{
-            addFragment(BlankFragment());
+            addFragment(HistoryFragment());
 
             val toast = Toast.makeText(
                     applicationContext,

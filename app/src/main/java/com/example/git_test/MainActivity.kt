@@ -69,6 +69,16 @@ class MainActivity : AppCompatActivity() {
             )
             toast.show()
         }
+        findViewById<View>(R.id.Button_History).setOnClickListener{
+            addFragment(BlankFragment());
+
+            val toast = Toast.makeText(
+                    applicationContext,
+                    "Кнопка Button_History вызвана", Toast.LENGTH_SHORT
+            )
+            toast.show()
+        }
+
     }
 
     private fun addFragment(fragment: Fragment) {

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.git_test.databinding.FragmentHistoryBinding
+import com.example.git_test.model.viewmodel.HistoryAdapter
 import com.example.git_test.model.viewmodel.HistoryViewModel
 
 
@@ -18,6 +19,7 @@ class HistoryFragment : Fragment() {
 
     private var _binding : FragmentHistoryBinding? = null
     private val binding get() = _binding!!
+    private val adapter: HistoryAdapter by lazy {HistoryAdapter()}
 
     /*
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +38,14 @@ class HistoryFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_history,container,false)
         _binding = FragmentHistoryBinding.bind(view)
                 return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.recyclerViewHistory.adapter = adapter
+        adapter.setData(viewModel.getAllHistory())
+
+
     }
 
     override fun onDestroyView() {

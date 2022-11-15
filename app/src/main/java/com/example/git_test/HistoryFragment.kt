@@ -38,6 +38,8 @@ class HistoryFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_history,container,false)
         _binding = FragmentHistoryBinding.bind(view)
                 return binding.root
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

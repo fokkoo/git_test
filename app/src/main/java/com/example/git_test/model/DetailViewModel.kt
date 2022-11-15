@@ -11,6 +11,9 @@ class DetailViewModel : ViewModel() {
 
     private val localRepository: LocalRepository = LocalRepositoryImpl(App.getHistoryDao())
 
+    fun programdelite(){
+
+    }
 
     fun saveWeather(weather: Weather){
         localRepository.saveEntity(

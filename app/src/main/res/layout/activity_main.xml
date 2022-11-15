@@ -40,8 +40,8 @@
 
     <Button
         android:id="@+id/Button_History"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="71dp"
+        android:layout_height="59dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="72dp"
         android:text="Button_History"
@@ -60,6 +60,7 @@
         android:id="@+id/button_recycl_view"
         android:layout_width="87dp"
         android:layout_height="93dp"
+        android:layout_marginEnd="36dp"
         android:text="Button for RW"
         app:layout_constraintEnd_toStartOf="@+id/button_fragment2"
         app:layout_constraintTop_toTopOf="parent" />

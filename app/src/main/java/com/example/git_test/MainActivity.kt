@@ -11,47 +11,46 @@ import com.example.git_test.model.DetailViewModel
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: DetailViewModel
-  //  private lateinit var binding: ActivityMainBinding
+    //  private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-     //   binding = ActivityMainBinding.inflate(layoutInflater)
-
-     //   setContentView(binding.root)
+        //   binding = ActivityMainBinding.inflate(layoutInflater)
+        //   setContentView(binding.root)
         setContentView(R.layout.activity_main)
 
         readSettings()
         initeMyView()
 
+        //   binding.textView.text = "binding text"
+        //    binding.button3.text = "binding text"
 
-     //   binding.textView.text = "binding text"
-    //    binding.button3.text = "binding text"
-
-    //    FrameLayout layout = new FrameLayout(this);
-    //    layout.setLayoutParms(new ViewGroup)
+        //    FrameLayout layout = new FrameLayout(this);
+        //    layout.setLayoutParms(new ViewGroup)
 
     }
 
     private fun readSettings() {
-     /*   FragmentSettings.radioButtonAddConstant =
-                getSharedPreferences(FragmentSettings.SETTINGS, MODE_PRIVATE).getBoolean(
-                        FragmentSettings.RADIO_BUTTON_ADD_FRAGMENT,
-                        false
-                )*/
+        /*   FragmentSettings.radioButtonAddConstant =
+                   getSharedPreferences(FragmentSettings.SETTINGS, MODE_PRIVATE).getBoolean(
+                           FragmentSettings.RADIO_BUTTON_ADD_FRAGMENT,
+                           false
+                   )*/
     }
-
 
 
     //R.id.button_recycl_view
     //binding.buttonRecyclView.id
     private fun initeMyView() {
-        findViewById<View>(R.id.button_recycl_view).setOnClickListener{
-            addFragment(Fragment1firstRW());
+        findViewById<View>(R.id.button_recycl_view).setOnClickListener {
+        //    addFragment(Fragment1firstRW())
 
             val weather: Weather = Weather(
-                    getDefaultCity(),0,0
+                    getDefaultCity(), 0, 0
             )
-            viewModel.saveWeather(weather)
+
+
+
 
             val toast = Toast.makeText(
                     applicationContext,
@@ -59,8 +58,8 @@ class MainActivity : AppCompatActivity() {
             )
             toast.show()
         }
-        findViewById<View>(R.id.button_fragment2).setOnClickListener{
-            addFragment(HistoryFragment());
+        findViewById<View>(R.id.button_fragment2).setOnClickListener {
+            addFragment(HistoryFragment())
 
             val toast = Toast.makeText(
                     applicationContext,
@@ -68,8 +67,8 @@ class MainActivity : AppCompatActivity() {
             )
             toast.show()
         }
-        findViewById<View>(R.id.Button_History).setOnClickListener{
-            addFragment(HistoryFragment());
+        findViewById<View>(R.id.Button_History).setOnClickListener {
+            addFragment(HistoryFragment())
 
             val toast = Toast.makeText(
                     applicationContext,
@@ -77,21 +76,13 @@ class MainActivity : AppCompatActivity() {
             )
             toast.show()
         }
-
     }
 
     private fun addFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
 
-
-
-
-            transaction.add(R.id.fragment_container, fragment)
-
-
+        transaction.add(R.id.fragment_container, fragment)
 
         transaction.commit()
     }
 }
-
-

@@ -21,7 +21,7 @@ class DetailFragment : Fragment() {
         fun newInstance(bundle: Bundle): DetailFragment = DetailFragment().apply { arguments = bundle }
     }
 
-    private val viewModel: DetailViewModel by lazy{
+    private val viewModel: DetailViewModel by lazy {
         ViewModelProvider(this).get(DetailViewModel::class.java)
     }
 
@@ -30,13 +30,12 @@ class DetailFragment : Fragment() {
     private val binding get() = _binding!!
 
 
-
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
-        val view = inflater.inflate(R.layout.detail_fragment,container,false)
+        val view = inflater.inflate(R.layout.detail_fragment, container, false)
         _binding = DetailFragmentBinding.bind(view)
         return binding.root
     }
@@ -46,13 +45,20 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.buttonDetailFragmentWriteData.setOnClickListener(){
-            val weather = arguments?.getParcelable(WEATHER_EXTRA)?:Weather()
+        val CityFromEditText = binding.editTextTextPersonName.text
 
 
-            binding.textDetailFragmentCity.text = getRussianCities()[0].toString()
 
-            val toast = Toast.makeText(context,"Кнопка Button_DetailFragment вызвана",Toast.LENGTH_SHORT)
+
+
+        binding.buttonDetailFragmentWriteData.setOnClickListener() {
+            val weather = arguments?.getParcelable(WEATHER_EXTRA) ?: Weather()
+
+
+
+            binding.textDetailFragmentCity.text = getRussianCities()[0].city.name.toString()
+
+            val toast = Toast.makeText(context, CityFromEditText, Toast.LENGTH_SHORT)
 
 
             toast.show()
@@ -61,20 +67,20 @@ class DetailFragment : Fragment() {
         }
 
 
-       val text = binding.editTextTextPersonName
 
-        binding.buttonRenderData.setOnClickListener(){
+
+        binding.buttonRenderData.setOnClickListener() {
             renderDara(Weather())
         }
-
-
 
 
     }
 
     private fun renderDara(state: Weather) {
 
-        viewModel.saveWeather(weather = Weather(City("Moscow",51.5,51.5),2,1))
+
+        val CityFromEditTextIn = binding.editTextTextPersonName.text.toString()
+        viewModel.saveWeather(weather = Weather(City(CityFromEditTextIn, 51.5, 51.5), 2, 1))
 
     }
 

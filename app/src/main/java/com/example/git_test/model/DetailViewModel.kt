@@ -24,6 +24,5 @@ class DetailViewModel : ViewModel() {
                         timestamp = Date().time
                 )
         )
-
     }
 }

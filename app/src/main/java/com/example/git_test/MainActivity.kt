@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.git_test.model.DetailFragment
 import com.example.git_test.model.DetailViewModel
 
 
@@ -76,6 +77,18 @@ class MainActivity : AppCompatActivity() {
             )
             toast.show()
         }
+        findViewById<View>(R.id.button_detail_fragment).setOnClickListener {
+            addFragment(DetailFragment())
+
+            val toast = Toast.makeText(
+                    applicationContext,
+                    "Кнопка Button_DetailFragment вызвана", Toast.LENGTH_SHORT
+            )
+            toast.show()
+        }
+
+
+
     }
 
     private fun addFragment(fragment: Fragment) {

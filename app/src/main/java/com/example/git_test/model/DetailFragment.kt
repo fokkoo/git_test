@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.git_test.R
 import com.example.git_test.Weather
 import com.example.git_test.databinding.DetailFragmentBinding
+import com.example.git_test.getDefaultCity
+import com.example.git_test.getRussianCities
 import com.example.git_test.model.database.City
 
 class DetailFragment : Fragment() {
@@ -42,8 +45,27 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val weather = arguments?.getParcelable(WEATHER_EXTRA)?:Weather()
 
+        binding.buttonDetailFragmentWriteData.setOnClickListener(){
+            val weather = arguments?.getParcelable(WEATHER_EXTRA)?:Weather()
+
+
+            binding.textDetailFragmentCity.text = getRussianCities()[0].toString()
+
+            val toast = Toast.makeText(context,"Кнопка Button_DetailFragment вызвана",Toast.LENGTH_SHORT)
+
+
+            toast.show()
+
+
+        }
+
+
+       val text = binding.editTextTextPersonName
+
+        binding.buttonRenderData.setOnClickListener(){
+            renderDara(Weather())
+        }
 
 
 

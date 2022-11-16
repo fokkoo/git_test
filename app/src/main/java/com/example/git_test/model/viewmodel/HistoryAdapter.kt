@@ -1,5 +1,6 @@
 package com.example.git_test.model.viewmodel
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.git_test.R
 import com.example.git_test.model.database.HistoryEntity
 import kotlinx.android.synthetic.main.history_item.view.*
+import java.sql.Date
+import java.text.SimpleDateFormat
+//import java.util.*
 
 class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.RecyclerItemViewHolder> (){
 
@@ -32,12 +36,13 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.RecyclerItemViewHolder
     }
 
     inner class RecyclerItemViewHolder(view: View) : RecyclerView.ViewHolder(view){
+        @SuppressLint("SimpleDateFormat")
         fun bind (data: HistoryEntity){
             if (layoutPosition == RecyclerView.NO_POSITION){
                 itemView.historyItemIdCard.text = data.id.toString()
                 itemView.historyItemCity.text = data.city
                 itemView.historyItemTemperature.text = data.temperature.toString()
-
+                itemView.historyItemDate.text = SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ").format(Date(data.timestamp))
             }
 
         }

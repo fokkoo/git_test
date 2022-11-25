@@ -21,9 +21,12 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.RecyclerItemViewHolder
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup,
+                                    viewType: Int
+    ): RecyclerItemViewHolder {
         return  RecyclerItemViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.history_item,parent,false) as View
+            LayoutInflater.from(parent.context)
+                    .inflate(R.layout.history_item,parent,false) as View
         )
     }
 
@@ -36,15 +39,14 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.RecyclerItemViewHolder
     }
 
     inner class RecyclerItemViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        @SuppressLint("SimpleDateFormat")
+       @SuppressLint("SimpleDateFormat")
         fun bind (data: HistoryEntity){
-            if (layoutPosition == RecyclerView.NO_POSITION){
+            if (layoutPosition != RecyclerView.NO_POSITION){
                 itemView.historyItemIdCard.text = data.id.toString()
                 itemView.historyItemCity.text = data.city
                 itemView.historyItemTemperature.text = data.temperature.toString()
                 itemView.historyItemDate.text = SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ").format(Date(data.timestamp))
             }
-
         }
     }
 }

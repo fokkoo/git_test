@@ -7,6 +7,11 @@ import com.example.git_test.view.App
 
 class HistoryViewModel : ViewModel(){
 
-    private val historyRepository = LocalRepositoryImpl(App.getHistoryDao())
+
     fun getAllHistory() : List<HistoryEntity> = historyRepository.getAllHistory()
+
+  //  fun deliteAllHistory() = historyRepository2.getAllHistory()
+
+    private val historyRepository = LocalRepositoryImpl(App.getHistoryDao())
+    private val historyRepository2 = LocalRepositoryImpl(App.getHistoryDao())
 }

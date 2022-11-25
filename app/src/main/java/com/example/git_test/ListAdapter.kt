@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.git_test.ListAdapter.MyViewHolder
 
 class ListAdapter(var list: Array<String>) : RecyclerView.Adapter<MyViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.list_adapter, parent, false)
@@ -26,7 +27,7 @@ class ListAdapter(var list: Array<String>) : RecyclerView.Adapter<MyViewHolder>(
         var textView: TextView
 
         init {
-            textView = itemView.findViewById(R.id.textView)
+            textView = itemView.findViewById(R.id.textView3)
         }
     }
 }

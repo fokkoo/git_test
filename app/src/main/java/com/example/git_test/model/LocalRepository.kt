@@ -8,4 +8,7 @@ interface LocalRepository  {
 
     fun getAllHistory(): List<HistoryEntity>
     fun saveEntity(weather: HistoryEntity)
+
+
+   // fun deleteAllHistory():List<HistoryEntity>
 }

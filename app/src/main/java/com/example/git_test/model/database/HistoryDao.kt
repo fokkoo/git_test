@@ -22,6 +22,7 @@ interface HistoryDao {
     fun update (entity: HistoryEntity)
 
     @Delete
-    fun delite (entity: HistoryEntity)
+    fun delete (entity: HistoryEntity)
+
 
 }

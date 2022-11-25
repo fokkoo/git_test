@@ -2,6 +2,9 @@ package com.example.git_test
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -32,6 +35,46 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.idHistory -> {
+                supportFragmentManager.apply {
+                    beginTransaction().add(R.id.fragment_container, HistoryFragment())
+                            .addToBackStack("")
+                            .commitAllowingStateLoss()
+                }
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
+    }
+
+    /*
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId){
+            R.id.historyItemIdCard->{
+                supportFragmentManager.apply {
+                    beginTransaction()
+                            .replace(R.id.fragment_container,HistoryFragment())
+                            .addToBackStack("")
+                            .commitAllowingStateLoss()
+                }
+                true
+            }
+           else -> super onOptionsItemSelected(item)
+
+        }
+
+       // return super.onOptionsItemSelected(item)
+    }
+*/
     private fun readSettings() {
         /*   FragmentSettings.radioButtonAddConstant =
                    getSharedPreferences(FragmentSettings.SETTINGS, MODE_PRIVATE).getBoolean(
@@ -47,24 +90,23 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.ButtonHistory.setOnClickListener() {
+
             addFragment(HistoryFragment())
 
             val toast = Toast.makeText(
                     applicationContext,
                     "Кнопка Button_History вызвана", Toast.LENGTH_SHORT
             )
+            toast.setGravity(Gravity.TOP, 0, 0);
             toast.show()
+
 
         }
 
 
 
         findViewById<View>(R.id.button_recycl_view).setOnClickListener {
-            //    addFragment(Fragment1firstRW())
-
-            val weather: Weather = Weather(
-                    getDefaultCity(), 0, 0
-            )
+            //  addFragment(Fragment1firstRW())
 
 
             val toast = Toast.makeText(
@@ -76,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.button_fragment2).setOnClickListener {
 
 
-            // addFragment(HistoryFragment())
+            addFragment(HistoryFragment())
 
             val toast = Toast.makeText(
                     applicationContext,

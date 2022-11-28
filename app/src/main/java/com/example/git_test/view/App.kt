@@ -18,7 +18,6 @@ class App: Application() {
         private var db: HistoryDataBase? = null
 
         // name of file where data base is written
-
         //.allowMainThreadQueries() многопоточность  как заплатка
         private const val DB_NAME = "History.db"
 

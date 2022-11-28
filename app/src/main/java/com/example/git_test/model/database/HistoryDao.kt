@@ -12,17 +12,17 @@ interface HistoryDao {
     fun all(): List<HistoryEntity>
 
     @Query("SELECT * FROM HistoryEntity WHERE city LIKE :city")
-    fun getDatabyWord (city: String): List<HistoryEntity>
+    fun getDatabyWord(city: String): List<HistoryEntity>
 
     //Dao is smart for autoInsert if conflit - ignor insert
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert (entity: HistoryEntity)
+    fun insert(entity: HistoryEntity)
 
     @Update
-    fun update (entity: HistoryEntity)
+    fun update(entity: HistoryEntity)
 
     @Delete
-    fun delete (entity: HistoryEntity)
+    fun delete(entity: HistoryEntity)
 
 
 }

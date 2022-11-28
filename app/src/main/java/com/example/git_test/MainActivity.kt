@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.idHistory -> {
                 supportFragmentManager.apply {
-                    beginTransaction().add(R.id.fragment_container, HistoryFragment())
+                    beginTransaction().replace(R.id.fragment_container, HistoryFragment())
                             .addToBackStack("")
                             .commitAllowingStateLoss()
                 }

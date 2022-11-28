@@ -47,21 +47,23 @@ class HistoryFragment : Fragment() {
         binding.recyclerViewHistory.adapter = adapter
 
         adapter.setData(viewModel.getAllHistory())
-       // viewModel.getAllHistory()
+        // viewModel.getAllHistory()
 
 
-         fun renderDara(){
+        fun renderData() {
 
-                binding.recyclerViewHistory.visibility = View.VISIBLE
-                adapter.setData(viewModel.getAllHistory())
+            binding.recyclerViewHistory.visibility = View.VISIBLE
+            adapter.setData(viewModel.getAllHistory())
 
         }
 
-        button_export_text.setOnClickListener(){
+        button_export_text.setOnClickListener() {
 
 
             textViewMySQL.text = viewModel.getAllHistory().toString()
         }
+
+
     }
 
     override fun onDestroyView() {

@@ -11,7 +11,7 @@ class ListAdapter(var list: Array<String>) : RecyclerView.Adapter<MyViewHolder>(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.list_adapter, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.list_adapter, parent, false)
         )
     }
 

@@ -40,7 +40,6 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,13 +47,8 @@ class DetailFragment : Fragment() {
         val CityFromEditText = binding.editTextTextPersonName.text
 
 
-
-
-
         binding.buttonDetailFragmentWriteData.setOnClickListener() {
             val weather = arguments?.getParcelable(WEATHER_EXTRA) ?: Weather()
-
-
 
             binding.textDetailFragmentCity.text = getRussianCities()[0].city.name.toString()
 
@@ -70,13 +64,13 @@ class DetailFragment : Fragment() {
 
 
         binding.buttonRenderData.setOnClickListener() {
-            renderDara(Weather())
+            renderData(Weather())
         }
 
 
     }
 
-    private fun renderDara(state: Weather) {
+    private fun renderData(state: Weather) {
 
 
         val CityFromEditTextIn = binding.editTextTextPersonName.text.toString()

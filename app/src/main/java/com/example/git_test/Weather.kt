@@ -14,7 +14,7 @@ data class Weather (
 
 }
 
-fun getDefaultCity(): City = City("Moscow",55.75,37.61)
+fun getDefaultCity(): City = City("Moscow_default",55.75,37.61)
 
 // в интерфейсе менять не будем поэтому не мутбл
 fun getWorldCities(): List <Weather> = listOf(

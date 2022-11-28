@@ -40,7 +40,11 @@
             android:layout_height="wrap_content"
             android:text="Button Start"
             />
-
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="221dp"
+            android:layout_height="39dp"
+            android:text=" id temperature city timestamp" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewHistory"
             android:layout_width="match_parent"

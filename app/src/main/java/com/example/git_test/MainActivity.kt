@@ -51,6 +51,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 true
             }
+            R.id.idBarGraf -> {
+                supportFragmentManager.apply {
+                    beginTransaction().replace(R.id.fragment_container, FragmentBar())
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
+                }
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
 

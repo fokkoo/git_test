@@ -6,5 +6,9 @@
         android:title="History"
         android:icon="@drawable/ic_launcher_background"
         app:showAsAction="always"/>
+    <item android:id="@+id/idBarGraf"
+        android:title="BarGraf"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:showAsAction="always"/>
 
 </menu>

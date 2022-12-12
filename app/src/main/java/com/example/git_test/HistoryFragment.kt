@@ -1,11 +1,10 @@
 package com.example.git_test
 
-import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.git_test.databinding.FragmentHistoryBinding
 import com.example.git_test.model.viewmodel.HistoryAdapter
@@ -14,8 +13,6 @@ import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
-
-import com.github.mikephil.charting.utils.ColorTemplate
 import kotlinx.android.synthetic.main.fragment_history.*
 
 
@@ -39,12 +36,23 @@ class HistoryFragment : Fragment() {
 */
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         val view = inflater.inflate(R.layout.fragment_history, container, false)
         _binding = FragmentHistoryBinding.bind(view)
+
+
+        val bundle = arguments
+        if (bundle != null) {
+            val KEY_MSG_1 = "FRAGMENT1_MSG"
+            val msg = bundle.getString(KEY_MSG_1)
+            if (msg != null) {
+              //  textMsg.setText(msg)
+            }
+        }
+        return view
 
 
         return binding.root
@@ -59,6 +67,7 @@ class HistoryFragment : Fragment() {
         // viewModel.getAllHistory()
 
 
+        barBiuld()
 
 
 
@@ -72,7 +81,7 @@ class HistoryFragment : Fragment() {
         button_export_text.setOnClickListener() {
 
 
-            textViewMySQL.text = viewModel.getAllHistory().toString()
+            textViewMySQL.text = viewModel.getAllHistory().size.toString()
         }
 
 
@@ -93,25 +102,16 @@ class HistoryFragment : Fragment() {
 
         val visitors = ArrayList<BarEntry>()
 
-     //  visitors.add(1, BarEntry(200,200))
 
-        visitors.add(BarEntry(2000,300))
-        visitors.add(BarEntry(2100, 400))
-        visitors.add(BarEntry(2200, 500))
+      //  textViewMySQL.text = viewModel.getAllHistory().get(1).temperature.toString()
 
+        val sizaDataMYSQL = viewModel.getAllHistory().size.toInt()
 
-        // Создаём двумерный массив
-        var visitors2 = arrayOf<Array<Int>>()
-
-        // заполняем нулями
-        for (i in 0..4) {
-            var array = arrayOf<Int>()
-            for (j in 0..4) {
-                array += 0
-            }
-            visitors2 += array
+        for (i in 0..sizaDataMYSQL-1) {
+            val Ydata = viewModel.getAllHistory().get(i).temperature.toFloat()
+            val Xdata = viewModel.getAllHistory().get(i).id.toFloat()
+            visitors.add(BarEntry(Xdata, Ydata))
         }
-
 
 
         val barDataSet = BarDataSet(visitors, "visitors")
@@ -122,16 +122,8 @@ class HistoryFragment : Fragment() {
         barChart.data = barData
         barChart.description.text = "Bar Chart Description"
         barChart.animateY(2000)
-
-
-        // Enables Always-on
-        // setAmbientEnabled();
     }
 
-    private fun BarEntry(x: Int, y: Int): BarEntry {
 
-        
-        TODO("Not yet implemented")
-    }
 
 }

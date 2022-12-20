@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/TextViewItemProgramImage"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:gravity="start|center_vertical"
+    android:textSize="40sp"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:src="@drawable/ic_launcher_foreground"
+
+    tools:text="@tools:sample/lorem"
+    />

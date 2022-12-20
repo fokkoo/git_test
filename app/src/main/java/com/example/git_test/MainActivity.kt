@@ -1,13 +1,13 @@
 package com.example.git_test
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.example.git_test.databinding.ActivityMainBinding
 import com.example.git_test.model.DetailFragment
 import com.example.git_test.model.DetailViewModel
@@ -36,6 +36,19 @@ class MainActivity : AppCompatActivity() {
         //    FrameLayout layout = new FrameLayout(this);
         //    layout.setLayoutParms(new ViewGroup)
 
+
+      //  val v = inflater.inflate(R.layout.fragment_train, container, false)
+
+       /*
+        val recyclerView: RecyclerView = findViewById(R.id.ProgramTrainRecycleView)
+        val adapter = ItemAdapterProgram(
+            arrayOf(
+                "1",
+                "2"
+            )
+        )
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)*/
     }
 
 
@@ -47,26 +60,30 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.idHistory -> {
+
+
+                Log.d("TAG", "idHistory is pressed")
+
                 supportFragmentManager.apply {
                     beginTransaction().replace(R.id.fragment_container, HistoryFragment())
-                        .addToBackStack("")
-                        .commitAllowingStateLoss()
+                            .addToBackStack("")
+                            .commitAllowingStateLoss()
                 }
                 true
             }
             R.id.idBarGraf -> {
                 supportFragmentManager.apply {
                     beginTransaction().replace(R.id.fragment_container, FragmentBar())
-                        .addToBackStack("")
-                        .commitAllowingStateLoss()
+                            .addToBackStack("")
+                            .commitAllowingStateLoss()
                 }
                 true
             }
             R.id.idJavaFragment -> {
                 supportFragmentManager.apply {
-                    beginTransaction().replace(R.id.fragment_container, FirstFragment())
-                        .addToBackStack("")
-                        .commitAllowingStateLoss()
+                    beginTransaction().replace(R.id.fragment_container, TrainFragment())
+                            .addToBackStack("")
+                            .commitAllowingStateLoss()
                 }
                 true
             }
@@ -176,8 +193,8 @@ class MainActivity : AppCompatActivity() {
 
 
             val toast = Toast.makeText(
-                applicationContext,
-                "Кнопка РВ фрагмента вызвана", Toast.LENGTH_SHORT
+                    applicationContext,
+                    "Кнопка РВ фрагмента вызвана", Toast.LENGTH_SHORT
             )
             toast.show()
         }
@@ -187,8 +204,8 @@ class MainActivity : AppCompatActivity() {
             addFragment(HistoryFragment())
 
             val toast = Toast.makeText(
-                applicationContext,
-                "Кнопка второго фрагмента вызвана", Toast.LENGTH_SHORT
+                    applicationContext,
+                    "Кнопка второго фрагмента вызвана", Toast.LENGTH_SHORT
             )
             toast.show()
         }
@@ -201,8 +218,8 @@ class MainActivity : AppCompatActivity() {
             addFragment(DetailFragment())
 
             val toast = Toast.makeText(
-                applicationContext,
-                "Кнопка Button_DetailFragment вызвана", Toast.LENGTH_SHORT
+                    applicationContext,
+                    "Кнопка Button_DetailFragment вызвана", Toast.LENGTH_SHORT
             )
             toast.show()
         }

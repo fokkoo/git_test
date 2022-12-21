@@ -13,18 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.ItemViewHolderProgram> {
 
-    private static final String TAG = "onBindViewHolder";
-   // private final String[] dataSource;
-   private final CardSource dataSource;
-
+    private final CardSource dataSource;
     private OnItemClickListner listener;
-    //private OnItemClickListener listener;
+    private static final String TAG = "onBindViewHolder";
 
+
+
+
+    //private OnItemClickListener listener;
+// private final String[] dataSource;
     public ItemAdapterProgram(CardSource dataSource) {
         this.dataSource = dataSource;
+        Log.d(TAG, "ItemAdapter");
     }
 
-    public void setListner(OnItemClickListner listner) {
+    public void setListener(OnItemClickListner listener) {
         this.listener = listener;
     }
 
@@ -43,10 +46,10 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
            // view = LayoutInflater.from(parent.getContext()).inflate(R.layout.program_item_recycler_view, parent, false);
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.program_item_recycler_view, parent, false);
             Log.d(TAG,"onCreateViewHolder viewType "+viewType);
-        }*/
+        }
 
 
-       // view = LayoutInflater.from(parent.getContext()).inflate(R.layout.program_item_recycler_view, parent, false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.program_item_recycler_view, parent, false);*/
 
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.program_item_recycler_view, parent, false);
 
@@ -55,13 +58,13 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 3){
+       /* if (position == 3){
            return 0;
         }else{
             return 1;
-        }
+        }*/
 
-      //  return super.getItemViewType(position);
+        return super.getItemViewType(position);
     }
 
     @Override
@@ -70,10 +73,10 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
         holder.bind(dataSource.getCardData(position));
 
 
-        if (getItemViewType(position)==1){
+    /*   if (getItemViewType(position)==1){
            // holder.getImageView().setImageResource
-        }
-     //   holder.getTextView().setText(dataSource[position]);
+   //     }
+       holder.getTextView().setText(dataSource[position]);*/
     }
 
     @Override

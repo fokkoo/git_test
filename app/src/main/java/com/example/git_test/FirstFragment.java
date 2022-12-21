@@ -30,11 +30,11 @@ public class FirstFragment  extends Fragment {
 
         RecyclerView recyclerView = v.findViewById(R.id.ProgramTrainRecycleView);
 
-        ItemAdapterProgram adapter = new ItemAdapterProgram(new String[]{
+/*        ItemAdapterProgram adapter = new ItemAdapterProgram(new String[]{
                 "1",
                 "2"
-        });
-        recyclerView.setAdapter(adapter);
+        });*/
+      //  recyclerView.setAdapter(adapter);
      //   recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         return  v;

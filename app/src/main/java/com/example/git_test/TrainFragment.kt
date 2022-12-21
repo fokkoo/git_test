@@ -1,22 +1,17 @@
 package com.example.git_test
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.git_test.databinding.FragmentHistoryBinding
 import com.example.git_test.databinding.FragmentTrainBinding
-import com.example.git_test.model.viewmodel.HistoryAdapter
-import com.example.git_test.model.viewmodel.HistoryViewModel
 
 
 class TrainFragment : Fragment() {
 
-
+    private val adapter: ItemAdapterProgram? = null
 
     private var _binding: FragmentTrainBinding? = null
     private val binding get() = _binding!!
@@ -35,8 +30,10 @@ class TrainFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
      //   return inflater.inflate(R.layout.fragment_train, container, false)
 
@@ -45,17 +42,25 @@ class TrainFragment : Fragment() {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_train, container, false)
         val recyclerView: RecyclerView = v.findViewById(R.id.ProgramTrainRecycleView)
-        val adapter = ItemAdapterProgram(
+
+
+    /*    val adapter = ItemAdapterProgram(
             arrayOf(
                 "first item",
                 "2 item",
                     "3 item",
                     "4 item"
             )
-        )
-       // recyclerView.hasFixedSize() // работает быстрее с одинаковым размером элементов
+        )*/
+
+
+
+
+
+
+        recyclerView.hasFixedSize() // работает быстрее с одинаковым размером элементов
         recyclerView.adapter = adapter
-       // recyclerView.layoutManager = LinearLayoutManager(this)
+      //  recyclerView.layoutManager = LinearLayoutManager(this)
         return v
     }
 

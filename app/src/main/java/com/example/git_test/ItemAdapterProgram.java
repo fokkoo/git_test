@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,15 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.ItemViewHolderProgram> {
 
     private static final String TAG = "onBindViewHolder";
-    private final String[] dataSource;
-    private OnItemClickListner listner;
+   // private final String[] dataSource;
+   private final CardSource dataSource;
 
-    public ItemAdapterProgram(String[] dataSource) {
+    private OnItemClickListner listener;
+    //private OnItemClickListener listener;
+
+    public ItemAdapterProgram(CardSource dataSource) {
         this.dataSource = dataSource;
     }
 
     public void setListner(OnItemClickListner listner) {
-        this.listner = listner;
+        this.listener = listener;
     }
 
     @NonNull
@@ -63,28 +67,53 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolderProgram holder, int position) {
         Log.d(TAG,"onBindViewHolder"+position);
+        holder.bind(dataSource.getCardData(position));
+
+
         if (getItemViewType(position)==1){
            // holder.getImageView().setImageResource
         }
-        holder.getTextView().setText(dataSource[position]);
+     //   holder.getTextView().setText(dataSource[position]);
     }
 
     @Override
     public int getItemCount() {
-        return dataSource.length;
+        return dataSource.size();
     }
 
     public class ItemViewHolderProgram extends RecyclerView.ViewHolder{
 
         private final TextView textView;
+        private final TextView titleProgram;
+        private final TextView description;
+        private final ImageView imageViewProgram;
+        private final CheckBox like;
 
         public ItemViewHolderProgram(@NonNull View itemView) {
             super(itemView);
 
             textView = itemView.findViewById(R.id.TextViewItemProgram);
 
+             titleProgram = itemView.findViewById(R.id.ProgramTitle);;
+             description = itemView.findViewById(R.id.description);;
+            imageViewProgram = itemView.findViewById(R.id.ProgramImageView);;
+             like = itemView.findViewById(R.id.like);;
+
 
         }
+
+        public void bind(CardData cardData) {
+
+            titleProgram.setText(cardData.getTitle());
+            description.setText(cardData.getDescription());
+            imageViewProgram.setImageResource(cardData.getPicture());
+            like.setChecked(cardData.isLike());
+
+
+            imageViewProgram.setOnClickListener(v -> listener.onItemClick(imageViewProgram, getLayoutPosition()));
+        }
+
+
         public TextView getTextView(){
             return textView;
         }
@@ -99,6 +128,6 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
     // обработка нажатия на элемент
 
     interface OnItemClickListner{
-        void onItemClick(int position);
+        void onItemClick(ImageView imageViewProgram, int position);
     }
 }

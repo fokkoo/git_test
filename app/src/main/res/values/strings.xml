@@ -9,4 +9,9 @@
     <string name="previous" />
     <string name="second_fragment_label" />
     <string name="first_fragment_label" />
+    <string name="program_Legs">Ноги</string>
+    <string name="program_Legs_description">Много упражнений на ноги делаем качественно</string>
+    <string name="program_chest">Грудь</string>
+    <string name="program_chest_description">Много упражнений на грудь делаем качественно</string>
+
 </resources>

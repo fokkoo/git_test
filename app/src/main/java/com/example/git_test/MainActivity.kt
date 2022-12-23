@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.git_test.databinding.ActivityMainBinding
+import com.example.git_test.model.CardSourceImpl
 import com.example.git_test.model.DetailFragment
 import com.example.git_test.model.DetailViewModel
 
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: DetailViewModel
     private lateinit var binding: ActivityMainBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -25,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+       // CardSource cardSours = new CardSourceImpl(this);
 
 
         readSettings()

@@ -4,11 +4,19 @@ import android.content.res.Resources;
 
 import androidx.annotation.NonNull;
 
+import org.jetbrains.annotations.NotNull;
+
 public class DataProvider {
+
+//      public static CardData[] getData(@NotNull Resources resources);
 
     public static CardData[] getData(@NonNull Resources resources) {
 
+
+
         return new CardData[]{
+
+
 
                 new CardData(
                         resources.getString(R.string.program_Legs),

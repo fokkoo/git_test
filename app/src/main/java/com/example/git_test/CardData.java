@@ -2,7 +2,8 @@ package com.example.git_test;
 
 import com.google.firebase.database.Exclude;
 
-class CardData {
+
+public class CardData {
 
 
     @Exclude // исключаем передачу ID в позж документ

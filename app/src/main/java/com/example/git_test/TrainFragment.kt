@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.git_test.databinding.FragmentTrainBinding
+import com.example.git_test.model.CardSourceImpl
 
 
 class TrainFragment : Fragment() {
@@ -36,6 +37,8 @@ class TrainFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
      //   return inflater.inflate(R.layout.fragment_train, container, false)
+
+
 
 
 

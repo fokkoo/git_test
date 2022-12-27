@@ -44,17 +44,25 @@
 
         <Button
             android:id="@+id/button_recycl_view"
-            android:layout_width="70dp"
-            android:layout_height="31dp"
+            android:layout_width="172dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="36dp"
-            android:text="Button for RW"
+            android:text="Button for RW go to A2"
             app:layout_constraintEnd_toStartOf="@+id/button_fragment2"
             app:layout_constraintTop_toTopOf="parent" />
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMainActvity"
+            android:layout_width="match_parent"
+            android:layout_height="474dp"
+
+            tools:listitem="@layout/program_item_recycler_view_card_view" />
+
         <Button
             android:id="@+id/button_detail_fragment"
-            android:layout_width="104dp"
-            android:layout_height="28dp"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
             android:text="Detail fragment"
             app:layout_constraintStart_toEndOf="@+id/Button_History"
             app:layout_constraintTop_toBottomOf="@+id/button_fragment2" />

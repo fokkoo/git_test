@@ -1,5 +1,6 @@
 package com.example.git_test
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -45,6 +46,11 @@ class TrainFragment : Fragment() {
         // Inflate the layout for this fragment
         val v = inflater.inflate(R.layout.fragment_train, container, false)
         val recyclerView: RecyclerView = v.findViewById(R.id.ProgramTrainRecycleView)
+
+
+
+       // val cardSours: CardSource = CardSourceImpl(MainActivity)
+         //    CardSource cardSours = new CardSourceImpl(cardSours);
 
 
     /*    val adapter = ItemAdapterProgram(

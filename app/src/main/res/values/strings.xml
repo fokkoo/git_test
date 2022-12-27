@@ -13,5 +13,8 @@
     <string name="program_Legs_description">Много упражнений на ноги делаем качественно</string>
     <string name="program_chest">Грудь</string>
     <string name="program_chest_description">Много упражнений на грудь делаем качественно</string>
-
+    <string name="title1">Жим лежа 1</string>
+    <string name="description1">String лягте на скамейку. Сведите лопатки вместе. Опустите штангу на грудь. На выдохе выжмите штангу вверх. Повторите подход</string>
+    <string name="title2">приседание</string>
+    <string name="description2">присядьте по глубже</string>
 </resources>

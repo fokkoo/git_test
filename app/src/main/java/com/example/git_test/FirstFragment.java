@@ -37,6 +37,12 @@ public class FirstFragment  extends Fragment {
       //  recyclerView.setAdapter(adapter);
      //   recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+     //       CardSource cardSours = new CardSourceImpl(this);
+
+      //  ItemAdapterProgram itemAdapterProgram = new ItemAdapterProgram(data);
+
+      //  recyclerView.setAdapter(adapter);
+
         return  v;
     }
 

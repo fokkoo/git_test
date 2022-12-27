@@ -1,5 +1,6 @@
 package com.example.git_test
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -8,6 +9,8 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.git_test.databinding.ActivityMainBinding
 import com.example.git_test.model.CardSourceImpl
 import com.example.git_test.model.DetailFragment
@@ -20,6 +23,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
 
+    private val itemAdapter: ItemAdapterProgram? = null
+    private val cardSource: CardSource? = null
+    private val recyclerView: RecyclerView? = null
+    private val currentPosition = -1
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +36,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+//************
+        val recyclerView: RecyclerView = binding.recyclerViewMainActvity
 
-       // CardSource cardSours = new CardSourceImpl(this);
+        val cardSours: CardSource = CardSourceImpl(this)
 
+        val adapter = itemAdapter(cardSours)
+
+        recyclerView.adapter = adapter
+
+        recyclerView.setLayoutManager(LinearLayoutManager(this))
+
+
+
+
+
+//************
 
         readSettings()
         initeMyView()
@@ -42,18 +63,18 @@ class MainActivity : AppCompatActivity() {
         //    layout.setLayoutParms(new ViewGroup)
 
 
-      //  val v = inflater.inflate(R.layout.fragment_train, container, false)
+        //  val v = inflater.inflate(R.layout.fragment_train, container, false)
 
-       /*
-        val recyclerView: RecyclerView = findViewById(R.id.ProgramTrainRecycleView)
-        val adapter = ItemAdapterProgram(
-            arrayOf(
-                "1",
-                "2"
-            )
-        )
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)*/
+        /*
+         val recyclerView: RecyclerView = findViewById(R.id.ProgramTrainRecycleView)
+         val adapter = ItemAdapterProgram(
+             arrayOf(
+                 "1",
+                 "2"
+             )
+         )
+         recyclerView.adapter = adapter
+         recyclerView.layoutManager = LinearLayoutManager(this)*/
     }
 
 
@@ -71,24 +92,24 @@ class MainActivity : AppCompatActivity() {
 
                 supportFragmentManager.apply {
                     beginTransaction().replace(R.id.fragment_container, HistoryFragment())
-                            .addToBackStack("")
-                            .commitAllowingStateLoss()
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
                 }
                 true
             }
             R.id.idBarGraf -> {
                 supportFragmentManager.apply {
                     beginTransaction().replace(R.id.fragment_container, FragmentBar())
-                            .addToBackStack("")
-                            .commitAllowingStateLoss()
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
                 }
                 true
             }
             R.id.idJavaFragment -> {
                 supportFragmentManager.apply {
                     beginTransaction().replace(R.id.fragment_container, TrainFragment())
-                            .addToBackStack("")
-                            .commitAllowingStateLoss()
+                        .addToBackStack("")
+                        .commitAllowingStateLoss()
                 }
                 true
             }
@@ -116,6 +137,10 @@ class MainActivity : AppCompatActivity() {
        // return super.onOptionsItemSelected(item)
     }
 */
+    fun deliteMe() {
+
+    }
+
     private fun readSettings() {
         /*   FragmentSettings.radioButtonAddConstant =
                    getSharedPreferences(FragmentSettings.SETTINGS, MODE_PRIVATE).getBoolean(
@@ -132,14 +157,14 @@ class MainActivity : AppCompatActivity() {
 
         val firstStart = true
 
-    if ( firstStart == true) {
-        supportFragmentManager.apply {
-            beginTransaction().replace(R.id.fragment_container, StartMenuFragment())
-                .addToBackStack("")
-                .commitAllowingStateLoss()
+        if (firstStart == true) {
+            supportFragmentManager.apply {
+                beginTransaction().replace(R.id.fragment_container, StartMenuFragment())
+                    .addToBackStack("")
+                    .commitAllowingStateLoss()
+            }
+            firstStart == false
         }
-        firstStart == false
-    }
 
 
         binding.ButtonHistory.setOnClickListener() {
@@ -149,8 +174,6 @@ class MainActivity : AppCompatActivity() {
                     .addToBackStack("")
                     .commitAllowingStateLoss()
             }
-
-
 
 
             //true
@@ -177,17 +200,16 @@ class MainActivity : AppCompatActivity() {
 */
 
 
-
             //
-         /*   addFragment(HistoryFragment())
+            /*   addFragment(HistoryFragment())
 
-            val toast = Toast.makeText(
-                    applicationContext,
-                    "Кнопка Button_History вызвана", Toast.LENGTH_SHORT
-            )
-            toast.setGravity(Gravity.TOP, 0, 0);
-            toast.show()
-*/
+               val toast = Toast.makeText(
+                       applicationContext,
+                       "Кнопка Button_History вызвана", Toast.LENGTH_SHORT
+               )
+               toast.setGravity(Gravity.TOP, 0, 0);
+               toast.show()
+   */
 
         }
 
@@ -197,9 +219,12 @@ class MainActivity : AppCompatActivity() {
             //  addFragment(Fragment1firstRW())
 
 
+            val intent = Intent(this@MainActivity, CardActivityJava::class.java)
+            startActivity(intent)
+
             val toast = Toast.makeText(
-                    applicationContext,
-                    "Кнопка РВ фрагмента вызвана", Toast.LENGTH_SHORT
+                applicationContext,
+                "Кнопка РВ фрагмента вызвана", Toast.LENGTH_SHORT
             )
             toast.show()
         }
@@ -209,8 +234,8 @@ class MainActivity : AppCompatActivity() {
             addFragment(HistoryFragment())
 
             val toast = Toast.makeText(
-                    applicationContext,
-                    "Кнопка второго фрагмента вызвана", Toast.LENGTH_SHORT
+                applicationContext,
+                "Кнопка второго фрагмента вызвана", Toast.LENGTH_SHORT
             )
             toast.show()
         }
@@ -223,8 +248,8 @@ class MainActivity : AppCompatActivity() {
             addFragment(DetailFragment())
 
             val toast = Toast.makeText(
-                    applicationContext,
-                    "Кнопка Button_DetailFragment вызвана", Toast.LENGTH_SHORT
+                applicationContext,
+                "Кнопка Button_DetailFragment вызвана", Toast.LENGTH_SHORT
             )
             toast.show()
         }

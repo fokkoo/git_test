@@ -27,6 +27,7 @@
 
             android:text="Программы тренировок" />
         <TextView
+            android:id="@+id/train_title"
             android:layout_width="match_parent"
             android:layout_height="60dp"
 
@@ -35,11 +36,22 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ProgramTrainRecycleView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
             tools:listitem="@layout/train_list_item"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             />
 
+        <Button
+            android:id="@+id/add_program"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Добавить тренеровку" />
+        <TextView
+            android:id="@+id/train_Toast_text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:text="Добавить тренеровку нажато?" />
 
     </LinearLayout>
 

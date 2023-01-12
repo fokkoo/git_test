@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.git_test.*
+import com.example.git_test.databinding.FragmentStartMenuBinding
 import com.example.git_test.databinding.FragmentTrainBinding
 import com.example.git_test.model.CardSourceImpl
 
@@ -25,9 +26,9 @@ class TrainFragment : Fragment() {
     lateinit var news : Array<String>
 
 
-    private var _binding: FragmentTrainBinding? = null
-    private val binding get() = _binding!!
 
+    private var _binding: FragmentTrainBinding? =null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +53,7 @@ class TrainFragment : Fragment() {
         val recyclerView: RecyclerView = v.findViewById(R.id.ProgramTrainRecycleView)
         val cardSours: CardSource = CardSourceImpl(activity)
         //CardSource cardSours = new CardSourceImpl(cardSours);
-
+        _binding = FragmentTrainBinding.bind(v)
 
         /*    val adapter = ItemAdapterProgram(
                 arrayOf(
@@ -74,6 +75,9 @@ class TrainFragment : Fragment() {
         //     recyclerView.hasFixedSize() // работает быстрее с одинаковым размером элементов
         //     recyclerView.adapter = adapter
         //  recyclerView.layoutManager = LinearLayoutManager(this)
+
+
+
         return v
     }
 
@@ -94,15 +98,29 @@ class TrainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         dataInitialisation()
 
+
+
+
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.ProgramTrainRecycleView)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         adapter = MyAdapter(newsArrayList)
         recyclerView.adapter = adapter
+
+
+        binding.addProgram.setOnClickListener(){
+            binding.trainTitle.text = "yes"
+        }
+
     }
 
+
+
+
     private fun dataInitialisation(){
+
+
 
         newsArrayList = arrayListOf<News>()
 

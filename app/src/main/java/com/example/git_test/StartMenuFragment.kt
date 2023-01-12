@@ -1,14 +1,13 @@
 package com.example.git_test
 
 import android.os.Bundle
-import android.text.TextUtils.replace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.git_test.databinding.FragmentStartMenuBinding
-import com.example.git_test.databinding.FragmentTrainBinding
+import com.example.git_test.model.trainRecyclerView.TrainFragment
 
 
 class StartMenuFragment : Fragment() {

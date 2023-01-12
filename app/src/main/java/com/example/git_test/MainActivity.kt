@@ -15,6 +15,7 @@ import com.example.git_test.databinding.ActivityMainBinding
 import com.example.git_test.model.CardSourceImpl
 import com.example.git_test.model.DetailFragment
 import com.example.git_test.model.DetailViewModel
+import com.example.git_test.model.trainRecyclerView.TrainFragment
 
 
 class MainActivity : AppCompatActivity() {

@@ -29,8 +29,8 @@ public class CardActivityJava extends AppCompatActivity {
         adapter2 = new itemAdapter2(cardSource2);
 
 
-        recyclerView2.setAdapter(adapter2);
-        recyclerView2.setLayoutManager(new LinearLayoutManager(this)); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+   //     recyclerView2.setAdapter(adapter2);
+   //     recyclerView2.setLayoutManager(new LinearLayoutManager(this)); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
 

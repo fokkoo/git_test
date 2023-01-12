@@ -47,10 +47,15 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.setLayoutManager(LinearLayoutManager(this))
 
+/*
+     val   recyclerView2 = findViewById<RecyclerView>(R.id.recyclerViewMainActvity)
+     val   cardSource2 = CardSourceImpl2(this)
+    val    adapter2 = itemAdapter2(cardSource2)
 
 
+        recyclerView2.setAdapter(adapter2)
 
-
+        recyclerView2.setLayoutManager(LinearLayoutManager(this))*/
 //************
 
         readSettings()
@@ -230,8 +235,8 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<View>(R.id.button_fragment2).setOnClickListener {
 
-
-            addFragment(HistoryFragment())
+            addFragment(FirstFragment())
+        //    addFragment(HistoryFragment())
 
             val toast = Toast.makeText(
                 applicationContext,

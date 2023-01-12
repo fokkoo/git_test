@@ -52,7 +52,7 @@ public class CardSourceImpl implements CardSource {
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardData(
-                        "CardSours Impl",
+                        "CardSours Impl1",
                         "CardSours Impl",
                         R.drawable.program_chest,
                         false

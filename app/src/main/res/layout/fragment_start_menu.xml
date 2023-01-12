@@ -19,6 +19,7 @@
 
 
     <TextView
+        android:id="@+id/title_main_menu"
         android:layout_width="match_parent"
         android:layout_height="60dp"
 
@@ -50,6 +51,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="Настройки" />
+        <TextView
+            android:id="@+id/text_check"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:text="Главное меню" />
 
     </LinearLayout>
 

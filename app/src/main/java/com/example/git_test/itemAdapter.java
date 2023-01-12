@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder> {
+ class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder> {
 //
     //    public static final int VIEW_TYPE_IMAGE = 1;
     //   public static final int VIEW_TYPE_TEXT = 0;

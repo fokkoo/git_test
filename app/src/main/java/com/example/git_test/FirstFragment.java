@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class FirstFragment  extends Fragment {
+public class FirstFragment extends Fragment {
 
     @Override
     public View onCreateView(
@@ -34,23 +34,21 @@ public class FirstFragment  extends Fragment {
                 "1",
                 "2"
         });*/
-      //  recyclerView.setAdapter(adapter);
-     //   recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        //  recyclerView.setAdapter(adapter);
+        //   recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-     //       CardSource cardSours = new CardSourceImpl(this);
+        //       CardSource cardSours = new CardSourceImpl(this);
 
-      //  ItemAdapterProgram itemAdapterProgram = new ItemAdapterProgram(data);
+        //  ItemAdapterProgram itemAdapterProgram = new ItemAdapterProgram(data);
 
-      //  recyclerView.setAdapter(adapter);
+        //  recyclerView.setAdapter(adapter);
 
-        return  v;
+        return v;
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
 
 
     }
@@ -59,21 +57,17 @@ public class FirstFragment  extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-
-
-
-
-
-                view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                Fragment secondFrag = new SecondFragment();
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.fragment_container, secondFrag).commit();
 
             }
         });
     }
-
 
 
 }

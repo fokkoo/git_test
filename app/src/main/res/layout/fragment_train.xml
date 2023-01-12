@@ -26,6 +26,11 @@
             android:layout_height="60dp"
 
             android:text="Программы тренировок" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+
+            android:text="Программы тренировок" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ProgramTrainRecycleView"

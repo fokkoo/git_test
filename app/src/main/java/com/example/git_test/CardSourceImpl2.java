@@ -47,13 +47,13 @@ public class CardSourceImpl2 implements CardSource2 {
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardData(
-                        "CardSours Impl",
+                        "CardSours Impl2",
                         "CardSours Impl",
                         R.drawable.nature1,
                         false
                 ),
                 new CardData(
-                        context.getResources().getString(R.string.title1),
+                        "it works",
                         context.getResources().getString(R.string.description1),
                         R.drawable.benchpress,
                         false

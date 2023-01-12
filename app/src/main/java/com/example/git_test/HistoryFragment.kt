@@ -18,6 +18,9 @@ import kotlinx.android.synthetic.main.fragment_history.*
 
 class HistoryFragment : Fragment() {
 
+
+
+
     private val viewModel: HistoryViewModel by lazy {
         ViewModelProvider(this).get(HistoryViewModel::class.java)
     }
@@ -49,13 +52,13 @@ class HistoryFragment : Fragment() {
             val KEY_MSG_1 = "FRAGMENT1_MSG"
             val msg = bundle.getString(KEY_MSG_1)
             if (msg != null) {
-              //  textMsg.setText(msg)
+                //  textMsg.setText(msg)
             }
         }
         return view
 
 
-        return binding.root
+     //   return binding.root
 
     }
 
@@ -94,8 +97,7 @@ class HistoryFragment : Fragment() {
     }
 
 
-    fun barBiuld(){
-
+    fun barBiuld() {
 
 
         val barChart: BarChart = binding.barChart
@@ -103,11 +105,11 @@ class HistoryFragment : Fragment() {
         val visitors = ArrayList<BarEntry>()
 
 
-      //  textViewMySQL.text = viewModel.getAllHistory().get(1).temperature.toString()
+        //  textViewMySQL.text = viewModel.getAllHistory().get(1).temperature.toString()
 
         val sizaDataMYSQL = viewModel.getAllHistory().size.toInt()
 
-        for (i in 0..sizaDataMYSQL-1) {
+        for (i in 0..sizaDataMYSQL - 1) {
             val Ydata = viewModel.getAllHistory().get(i).temperature.toFloat()
             val Xdata = viewModel.getAllHistory().get(i).id.toFloat()
             visitors.add(BarEntry(Xdata, Ydata))
@@ -115,15 +117,14 @@ class HistoryFragment : Fragment() {
 
 
         val barDataSet = BarDataSet(visitors, "visitors")
-       // barDataSet.setValueTextColors(Color.BLACK)
-      //  barDataSet.setColors(ColorTemplate.MATERIAL_COLORS)
+        // barDataSet.setValueTextColors(Color.BLACK)
+        //  barDataSet.setColors(ColorTemplate.MATERIAL_COLORS)
         val barData = BarData(barDataSet)
         barChart.setFitBars(true)
         barChart.data = barData
         barChart.description.text = "Bar Chart Description"
         barChart.animateY(2000)
     }
-
 
 
 }

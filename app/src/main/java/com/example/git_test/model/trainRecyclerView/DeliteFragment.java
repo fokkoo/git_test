@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -76,8 +78,13 @@ public class DeliteFragment extends Fragment {
             public void onItemClick(View view, int position) {
                 currentPosition = position;
                 Log.d(TAG, "OnItemClickListener" + currentPosition);
-                cardSource.deliteCardData(currentPosition);
-                adapter.notifyDataSetChanged(); // уведомление адаптера о обновлении списка
+
+
+              //  FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, new MyTrainFragment());
+                fragmentTransaction.commit();
             }
         });
 

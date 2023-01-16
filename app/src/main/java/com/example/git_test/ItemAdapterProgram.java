@@ -88,9 +88,9 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
 
         private final TextView textView;
         private final TextView titleProgram;
-        private final TextView description;
+     //   private final TextView description;
         private final ImageView imageViewProgram;
-        private final CheckBox like;
+      //  private final CheckBox like;
 
         public ItemViewHolderProgram(@NonNull View itemView) {
             super(itemView);
@@ -98,9 +98,9 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
             textView = itemView.findViewById(R.id.TextViewItemProgram);
 
              titleProgram = itemView.findViewById(R.id.ProgramTitle);;
-             description = itemView.findViewById(R.id.description);;
+           //  description = itemView.findViewById(R.id.description);;
             imageViewProgram = itemView.findViewById(R.id.ProgramImageView);;
-             like = itemView.findViewById(R.id.like);;
+         //    like = itemView.findViewById(R.id.like);;
 
 
         }
@@ -108,9 +108,9 @@ public class ItemAdapterProgram extends RecyclerView.Adapter<ItemAdapterProgram.
         public void bind(CardData cardData) {
 
             titleProgram.setText(cardData.getTitle());
-            description.setText(cardData.getDescription());
+          //  description.setText(cardData.getDescription());
             imageViewProgram.setImageResource(cardData.getPicture());
-            like.setChecked(cardData.isLike());
+          //  like.setChecked(cardData.isLike());
 
 
             imageViewProgram.setOnClickListener(v -> listener.onItemClick(imageViewProgram, getLayoutPosition()));

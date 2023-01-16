@@ -30,7 +30,7 @@
             tools:src="@tools:sample/avatars" />
 
         <CheckBox
-            android:id="@+id/like"
+            android:id="@+id/Programlike"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
@@ -55,7 +55,7 @@
                 tools:text="@tools:sample/lorem" />
 
             <TextView
-                android:id="@+id/description"
+                android:id="@+id/ProgramDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

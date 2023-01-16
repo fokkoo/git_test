@@ -1,4 +1,4 @@
-package com.example.git_test;
+package com.example.git_test.model.trainRecyclerView;
 
 
 import android.util.Log;
@@ -13,20 +13,22 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
- class itemAdapter extends RecyclerView.Adapter<itemAdapter.ItemViewHolder> {
+import com.example.git_test.R;
+
+public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.ItemViewHolder> {
 //
     //    public static final int VIEW_TYPE_IMAGE = 1;
     //   public static final int VIEW_TYPE_TEXT = 0;
    // public static final int NO_POSITION = -1;
   //  private int currentPosition = NO_POSITION; // позиция элемента для его последующего удаления
     //
-    private final CardSource dataSource;
+    private final CardSourceTrain dataSource;
 
     private OnItemClickListener listener;
     public static final String TAG = "ItemAdapter";
 
 
-    public itemAdapter(CardSource dataSource) {
+    public itemAdapterTrain(CardSourceTrain dataSource) {
         this.dataSource = dataSource;
         Log.d(TAG, "ItemAdapter");
     }
@@ -54,8 +56,6 @@ import androidx.recyclerview.widget.RecyclerView;
         return new ItemViewHolder(view);
     }
 
-
-
     /*
         @Override
         public int getItemViewType(int position) {
@@ -63,7 +63,7 @@ import androidx.recyclerview.widget.RecyclerView;
         }
     */
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull itemAdapterTrain.ItemViewHolder holder, int position) {
 
         Log.d(TAG, "onBindViewHolder" + position);
 
@@ -106,13 +106,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
+            title = itemView.findViewById(R.id.ProgramTitle);
             description = itemView.findViewById(R.id.ProgramDescription);
-            imageView = itemView.findViewById(R.id.imageView);
+            imageView = itemView.findViewById(R.id.ProgramImageView);
             like = itemView.findViewById(R.id.Programlike);
         }
 
-        public void bind(CardData cardData) {
+        public void bind(CardDataTrain cardData) {
             title.setText(cardData.getTitle());
             description.setText(cardData.getDescription());
             imageView.setImageResource(cardData.getPicture());

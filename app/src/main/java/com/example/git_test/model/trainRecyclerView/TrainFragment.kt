@@ -17,10 +17,10 @@ class TrainFragment : Fragment() {
 
  //   private val adapter: ItemAdapterProgram? = null
 
-    private lateinit var adapter: MyAdapter
+    private lateinit var adapter: itemAdapterTrain
   // private lateinit var adapter: itemAdapter2
     private lateinit var recyclerView: RecyclerView
-    private lateinit var newsArrayList : ArrayList<News>
+   // private lateinit var newsArrayList : ArrayList<News>
 
     lateinit var imageId : Array<Int>
     lateinit var heading : Array<String>
@@ -43,39 +43,12 @@ class TrainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        //   return inflater.inflate(R.layout.fragment_train, container, false)
 
-
-        // Inflate the layout for this fragment
 
 
         val v = inflater.inflate(R.layout.fragment_train, container, false)
-        val recyclerView: RecyclerView = v.findViewById(R.id.ProgramTrainRecycleView)
-        val cardSours: CardSource = CardSourceImpl(activity)
-        //CardSource cardSours = new CardSourceImpl(cardSours);
+
         _binding = FragmentTrainBinding.bind(v)
-
-        /*    val adapter = ItemAdapterProgram(
-                arrayOf(
-                    "first item",
-                    "2 item",
-                        "3 item",
-                        "4 item"
-                )
-            )*/
-
-        val recyclerView2: RecyclerView = v.findViewById(R.id.ProgramTrainRecycleView)
-        val cardSource2 = CardSourceImpl2(activity)
-        val adapter2 = itemAdapter2(cardSource2)
-
-        //       recyclerView2.setAdapter(adapter2)
-        recyclerView2.layoutManager = LinearLayoutManager(activity) // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-
-        //     recyclerView.hasFixedSize() // работает быстрее с одинаковым размером элементов
-        //     recyclerView.adapter = adapter
-        //  recyclerView.layoutManager = LinearLayoutManager(this)
 
 
 
@@ -97,7 +70,9 @@ class TrainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dataInitialisation()
+      //  dataInitialisation()
+
+
 
 
 
@@ -109,7 +84,7 @@ class TrainFragment : Fragment() {
 
        // val cardSource2 = CardSourceImpl2(activity)
       //  adapter = itemAdapter2(cardSource2)
-        adapter = MyAdapter(newsArrayList)
+      //  adapter = MyAdapter(newsArrayList)
         recyclerView.adapter = adapter
 
 
@@ -121,7 +96,7 @@ class TrainFragment : Fragment() {
 
 
 
-
+/*
     private fun dataInitialisation(){
 
 
@@ -160,4 +135,5 @@ class TrainFragment : Fragment() {
 
         }
     }
+*/
 }

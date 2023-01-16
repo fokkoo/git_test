@@ -74,10 +74,10 @@ public class itemAdapter2 extends RecyclerView.Adapter<itemAdapter2.ItemViewHold
 
         public ItemViewHolder2(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.title);
-            description = itemView.findViewById(R.id.description);
-            imageView = itemView.findViewById(R.id.imageView);
-            like = itemView.findViewById(R.id.like);
+            title = itemView.findViewById(R.id.ProgramTitle);
+            description = itemView.findViewById(R.id.ProgramDescription);
+            imageView = itemView.findViewById(R.id.ProgramImageView);
+            like = itemView.findViewById(R.id.Programlike);
         }
 
         public void bind(CardData cardData) {

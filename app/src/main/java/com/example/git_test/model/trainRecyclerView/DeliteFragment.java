@@ -76,6 +76,8 @@ public class DeliteFragment extends Fragment {
             public void onItemClick(View view, int position) {
                 currentPosition = position;
                 Log.d(TAG, "OnItemClickListener" + currentPosition);
+                cardSource.deliteCardData(currentPosition);
+                adapter.notifyDataSetChanged(); // уведомление адаптера о обновлении списка
             }
         });
 

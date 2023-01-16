@@ -18,6 +18,7 @@ class TrainFragment : Fragment() {
  //   private val adapter: ItemAdapterProgram? = null
 
     private lateinit var adapter: MyAdapter
+  // private lateinit var adapter: itemAdapter2
     private lateinit var recyclerView: RecyclerView
     private lateinit var newsArrayList : ArrayList<News>
 
@@ -105,6 +106,9 @@ class TrainFragment : Fragment() {
         recyclerView = view.findViewById(R.id.ProgramTrainRecycleView)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
+
+       // val cardSource2 = CardSourceImpl2(activity)
+      //  adapter = itemAdapter2(cardSource2)
         adapter = MyAdapter(newsArrayList)
         recyclerView.adapter = adapter
 

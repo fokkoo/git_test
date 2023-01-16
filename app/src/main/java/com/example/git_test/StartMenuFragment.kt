@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.git_test.databinding.FragmentStartMenuBinding
+import com.example.git_test.model.knolegData.KnolegFragment
 import com.example.git_test.model.trainRecyclerView.TrainFragment
 
 
@@ -74,6 +75,11 @@ class StartMenuFragment : Fragment() {
         }
 
         binding.buttonData.setOnClickListener(){
+
+            val KnolegFragment = KnolegFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.fragment_container, KnolegFragment)
+            transaction.commit()
 
             binding.textCheck.text = "База данных"
         }

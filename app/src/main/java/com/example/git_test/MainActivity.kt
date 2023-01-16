@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-//************
+
         val recyclerView: RecyclerView = binding.recyclerViewMainActvity
 
         val cardSours: CardSource = CardSourceImpl(this)
@@ -48,39 +48,14 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.setLayoutManager(LinearLayoutManager(this))
 
-/*
-     val   recyclerView2 = findViewById<RecyclerView>(R.id.recyclerViewMainActvity)
-     val   cardSource2 = CardSourceImpl2(this)
-    val    adapter2 = itemAdapter2(cardSource2)
 
-
-        recyclerView2.setAdapter(adapter2)
-
-        recyclerView2.setLayoutManager(LinearLayoutManager(this))*/
-//************
 
         readSettings()
         initeMyView()
 
-        //  binding.textView.text = "binding text"
-        //    binding.button3.text = "binding text"
-
-        //    FrameLayout layout = new FrameLayout(this);
-        //    layout.setLayoutParms(new ViewGroup)
 
 
-        //  val v = inflater.inflate(R.layout.fragment_train, container, false)
 
-        /*
-         val recyclerView: RecyclerView = findViewById(R.id.ProgramTrainRecycleView)
-         val adapter = ItemAdapterProgram(
-             arrayOf(
-                 "1",
-                 "2"
-             )
-         )
-         recyclerView.adapter = adapter
-         recyclerView.layoutManager = LinearLayoutManager(this)*/
     }
 
 

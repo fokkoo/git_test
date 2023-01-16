@@ -16,14 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.git_test.R;
 
 public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.ItemViewHolder> {
-//
-    //    public static final int VIEW_TYPE_IMAGE = 1;
-    //   public static final int VIEW_TYPE_TEXT = 0;
-   // public static final int NO_POSITION = -1;
-  //  private int currentPosition = NO_POSITION; // позиция элемента для его последующего удаления
-    //
-    private final CardSourceTrain dataSource;
 
+    private final CardSourceTrain dataSource;
     private OnItemClickListener listener;
     public static final String TAG = "ItemAdapter";
 
@@ -38,6 +32,11 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
         this.listener = listener;
     }
 
+    public void testVOID() {
+        /// test method can be deleted
+    }
+
+
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,48 +44,18 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
 
         Log.d(TAG, "onCreateViewHolder" + viewType);
         View view;
-/*
-        if (viewType == VIEW_TYPE_IMAGE) {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_image, parent, false);
-        } else {
-            view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
-        }
-*/
+
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.program_item_recycler_view_card_view, parent, false);
         return new ItemViewHolder(view);
     }
 
-    /*
-        @Override
-        public int getItemViewType(int position) {
-            return position % 4 == 0 ? VIEW_TYPE_IMAGE : VIEW_TYPE_TEXT;  // если позиция 4 то вставляется константа для картинки в остальных случаях текст
-        }
-    */
+
     @Override
     public void onBindViewHolder(@NonNull itemAdapterTrain.ItemViewHolder holder, int position) {
 
         Log.d(TAG, "onBindViewHolder" + position);
 
         holder.bind(dataSource.getCardData(position));
-
-        /*
-        if (getItemViewType(position) == VIEW_TYPE_IMAGE) {
-           holder.getImageView().setImageResource(R.drawable.promotion);
-        } else {
-            holder.getTextView().setText(dataSource[position]);
-        }
-        */
-
-        //    holder.getTextView().setText(dataSource[position]);
-/*
-        // прописывания условия при котором должно быть красным поле. остальные поля надо принудительно делать не красными.
-        if (position % 5 == 0) {
-            holder.getTextView().setBackgroundColor(Color.RED);
-        }
-        else{
-            holder.getTextView().setBackgroundColor(Color.WHITE);
-        }
-*/
 
 
     }
@@ -121,23 +90,13 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
 
             imageView.setOnClickListener(v -> listener.onItemClick(imageView, getLayoutPosition()));
         }
-        //   imageView = itemView.findViewById(R.id.image);
+
     }
 
-// 1:03
 
     interface OnItemClickListener {
         void onItemClick(View view, int position); // which position is clicked
     }
-    //   public TextView getTextView() {
-    //       return textView;
-    //  }
-
-
-
-       /* public ImageView getImageView() {
-            return imageView;
-        }*/
 
 
 }

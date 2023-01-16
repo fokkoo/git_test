@@ -49,63 +49,67 @@ public class CardSourceImplTrain implements CardSourceTrain {
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardDataTrain(
-                        "CardSours Impl",
+                        context.getResources().getString(R.string.base_program),
                         context.getResources().getString(R.string.description1),
-                        R.drawable.nature1,
+                        R.drawable.program1_base_program,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.title1),
+                        context.getResources().getString(R.string.circuit_workout),
                         context.getResources().getString(R.string.description1),
-                        R.drawable.benchpress,
+                        R.drawable.program2_circuit_workout,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.three_day_split_workout),
                         context.getResources().getString(R.string.description2),
-                        R.drawable.deadlift,
+                        R.drawable.program3_fat_burn,
                         false
                 ),
 
                 new CardDataTrain(
-                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.fat_burn_workout),
                         context.getResources().getString(R.string.description2),
-                        R.drawable.nature1,
+                        R.drawable.program4_three_day_split,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.title1),
+                        context.getResources().getString(R.string.your_workout),
                         context.getResources().getString(R.string.description1),
-                        R.drawable.benchpress,
+                        R.drawable.program5_your_train,
+                        false
+                ),
+        new CardDataTrain(
+                context.getResources().getString(R.string.base_program),
+                context.getResources().getString(R.string.description1),
+                R.drawable.program1_base_program,
+                false
+        ),
+                new CardDataTrain(
+                        context.getResources().getString(R.string.circuit_workout),
+                        context.getResources().getString(R.string.description1),
+                        R.drawable.program2_circuit_workout,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.three_day_split_workout),
                         context.getResources().getString(R.string.description2),
-                        R.drawable.deadlift,
+                        R.drawable.program3_fat_burn,
                         false
                 ),
 
                 new CardDataTrain(
-                        context.getResources().getString(R.string.title2),
+                        context.getResources().getString(R.string.fat_burn_workout),
                         context.getResources().getString(R.string.description2),
-                        R.drawable.nature1,
+                        R.drawable.program4_three_day_split,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.title1),
+                        context.getResources().getString(R.string.your_workout),
                         context.getResources().getString(R.string.description1),
-                        R.drawable.benchpress,
-                        false
-                ),
-                new CardDataTrain(
-                        context.getResources().getString(R.string.title2),
-                        context.getResources().getString(R.string.description2),
-                        R.drawable.deadlift,
+                        R.drawable.program5_your_train,
                         false
                 )
-
-
         )
         );
     }

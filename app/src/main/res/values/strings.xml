@@ -17,4 +17,17 @@
     <string name="description1">String лягте на скамейку. Сведите лопатки вместе. Опустите штангу на грудь. На выдохе выжмите штангу вверх. Повторите подход</string>
     <string name="title2">приседание</string>
     <string name="description2">присядьте по глубже</string>
+
+    <string name="chest_workout">Тренировка груди</string>
+    <string name="leg_workout">Тренировка ног</string>
+    <string name="back_workout">Тренировка спины</string>
+    <string name="shoulder_workout">Тренировка плеч</string>
+
+
+    <string name="base_program">Базовая программа</string>
+    <string name="circuit_workout">Круговая программа</string>
+    <string name="three_day_split_workout">Трехдневний сплит</string>
+    <string name="fat_burn_workout">Жиросжигающая высокоэнергетичная программа</string>
+    <string name="your_workout">Ваша программа</string>
+
 </resources>

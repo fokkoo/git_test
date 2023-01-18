@@ -8,3 +8,4 @@ abstract class HistoryDataBase: RoomDatabase() {
 
     abstract fun historyDao(): HistoryDao
 }
+

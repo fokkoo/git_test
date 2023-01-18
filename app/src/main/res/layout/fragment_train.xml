@@ -36,7 +36,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ProgramTrainRecycleView"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="50dp"
             tools:listitem="@layout/train_list_item"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             />
@@ -46,13 +46,28 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Добавить тренеровку" />
+        <Button
+            android:id="@+id/read_program"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Считать тренеровку" />
         <TextView
             android:id="@+id/train_Toast_text"
             android:layout_width="match_parent"
             android:layout_height="60dp"
 
-            android:text="Добавить тренеровку нажато?" />
+            android:text="Put train here" />
 
+
+        <EditText
+            android:id="@+id/trainFragmenteditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="ReadTrainFromHear"
+
+            />
     </LinearLayout>
 
 

@@ -22,6 +22,7 @@ import com.example.git_test.R;
 public class MyTrainFragment extends Fragment {
 
 
+
     private itemAdapterTrain adapter;
     private CardSourceTrain cardSource;
     private RecyclerView recyclerView;
@@ -63,9 +64,9 @@ public class MyTrainFragment extends Fragment {
         cardSource = new CardSourceImplTrain(getActivity().getApplicationContext());
         adapter = new itemAdapterTrain(cardSource);
 
-        recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+      //  recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
+      //  recyclerView.setAdapter(adapter);
+      //  recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
     }

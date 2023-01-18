@@ -18,6 +18,30 @@
         android:layout_width="match_parent"
         android:layout_height="30dp"
         android:text="fragment RW Train" />
+    <TextView
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="My train fragment Text" />
+
+    <EditText
+        android:id="@+id/MyTrainButtoneditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/MyTrainButtonWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ButtonWrite" />
+
+    <TextView
+        android:id="@+id/MyTrainButtontextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ExportText" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_Recycle_view_train"

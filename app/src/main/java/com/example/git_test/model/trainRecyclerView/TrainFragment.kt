@@ -5,10 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.git_test.*
 import com.example.git_test.databinding.FragmentTrainBinding
+import com.example.git_test.model.DetailViewModel
+import com.example.git_test.model.database.City
 
 
 class TrainFragment : Fragment() {
@@ -19,6 +22,10 @@ class TrainFragment : Fragment() {
     private var _binding: FragmentTrainBinding? =null
     private val binding get() = _binding!!
 
+
+    private val viewModel: DetailViewModel by lazy {
+        ViewModelProvider(this).get(DetailViewModel::class.java)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,20 +65,33 @@ class TrainFragment : Fragment() {
 
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.ProgramTrainRecycleView)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = adapter
+ //       recyclerView.layoutManager = layoutManager
+ //       recyclerView.setHasFixedSize(true)
+ //       recyclerView.adapter = adapter
 
+        var counter = 1
 
         binding.addProgram.setOnClickListener(){
-            binding.trainTitle.text = "yes"
+            counter= counter+1
+            binding.trainTitle.text = "yes"+counter.toString()
+
+            binding.trainToastText.text = getRussianCities()[0].city.name.toString()
+
+
+            val CityFromEditTextInn = binding.trainFragmenteditText.text.toString()
+            viewModel.saveWeather(weather = Weather(City(CityFromEditTextInn, 51.5, 51.5), 2, 1))
+
+        }
+
+        binding.readProgram.setOnClickListener(){
+
+            //      adapter.setListener( itemAdapterTrain.OnItemClickListener())
+            counter= counter+1
+            binding.trainTitle.text  = "no"+counter.toString()
         }
 
 
 
-  //      adapter.setListener( itemAdapterTrain.OnItemClickListener())
-
-     
 
     }
 

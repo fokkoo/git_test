@@ -83,7 +83,7 @@ public class DeliteFragment extends Fragment {
               //  FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, new MyTrainFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new TrainFragment());
                 fragmentTransaction.commit();
             }
         });

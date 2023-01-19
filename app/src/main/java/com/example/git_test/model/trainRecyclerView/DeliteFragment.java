@@ -77,6 +77,14 @@ public class DeliteFragment extends Fragment {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;
+
+
+                Bundle result = new Bundle();
+                result.putString("df1","техт");
+                getParentFragmentManager().setFragmentResult("dataFromFDelite",result);
+
+
+
                 Log.d(TAG, "OnItemClickListener" + currentPosition);
 
 

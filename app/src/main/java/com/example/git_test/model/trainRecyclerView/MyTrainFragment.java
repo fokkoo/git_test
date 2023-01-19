@@ -1,5 +1,6 @@
 package com.example.git_test.model.trainRecyclerView;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.git_test.R;
 
@@ -22,6 +24,13 @@ import com.example.git_test.R;
 public class MyTrainFragment extends Fragment {
 
 
+    // это будет именем файла настроек
+    public static final String APP_PREFERENCES = "mysettings";
+    public static final String APP_PREFERENCES_NAME = "Nickname"; // имя кота
+    public static final String APP_PREFERENCES_AGE = "Age"; // возраст кота
+    SharedPreferences mSettings;
+
+    TextView MyTrainButtontextView2;
 
     private itemAdapterTrain adapter;
     private CardSourceTrain cardSource;
@@ -44,6 +53,8 @@ public class MyTrainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
 
         }
@@ -53,16 +64,30 @@ public class MyTrainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
         return inflater.inflate(R.layout.fragment_my_train, container, false);
+
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
+
+/*
+      MyTrainButtontextView2 = view.findViewById(R.id.MyTrainButtontextView2);
+        Bundle bundle = this.getArguments();
+         String data = bundle.getString("key");
+         MyTrainButtontextView2.setText(data);
+
         recyclerView = view.findViewById(R.id.fragment_Recycle_view_train);
         cardSource = new CardSourceImplTrain(getActivity().getApplicationContext());
-        adapter = new itemAdapterTrain(cardSource);
+       adapter = new itemAdapterTrain(cardSource);*/
 
       //  recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
       //  recyclerView.setAdapter(adapter);

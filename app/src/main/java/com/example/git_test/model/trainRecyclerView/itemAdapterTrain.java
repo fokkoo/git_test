@@ -1,6 +1,7 @@
 package com.example.git_test.model.trainRecyclerView;
 
 
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.git_test.R;
@@ -20,6 +23,7 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
     private final CardSourceTrain dataSource;
     private OnItemClickListener listener;
     public static final String TAG = "ItemAdapter";
+
 
 
     public itemAdapterTrain(CardSourceTrain dataSource) {
@@ -89,6 +93,12 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
 
 
             imageView.setOnClickListener(v -> listener.onItemClick(imageView, getLayoutPosition()));
+
+            Bundle bundle = new Bundle();
+            bundle.putString("key","1");
+            TrainFragment trainFragment = new TrainFragment();
+            trainFragment.setArguments(bundle);
+
         }
 
     }

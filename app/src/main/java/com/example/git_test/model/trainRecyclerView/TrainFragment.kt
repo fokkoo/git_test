@@ -12,15 +12,25 @@ import com.example.git_test.*
 import com.example.git_test.databinding.FragmentTrainBinding
 import com.example.git_test.model.DetailViewModel
 import com.example.git_test.model.database.City
+import com.example.git_test.model.viewmodel.HistoryViewModel
 
 
 class TrainFragment : Fragment() {
+
+
+
+
 
     private lateinit var adapter: itemAdapterTrain
     private lateinit var recyclerView: RecyclerView
 
     private var _binding: FragmentTrainBinding? =null
     private val binding get() = _binding!!
+
+
+    private val secondViewModel: HistoryViewModel by lazy {
+        ViewModelProvider(this).get(HistoryViewModel::class.java)
+    }
 
 
     private val viewModel: DetailViewModel by lazy {
@@ -87,7 +97,12 @@ class TrainFragment : Fragment() {
 
             //      adapter.setListener( itemAdapterTrain.OnItemClickListener())
             counter= counter+1
-            binding.trainTitle.text  = "no"+counter.toString()
+           // binding.trainTitle.text  = getRussianCities()[getRussianCities().size-1].city.name.toString()
+
+            binding.trainTitle.text  = secondViewModel.getAllHistory()[counter].city.toString()
+
+
+           // currentPosition
         }
 
 

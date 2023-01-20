@@ -67,6 +67,7 @@ public class MyTrainFragment extends Fragment {
 
 
 
+
         return inflater.inflate(R.layout.fragment_my_train, container, false);
 
 

@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.git_test.*
+import com.example.git_test.R
+import com.example.git_test.Weather
 import com.example.git_test.databinding.FragmentTrainBinding
+import com.example.git_test.getRussianCities
 import com.example.git_test.model.DetailViewModel
 import com.example.git_test.model.database.City
 import com.example.git_test.model.viewmodel.HistoryViewModel
@@ -50,7 +52,6 @@ class TrainFragment : Fragment() {
     ): View? {
         val v = inflater.inflate(R.layout.fragment_train, container, false)
         _binding = FragmentTrainBinding.bind(v)
-
 
 
 
@@ -101,6 +102,18 @@ class TrainFragment : Fragment() {
 
             binding.trainTitle.text  = secondViewModel.getAllHistory()[counter].city.toString()
 
+            parentFragmentManager.setFragmentResultListener("dataFromFDelite",this,
+                {
+                    requestKey, result -> val onItemClickPositionDe = result.getInt("df1")
+                    binding.trainTitle.text  =onItemClickPositionDe.toString()
+                }
+
+
+
+
+            )
+
+            // Inflate the layout for this fragment
 
            // currentPosition
         }

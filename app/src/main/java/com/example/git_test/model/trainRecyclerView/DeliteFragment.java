@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -80,7 +81,7 @@ public class DeliteFragment extends Fragment {
 
 
                 Bundle result = new Bundle();
-                result.putString("df1","техт");
+                result.putInt("df1",currentPosition);
                 getParentFragmentManager().setFragmentResult("dataFromFDelite",result);
 
 

@@ -30,7 +30,7 @@
             android:layout_width="138dp"
             android:layout_height="59dp"
             android:layout_marginStart="8dp"
-
+            android:visibility="invisible"
             android:text="Button_History"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +39,7 @@
             android:id="@+id/button_fragment2"
             android:layout_width="134dp"
             android:layout_height="36dp"
+            android:visibility="invisible"
             android:text="Button_2_History"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -48,6 +49,7 @@
             android:layout_width="172dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="36dp"
+            android:visibility="invisible"
             android:text="Button for RW go to A2"
             app:layout_constraintEnd_toStartOf="@+id/button_fragment2"
             app:layout_constraintTop_toTopOf="parent" />

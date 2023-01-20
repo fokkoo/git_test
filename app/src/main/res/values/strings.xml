@@ -30,4 +30,9 @@
     <string name="fat_burn_workout">Жиросжигающая высокоэнергетичная программа</string>
     <string name="your_workout">Ваша программа</string>
 
+    <string name="day1">Первый день</string>
+    <string name="day2">Второй день</string>
+    <string name="day3">Третий день</string>
+
+
 </resources>

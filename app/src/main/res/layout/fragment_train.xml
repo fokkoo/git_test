@@ -21,13 +21,16 @@
 
 
 
+
+
         <TextView
+            android:id="@+id/train_title"
             android:layout_width="match_parent"
             android:layout_height="60dp"
 
             android:text="Программы тренировок" />
         <TextView
-            android:id="@+id/train_title"
+            android:id="@+id/train_description"
             android:layout_width="match_parent"
             android:layout_height="60dp"
 
@@ -36,10 +39,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/ProgramTrainRecycleView"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            tools:listitem="@layout/train_list_item"
+            android:layout_height="125dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            />
+            tools:listitem="@layout/train_list_item" />
 
         <Button
             android:id="@+id/add_program"
@@ -51,6 +53,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Считать тренеровку" />
+        <Button
+            android:id="@+id/back_program"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="уйти обратно в список программ" />
         <TextView
             android:id="@+id/train_Toast_text"
             android:layout_width="match_parent"

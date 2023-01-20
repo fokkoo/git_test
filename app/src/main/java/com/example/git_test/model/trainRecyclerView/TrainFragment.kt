@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -85,6 +86,9 @@ class TrainFragment : Fragment() {
 
         var counter = 1
 
+        writeData()
+
+
         binding.addProgram.setOnClickListener(){
             counter= counter+1
             binding.trainTitle.text = "yes"+counter.toString()
@@ -101,40 +105,40 @@ class TrainFragment : Fragment() {
 
             //      adapter.setListener( itemAdapterTrain.OnItemClickListener())
             counter= counter+1
-           // binding.trainTitle.text  = getRussianCities()[getRussianCities().size-1].city.name.toString()
-
-         //   binding.trainTitle.text  = secondViewModel.getAllHistory()[counter].city.toString()
-
-            parentFragmentManager.setFragmentResultListener("dataFromFDelite", this,
-                { requestKey, result ->
-                    val onItemClickPositionDe = result.getInt("df1")
-              //      binding.trainTitle.text = onItemClickPositionDe.toString()
 
 
-                    //    CardDataTrain("moscow","moscow",1,true)
-
-                    //   CardSourceImplTrain(activity).cards[1].toString()
-
-
-                //    binding.trainTitle.text = CardSourceImplTrain(activity).cards[counter].toString()
-
-                 //   binding.trainTitle.text = CardSourceImplTrain(activity).getCardData(counter).title.toString()
-                }
-
-
-            )
 
             // Inflate the layout for this fragment
 
            // currentPosition
         }
 
+        binding.backProgram.setOnClickListener(){
+            val Statistics = DeliteFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.fragment_container, Statistics)
+            transaction.commit()
+
+        }
 
 
 
     }
 
+    private fun writeData() {
+        parentFragmentManager.setFragmentResultListener("dataFromFDelite", this,
+            { requestKey, result ->
+                val onItemClickPositionDe = result.getInt("df1")
 
+                binding.trainTitle.text = CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).title.toString()
+
+                binding.trainDescription.text = CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).description.toString()
+                // binding.trainImageView =  CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).picture
+            }
+
+
+        )
+    }
 
 
 }

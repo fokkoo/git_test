@@ -8,13 +8,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.git_test.CardSourceResponse
 import com.example.git_test.R
 import com.example.git_test.Weather
 import com.example.git_test.databinding.FragmentTrainBinding
 import com.example.git_test.getRussianCities
+import com.example.git_test.model.CardSourceImpl
 import com.example.git_test.model.DetailViewModel
 import com.example.git_test.model.database.City
 import com.example.git_test.model.viewmodel.HistoryViewModel
+import kotlinx.android.synthetic.main.history_item.*
 
 
 class TrainFragment : Fragment() {
@@ -100,15 +103,23 @@ class TrainFragment : Fragment() {
             counter= counter+1
            // binding.trainTitle.text  = getRussianCities()[getRussianCities().size-1].city.name.toString()
 
-            binding.trainTitle.text  = secondViewModel.getAllHistory()[counter].city.toString()
+         //   binding.trainTitle.text  = secondViewModel.getAllHistory()[counter].city.toString()
 
-            parentFragmentManager.setFragmentResultListener("dataFromFDelite",this,
-                {
-                    requestKey, result -> val onItemClickPositionDe = result.getInt("df1")
-                    binding.trainTitle.text  =onItemClickPositionDe.toString()
+            parentFragmentManager.setFragmentResultListener("dataFromFDelite", this,
+                { requestKey, result ->
+                    val onItemClickPositionDe = result.getInt("df1")
+              //      binding.trainTitle.text = onItemClickPositionDe.toString()
+
+
+                    //    CardDataTrain("moscow","moscow",1,true)
+
+                    //   CardSourceImplTrain(activity).cards[1].toString()
+
+
+                //    binding.trainTitle.text = CardSourceImplTrain(activity).cards[counter].toString()
+
+                 //   binding.trainTitle.text = CardSourceImplTrain(activity).getCardData(counter).title.toString()
                 }
-
-
 
 
             )

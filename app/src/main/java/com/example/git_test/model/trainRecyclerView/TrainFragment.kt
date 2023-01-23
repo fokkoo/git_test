@@ -9,16 +9,15 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.git_test.CardSourceResponse
 import com.example.git_test.R
 import com.example.git_test.Weather
 import com.example.git_test.databinding.FragmentTrainBinding
 import com.example.git_test.getRussianCities
-import com.example.git_test.model.CardSourceImpl
 import com.example.git_test.model.DetailViewModel
 import com.example.git_test.model.database.City
+import com.example.git_test.model.dayTrain.CardSourceDayTrain
+import com.example.git_test.model.dayTrain.itemAdapterDayTrain
 import com.example.git_test.model.viewmodel.HistoryViewModel
-import kotlinx.android.synthetic.main.history_item.*
 
 
 class TrainFragment : Fragment() {
@@ -27,8 +26,12 @@ class TrainFragment : Fragment() {
 
 
 
-    private lateinit var adapter: itemAdapterTrain
+    private lateinit var adapter: itemAdapterDayTrain
     private lateinit var recyclerView: RecyclerView
+
+    private val cardSource: CardSourceDayTrain? = null
+    private val currentPosition = -1
+    val TAG = "ItemAdapter"
 
     private var _binding: FragmentTrainBinding? =null
     private val binding get() = _binding!!
@@ -80,9 +83,9 @@ class TrainFragment : Fragment() {
 
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.ProgramTrainRecycleView)
- //       recyclerView.layoutManager = layoutManager
+        recyclerView.layoutManager = layoutManager
  //       recyclerView.setHasFixedSize(true)
- //       recyclerView.adapter = adapter
+        recyclerView.adapter = adapter
 
         var counter = 1
 
@@ -130,9 +133,13 @@ class TrainFragment : Fragment() {
             { requestKey, result ->
                 val onItemClickPositionDe = result.getInt("df1")
 
-                binding.trainTitle.text = CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).title.toString()
+                binding.trainTitle.text = CardSourceImplTrain(activity).getCardData(
+                    onItemClickPositionDe
+                ).title.toString()
 
-                binding.trainDescription.text = CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).description.toString()
+                binding.trainDescription.text = CardSourceImplTrain(activity).getCardData(
+                    onItemClickPositionDe
+                ).description.toString()
                 // binding.trainImageView =  CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).picture
             }
 

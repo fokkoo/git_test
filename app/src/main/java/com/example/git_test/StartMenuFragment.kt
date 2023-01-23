@@ -63,7 +63,7 @@ class StartMenuFragment : Fragment() {
 
 
         binding.buttonTrain.setOnClickListener(){
-            val MyTrainFragment = MyTrainFragment()
+            val MyTrainFragment =  DeliteFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, MyTrainFragment)
             transaction.commit()
@@ -88,7 +88,7 @@ class StartMenuFragment : Fragment() {
 
         binding.buttonStatistics.setOnClickListener(){
 
-            val Statistics = DeliteFragment()
+            val Statistics = MyTrainFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, Statistics)
             transaction.commit()

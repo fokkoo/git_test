@@ -1,5 +1,4 @@
-package com.example.git_test.model.trainRecyclerView;
-
+package com.example.git_test.model.dayTrain;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,27 +11,27 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.git_test.R;
+import com.example.git_test.model.trainRecyclerView.CardDataTrain;
+import com.example.git_test.model.trainRecyclerView.CardSourceTrain;
+import com.example.git_test.model.trainRecyclerView.TrainFragment;
+import com.example.git_test.model.trainRecyclerView.itemAdapterTrain;
 
-public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.ItemViewHolder> {
+public class itemAdapterDayTrain extends RecyclerView.Adapter<itemAdapterDayTrain.ItemViewHolder> {
 
-    private final CardSourceTrain dataSource;
-    private OnItemClickListener listener;
+    private final CardSourceDayTrain dataSource;
+    private itemAdapterDayTrain.OnItemClickListener listener;
     public static final String TAG = "ItemAdapter";
 
-
-
-    public itemAdapterTrain(CardSourceTrain dataSource) {
+    public itemAdapterDayTrain(CardSourceDayTrain dataSource) {
         this.dataSource = dataSource;
         Log.d(TAG, "ItemAdapter");
     }
 
 
-    public void setListener(@Nullable OnItemClickListener listener) {
+    public void setListener(@Nullable itemAdapterDayTrain.OnItemClickListener listener) {
         this.listener = listener;
     }
 
@@ -41,25 +40,16 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
 
     @NonNull
     @Override
-    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-
-        Log.d(TAG, "onCreateViewHolder" + viewType);
+    public itemAdapterDayTrain.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
 
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.program_item_recycler_view_card_view, parent, false);
-        return new ItemViewHolder(view);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.train_list_item, parent, false);
+        return new itemAdapterDayTrain.ItemViewHolder(view);
     }
 
-
     @Override
-    public void onBindViewHolder(@NonNull itemAdapterTrain.ItemViewHolder holder, int position) {
-
-        Log.d(TAG, "onBindViewHolder" + position);
-
+    public void onBindViewHolder(@NonNull itemAdapterDayTrain.ItemViewHolder holder, int position) {
         holder.bind(dataSource.getCardData(position));
-
-
     }
 
     @Override
@@ -67,27 +57,26 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
         return dataSource.size();
     }
 
-
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         private final TextView title;
         private final TextView description;
         private final ImageView imageView;
-        private final CheckBox like;
+     //   private final CheckBox like;
         //  private final ImageView imageView;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.ProgramTitle);
-            description = itemView.findViewById(R.id.ProgramDescription);
-            imageView = itemView.findViewById(R.id.ProgramImageView);
-            like = itemView.findViewById(R.id.Programlike);
+            title = itemView.findViewById(R.id.day_train_main_text);
+            description = itemView.findViewById(R.id.day_train_secondary_text);
+            imageView = itemView.findViewById(R.id.day_train_image);
+          //  like = itemView.findViewById(R.id.Programlike);
         }
 
         public void bind(CardDataTrain cardData) {
             title.setText(cardData.getTitle());
             description.setText(cardData.getDescription());
             imageView.setImageResource(cardData.getPicture());
-            like.setChecked(cardData.isLike());
+        //    like.setChecked(cardData.isLike());
 
 
             imageView.setOnClickListener(v -> listener.onItemClick(imageView, getLayoutPosition()));
@@ -101,14 +90,7 @@ public class itemAdapterTrain extends RecyclerView.Adapter<itemAdapterTrain.Item
 
     }
 
-
     interface OnItemClickListener {
         void onItemClick(View view, int position); // which position is clicked
     }
-
-
 }
-
-
-
-

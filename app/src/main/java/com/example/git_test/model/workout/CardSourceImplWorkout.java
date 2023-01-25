@@ -1,47 +1,46 @@
-package com.example.git_test.model.dayTrain;
+package com.example.git_test.model.workout;
 
 import android.content.Context;
 
 import com.example.git_test.R;
+import com.example.git_test.model.dayTrain.CardSourceDayTrain;
 import com.example.git_test.model.trainRecyclerView.CardDataTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceResponseTrain;
-import com.example.git_test.model.trainRecyclerView.CardSourceTrain;
-import com.example.git_test.model.dayTrain.CardSourceDayTrain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CardSourceImplDayTrain implements CardSourceDayTrain {
+public class CardSourceImplWorkout implements CardSourceDayTrain {
 
 
     private List<CardDataTrain> cards;
 
-    public CardSourceImplDayTrain(Context context) {
+    public CardSourceImplWorkout(Context context) {
         //    this.context = context;
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardDataTrain(
-                        context.getResources().getString(R.string.day1),
+                        "Упражнение 1",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.day2),
+                        "Упражнение 2",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program2_circuit_workout,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.day3),
+                        "Упражнение 3",
                         context.getResources().getString(R.string.description2),
                         R.drawable.program3_fat_burn,
                         false
                 ),
 
                 new CardDataTrain(
-                        context.getResources().getString(R.string.day1),
+                        "Упражнение 4",
                         context.getResources().getString(R.string.description2),
                         R.drawable.program4_three_day_split,
                         false

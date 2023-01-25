@@ -83,9 +83,9 @@ class TrainFragment : Fragment() {
 
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.ProgramTrainRecycleView)
-        recyclerView.layoutManager = layoutManager
+   //     recyclerView.layoutManager = layoutManager
  //       recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = adapter
+     //   recyclerView.adapter = adapter
 
         var counter = 1
 

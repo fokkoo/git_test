@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".model.workout.WorkoutFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="40dp"
+        android:text="WorkOut Fragment" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        tools:context=".model.workout.WorkoutFragment">
+
+    <Button
+        android:id="@+id/buttonWorkoutStart"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Start Train" />
+    <Button
+        android:id="@+id/buttonWorkoutFinish"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="finish Train" />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleViewWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/workout_list_item"
+        />
+
+
+</LinearLayout>

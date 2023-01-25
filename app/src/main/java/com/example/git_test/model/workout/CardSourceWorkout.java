@@ -1,13 +1,13 @@
-package com.example.git_test.model.dayTrain;
+package com.example.git_test.model.workout;
 
 import com.example.git_test.model.trainRecyclerView.CardDataTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceResponseTrain;
 
-public interface CardSourceDayTrain {
+public interface CardSourceWorkout {
 
     CardDataTrain getCardData(int position);
 
-    CardSourceDayTrain init(CardSourceResponseTrain response);
+    CardSourceWorkout init(CardSourceResponseTrain response);
 
     void deliteCardData(int position);
 

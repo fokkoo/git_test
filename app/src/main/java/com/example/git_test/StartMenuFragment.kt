@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.git_test.databinding.FragmentStartMenuBinding
+import com.example.git_test.model.dayTrain.DayTrainFragment
 import com.example.git_test.model.knolegData.KnolegFragment
 import com.example.git_test.model.trainRecyclerView.DeliteFragment
 import com.example.git_test.model.trainRecyclerView.MyTrainFragment
@@ -88,7 +89,7 @@ class StartMenuFragment : Fragment() {
 
         binding.buttonStatistics.setOnClickListener(){
 
-            val Statistics = MyTrainFragment()
+            val Statistics = DayTrainFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, Statistics)
             transaction.commit()

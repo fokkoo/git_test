@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CardSourceImplWorkout implements CardSourceDayTrain {
+public class CardSourceImplWorkout implements CardSourceWorkout {
 
 
     private List<CardDataTrain> cards;
@@ -21,26 +21,26 @@ public class CardSourceImplWorkout implements CardSourceDayTrain {
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardDataTrain(
-                        "Упражнение 1",
+                        context.getResources().getString(R.string.day1),
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         false
                 ),
                 new CardDataTrain(
-                        "Упражнение 2",
+                        context.getResources().getString(R.string.day2),
                         context.getResources().getString(R.string.description1),
                         R.drawable.program2_circuit_workout,
                         false
                 ),
                 new CardDataTrain(
-                        "Упражнение 3",
+                        context.getResources().getString(R.string.day3),
                         context.getResources().getString(R.string.description2),
                         R.drawable.program3_fat_burn,
                         false
                 ),
 
                 new CardDataTrain(
-                        "Упражнение 4",
+                        context.getResources().getString(R.string.day1),
                         context.getResources().getString(R.string.description2),
                         R.drawable.program4_three_day_split,
                         false
@@ -55,7 +55,7 @@ public class CardSourceImplWorkout implements CardSourceDayTrain {
     }
 
     @Override
-    public CardSourceDayTrain init(CardSourceResponseTrain response) {
+    public CardSourceWorkout init(CardSourceResponseTrain response) {
         return this;
     }
 

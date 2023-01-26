@@ -1,34 +1,34 @@
 package com.example.git_test.model.workout;
 
 public class CardWorkout {
-    private String titleDayTrain;       // заголовок
-    private String descriptionDayTrain; // описание
-    private int pictureDayTrain;        // изображение
-    private boolean likeDayTrain;       // флажок
+    private String titleWorkout;       // заголовок
+    private String descriptionWorkout; // описание
+    private int pictureWorkout;        // изображение
+    private boolean likeWorkout;       // флажок
 
     public CardWorkout(String title, String description, int picture, boolean like) {
-        this.titleDayTrain = titleDayTrain;
-        this.descriptionDayTrain = descriptionDayTrain;
-        this.pictureDayTrain = pictureDayTrain;
-        this.likeDayTrain = likeDayTrain;
+        this.titleWorkout = titleWorkout;
+        this.descriptionWorkout = descriptionWorkout;
+        this.pictureWorkout = pictureWorkout;
+        this.likeWorkout = likeWorkout;
     }
 
-    public String getTitleDayTrain() {
+    public String getTitleWorkout() {
 
-        return titleDayTrain;
+        return titleWorkout;
     }
 
-    public String getDescriptionDayTrain() {
+    public String getDescriptionWorkout() {
 
-        return descriptionDayTrain;
+        return descriptionWorkout;
     }
 
-    public int getPictureDayTrain() {
-        return pictureDayTrain;
+    public int getPictureWorkout() {
+        return pictureWorkout;
     }
 
-    public boolean isLikeDayTrain() {
+    public boolean isLikeWorkout() {
 
-        return likeDayTrain;
+        return likeWorkout;
     }
 }

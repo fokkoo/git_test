@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".model.repetitionWorkout.RepetitionWorkoutFragment">
+
+    <FrameLayout
+        android:id="@+id/fragment_result_repetition_container"
+        android:layout_width="327dp"
+        android:layout_height="396dp"
+        android:layout_marginBottom="104dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="105dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewRepetitionWorkout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/repetition_workout_item_list"
+            />
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/RepetitionWA_Image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/RepetitionMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
+        android:text="1 Название упражнения"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/RepetitionHardText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Результаты прошлых тренеровок"
+        app:layout_constraintTop_toTopOf="@+id/textView7"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:text="Результаты текущей тренеровки"
+        app:layout_constraintEnd_toEndOf="@+id/RepetitionMainText"
+        app:layout_constraintTop_toBottomOf="@+id/RepetitionMainText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

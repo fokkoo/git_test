@@ -1,6 +1,7 @@
 package com.example.git_test.model.workout;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,11 +16,13 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.git_test.MainActivity;
 import com.example.git_test.R;
 import com.example.git_test.model.dayTrain.CardSourceDayTrain;
 import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
 import com.example.git_test.model.dayTrain.itemAdapterDayTrain;
+import com.example.git_test.model.repetitionWorkout.RepetitionWorkoutFragment;
 
 public class WorkoutFragment extends Fragment {
 
@@ -76,26 +79,32 @@ public class WorkoutFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
+
         adapter.setListener(new itemAdapterWorkout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;
 
 
-                Bundle result = new Bundle();
-                result.putInt("df1",currentPosition);
-                getParentFragmentManager().setFragmentResult("dataFromFDelite",result);
+                Fragment frag = new RepetitionWorkoutFragment();
 
+                Bundle result = new Bundle();
+
+                result.putString("username","my long texteeeeeeeeeeeeeeeeee");
+
+                frag.setArguments(result);
 
 
                 Log.d(TAG, "OnItemClickListener" + currentPosition);
 
 
-                //  FragmentManager fragmentManager = getSupportFragmentManager();
+/*
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, new DayTrainFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
                 fragmentTransaction.commit();
+
+                */
             }
         });
 
@@ -103,5 +112,8 @@ public class WorkoutFragment extends Fragment {
 
 
     }
+
+
+
 
 }

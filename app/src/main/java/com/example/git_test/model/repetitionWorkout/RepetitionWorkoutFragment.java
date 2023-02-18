@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.lifecycle.LifecycleOwner;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ public class RepetitionWorkoutFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String recivedData;
 
     public RepetitionWorkoutFragment() {
         // Required empty public constructor
@@ -82,6 +84,8 @@ public class RepetitionWorkoutFragment extends Fragment {
 */
 
      //   Bundle bundle = getActivity().getIntent().getExtras();
+
+
         Bundle bundle = this.getArguments();
    //     String data = bundle.getString("keyWorkoutFragmentCurrentPosition");
 

@@ -22,6 +22,7 @@ import com.example.git_test.model.dayTrain.CardSourceDayTrain;
 import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
 import com.example.git_test.model.dayTrain.itemAdapterDayTrain;
+import com.example.git_test.model.repetitionWorkout.MyRepetitionWorkoutFragment;
 import com.example.git_test.model.repetitionWorkout.RepetitionWorkoutFragment;
 
 public class WorkoutFragment extends Fragment {
@@ -86,25 +87,27 @@ public class WorkoutFragment extends Fragment {
                 currentPosition = position;
 
 
-                Fragment frag = new RepetitionWorkoutFragment();
+                Fragment frag = new MyRepetitionWorkoutFragment();
 
                 Bundle result = new Bundle();
+                result.putString("df1","my long texteeeeeeeeeeeeeeeeee");
 
-                result.putString("username","my long texteeeeeeeeeeeeeeeeee");
-
+                result.putString("dataFromFWorout","String Value");
                 frag.setArguments(result);
 
 
-                Log.d(TAG, "OnItemClickListener" + currentPosition);
 
 
-/*
+
+
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
                 fragmentTransaction.commit();
 
-                */
+
+
+
             }
         });
 

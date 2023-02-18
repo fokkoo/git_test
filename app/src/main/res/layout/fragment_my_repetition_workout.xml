@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".model.repetitionWorkout.MyRepetitionWorkoutFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My repetition workot fragment" />
+    <TextView
+        android:id="@+id/MyRepetitionWO_headText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/hello_blank_fragment" />
+
+    <Button
+        android:id="@+id/buttonGoBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go back" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:listitem="@layout/repetition_workout_item_list"/>
+
+    <Button
+        android:id="@+id/buttonAddRepetitionTrain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Добавить подход" />
+
+
+
+</LinearLayout>

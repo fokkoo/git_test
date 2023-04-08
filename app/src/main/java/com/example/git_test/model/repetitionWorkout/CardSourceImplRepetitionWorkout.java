@@ -4,8 +4,6 @@ import android.content.Context;
 
 import com.example.git_test.R;
 import com.example.git_test.model.trainRecyclerView.CardDataTrain;
-import com.example.git_test.model.trainRecyclerView.CardSourceResponseTrain;
-import com.example.git_test.model.workout.CardSourceWorkout;
 
 import java.util.ArrayList;
 import java.util.Arrays;

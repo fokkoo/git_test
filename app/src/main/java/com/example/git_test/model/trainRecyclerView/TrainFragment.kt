@@ -61,7 +61,6 @@ class TrainFragment : Fragment() {
         _binding = FragmentTrainBinding.bind(v)
 
 
-
         return v
     }
 

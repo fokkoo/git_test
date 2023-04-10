@@ -34,8 +34,6 @@ public class itemAdapterWorkout extends RecyclerView.Adapter<itemAdapterWorkout.
     }
 
 
-
-
     @NonNull
     @Override
     public itemAdapterWorkout.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

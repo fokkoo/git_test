@@ -69,7 +69,7 @@ class MyRepetitionWorkoutFragment : Fragment() {
            readData()
 
           //  val Statistics = TrainFragment()
-           val Statistics = WorkoutFragment()
+           val Statistics = TrainFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, Statistics)
             transaction.commit()

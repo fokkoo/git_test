@@ -20,7 +20,7 @@ import com.example.git_test.model.trainRecyclerView.TrainFragment;
 public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapterRepetitionWorkout.ItemViewHolder> {
 
     private final CardSourceRepetitionWorkout dataSource;
-   // private itemAdapterRepetitionWorkout.OnItemClickListener listener;
+    private itemAdapterRepetitionWorkout.OnItemClickListener listener;
     public static final String TAG = "ItemAdapter";
 
     public itemAdapterRepetitionWorkout(CardSourceRepetitionWorkout dataSource) {
@@ -28,15 +28,9 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
         Log.d(TAG, "ItemAdapter");
     }
 
-
-
-
-/*
     public void setListener(@Nullable itemAdapterRepetitionWorkout.OnItemClickListener listener) {
         this.listener = listener;
     }
-*/
-
 
 
     @NonNull
@@ -50,7 +44,7 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
 
     @Override
     public void onBindViewHolder(@NonNull itemAdapterRepetitionWorkout.ItemViewHolder holder, int position) {
-       // holder.bind(dataSource.getCardData(position));
+        holder.bind(dataSource.getCardData(position));
 
     }
 
@@ -115,5 +109,8 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
 
     }
 
+    interface OnItemClickListener {
+        void onItemClick(View view, int position); // which position is clicked
+    }
 
 }

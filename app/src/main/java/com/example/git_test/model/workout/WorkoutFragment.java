@@ -43,7 +43,6 @@ public class WorkoutFragment extends Fragment {
     public static WorkoutFragment newInstance(String param1, String param2) {
         WorkoutFragment fragment = new WorkoutFragment();
         Bundle args = new Bundle();
-
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,7 +50,6 @@ public class WorkoutFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         if (getArguments() != null) {
 
@@ -102,7 +100,8 @@ public class WorkoutFragment extends Fragment {
 
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
+             //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
                 fragmentTransaction.commit();
 
 

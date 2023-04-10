@@ -1,7 +1,5 @@
 package com.example.git_test.model.repetitionWorkout;
 
-import com.example.git_test.model.trainRecyclerView.CardDataTrain;
-
 public interface CardSourceRepetitionWorkout {
 
   //  CardDataTrain getCardData(int position);

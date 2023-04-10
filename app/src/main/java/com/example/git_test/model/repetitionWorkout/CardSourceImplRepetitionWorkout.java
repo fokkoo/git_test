@@ -3,7 +3,6 @@ package com.example.git_test.model.repetitionWorkout;
 import android.content.Context;
 
 import com.example.git_test.R;
-import com.example.git_test.model.trainRecyclerView.CardDataTrain;
 
 import java.util.ArrayList;
 import java.util.Arrays;

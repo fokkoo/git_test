@@ -23,7 +23,7 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
     private itemAdapterRepetitionWorkout.OnItemClickListener listener;
     public static final String TAG = "ItemAdapter";
 
-    public static final String TestTextDeliteIt = "TestTextDeliteIt";
+    public static String TestTextDeliteIt = "TestTextDeliteIt";
     public static final int TestIntDeliteIt = 0;
 
     public itemAdapterRepetitionWorkout(CardSourceRepetitionWorkout dataSource) {
@@ -95,14 +95,16 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
         public void bind(CardRepetitionWorkout cardRepetitionWorkout) {
 
 
-            TestTextDeliteIt = TestIntDeliteIt.
+      //      TestTextDeliteIt = Integer.toString(cardRepetitionWorkout.getNumberSET());
 
-            numberSET.setText(TestTextDeliteIt);
-          /*
-              numberSET.setText(cardRepetitionWorkout.getNumberSET());
-            weight.setText(cardRepetitionWorkout.getWeight());
-            repetition.setText(cardRepetitionWorkout.getRepetition());
- */
+
+
+      //      numberSET.setText(TestTextDeliteIt);
+
+              numberSET.setText(Integer.toString(cardRepetitionWorkout.getNumberSET()));
+            weight.setText(Integer.toString(cardRepetitionWorkout.getWeight()));
+            repetition.setText(Integer.toString(cardRepetitionWorkout.getRepetition()));
+
         }
 
      /*

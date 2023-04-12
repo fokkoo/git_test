@@ -43,6 +43,60 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         0,
                         0,
                         false
+                ),
+                new CardRepetitionWorkout(
+                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.description1),
+                        R.drawable.program1_base_program,
+                        4,
+                        0,
+                        0,
+                        false
+                ),
+                new CardRepetitionWorkout(
+                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.description1),
+                        R.drawable.program1_base_program,
+                        5,
+                        0,
+                        0,
+                        false
+                ),
+                new CardRepetitionWorkout(
+                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.description1),
+                        R.drawable.program1_base_program,
+                        6,
+                        0,
+                        0,
+                        false
+                ),
+                new CardRepetitionWorkout(
+                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.description1),
+                        R.drawable.program1_base_program,
+                        7,
+                        0,
+                        0,
+                        false
+                ),
+                new CardRepetitionWorkout(
+                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.description1),
+                        R.drawable.program1_base_program,
+                        8,
+                        0,
+                        0,
+                        false
+                ),
+                new CardRepetitionWorkout(
+                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.description1),
+                        R.drawable.program1_base_program,
+                        9,
+                        0,
+                        0,
+                        false
                 )
 
         )

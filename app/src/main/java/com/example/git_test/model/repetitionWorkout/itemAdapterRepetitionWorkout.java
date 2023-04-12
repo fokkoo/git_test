@@ -44,6 +44,7 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
 
     @Override
     public void onBindViewHolder(@NonNull itemAdapterRepetitionWorkout.ItemViewHolder holder, int position) {
+       // holder.bind(dataSource.getCardData(position));
         holder.bind(dataSource.getCardData(position));
 
     }
@@ -90,6 +91,14 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
             repetition = itemView.findViewById(R.id.RepetitionWorkoutItemListMainID);
         }
 
+        public void bind(CardRepetitionWorkout cardRepetitionWorkout) {
+            numberSET.setText(cardRepetitionWorkout.getNumberSET());
+            weight.setText(cardRepetitionWorkout.getWeight());
+            repetition.setText(cardRepetitionWorkout.getRepetition());
+
+        }
+
+     /*
         public void bind(CardDataTrain cardDataTrain) {
             numberSET.setText(cardDataTrain.getTitle());
             weight.setText(cardDataTrain.getDescription());
@@ -97,16 +106,16 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
         //    like.setChecked(cardData.isLike());
 
 
-            /*
-            imageView.setOnClickListener(v -> listener.onItemClick(imageView, getLayoutPosition()));
 
-            Bundle bundle = new Bundle();
-            bundle.putString("key","1");
-            TrainFragment trainFragment = new TrainFragment();
-            trainFragment.setArguments(bundle);
-*/
+     //       imageView.setOnClickListener(v -> listener.onItemClick(imageView, getLayoutPosition()));
+
+     //       Bundle bundle = new Bundle();
+     //       bundle.putString("key","1");
+      //      TrainFragment trainFragment = new TrainFragment();
+     //       trainFragment.setArguments(bundle);
+
         }
-
+*/
     }
 
     interface OnItemClickListener {

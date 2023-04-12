@@ -23,6 +23,9 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
     private itemAdapterRepetitionWorkout.OnItemClickListener listener;
     public static final String TAG = "ItemAdapter";
 
+    public static final String TestTextDeliteIt = "TestTextDeliteIt";
+    public static final int TestIntDeliteIt = 0;
+
     public itemAdapterRepetitionWorkout(CardSourceRepetitionWorkout dataSource) {
         this.dataSource = dataSource;
         Log.d(TAG, "ItemAdapter");
@@ -44,7 +47,7 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
 
     @Override
     public void onBindViewHolder(@NonNull itemAdapterRepetitionWorkout.ItemViewHolder holder, int position) {
-       // holder.bind(dataSource.getCardData(position));
+
         holder.bind(dataSource.getCardData(position));
 
     }
@@ -77,8 +80,6 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
          */
 
 
-     //   private final CheckBox like;
-        //  private final ImageView imageView;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -92,10 +93,16 @@ public class itemAdapterRepetitionWorkout extends RecyclerView.Adapter<itemAdapt
         }
 
         public void bind(CardRepetitionWorkout cardRepetitionWorkout) {
-            numberSET.setText(cardRepetitionWorkout.getNumberSET());
+
+
+            TestTextDeliteIt = TestIntDeliteIt.
+
+            numberSET.setText(TestTextDeliteIt);
+          /*
+              numberSET.setText(cardRepetitionWorkout.getNumberSET());
             weight.setText(cardRepetitionWorkout.getWeight());
             repetition.setText(cardRepetitionWorkout.getRepetition());
-
+ */
         }
 
      /*

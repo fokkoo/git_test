@@ -76,7 +76,7 @@ public class itemAdapterDayTrain extends RecyclerView.Adapter<itemAdapterDayTrai
             title.setText(cardData.getTitle());
             description.setText(cardData.getDescription());
             imageView.setImageResource(cardData.getPicture());
-        //    like.setChecked(cardData.isLike());
+
 
 
             imageView.setOnClickListener(v -> listener.onItemClick(imageView, getLayoutPosition()));

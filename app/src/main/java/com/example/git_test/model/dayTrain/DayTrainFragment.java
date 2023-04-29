@@ -1,5 +1,6 @@
 package com.example.git_test.model.dayTrain;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.git_test.MainActivity;
 import com.example.git_test.R;
 import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceTrain;
@@ -79,16 +81,24 @@ public class DayTrainFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
+
         adapter.setListener(new itemAdapterDayTrain.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;
 
 
+              // ********************************
+                DayTrainFragment fragment = new DayTrainFragment();
+                Bundle textBundle = new Bundle();
+                textBundle.putString("text from DTF","text from DTF");
+                fragment.setArguments(textBundle);
+                getParentFragmentManager().setFragmentResult("text from DTF",textBundle);
+                // ********************************
+
                 Bundle result = new Bundle();
                 result.putInt("df1",currentPosition);
                 getParentFragmentManager().setFragmentResult("dataFromFDelite",result);
-
 
 
                 Log.d(TAG, "OnItemClickListener" + currentPosition);
@@ -97,6 +107,7 @@ public class DayTrainFragment extends Fragment {
                 //  FragmentManager fragmentManager = getSupportFragmentManager();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                // fragmentTransaction.replace(R.id.fragment_container, new TrainFragment());
                 fragmentTransaction.replace(R.id.fragment_container, new WorkoutFragment());
                 fragmentTransaction.commit();
             }

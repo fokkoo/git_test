@@ -12,7 +12,8 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="60dp"
+        android:textSize="40dp"
         android:text="Day Train Fragment" />
 
 

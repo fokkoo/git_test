@@ -7,11 +7,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +30,10 @@ import com.example.git_test.model.repetitionWorkout.RepetitionWorkoutFragment;
 
 public class WorkoutFragment extends Fragment {
 
+
+
+
+    private String text;
 
     private itemAdapterWorkout adapter;
     private CardSourceWorkout cardSource;
@@ -51,7 +58,10 @@ public class WorkoutFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
         if (getArguments() != null) {
+        //    text = getArguments().getString("dataFromFDelite");
 
         }
     }
@@ -61,8 +71,34 @@ public class WorkoutFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+     //   View rootView = inflater.inflate(R.layout.activity_main, container, false);
+     //   TextView btn = rootView.findViewById(R.id.WorkOutText);
+        View v = inflater.inflate(R.layout.fragment_workout, container, false);
+        TextView textMod = (TextView) v.findViewById(R.id.WorkOutText);
 
-        return inflater.inflate(R.layout.fragment_workout, container, false);
+        if (getArguments() != null) {
+             text = getArguments().getString("dataFromFDelite");
+
+        }
+
+
+
+        //******************************** прием текста из фрагмента
+        getParentFragmentManager().setFragmentResultListener("text from DTF", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
+
+                String data = textBundle.getString("text from DTF");
+                TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
+
+                textMod.setText(data.toString());
+            }
+        });
+
+
+        //****************************
+
+        return v;
     }
 
     @Override
@@ -79,10 +115,22 @@ public class WorkoutFragment extends Fragment {
 
 
 
+
+
+
         adapter.setListener(new itemAdapterWorkout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;
+
+                if (getArguments() != null) {
+                        text = getArguments().getString("dataFromFDelite");
+
+
+
+
+
+                }
 
 
                 Fragment frag = new MyRepetitionWorkoutFragment();
@@ -94,18 +142,11 @@ public class WorkoutFragment extends Fragment {
                 frag.setArguments(result);
 
 
-
-
-
-
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
              //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
                 fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
                 fragmentTransaction.commit();
-
-
-
 
             }
         });
@@ -114,6 +155,29 @@ public class WorkoutFragment extends Fragment {
 
 
     }
+
+
+
+/*
+    private fun writeData() {
+        parentFragmentManager.setFragmentResultListener("dataFromFDelite", this,
+                { requestKey, result ->
+                        val onItemClickPositionDe = result.getInt("df1")
+
+                        binding.trainTitle.text = CardSourceImplTrain(activity).getCardData(
+                                onItemClickPositionDe
+                        ).title.toString()
+
+                        binding.trainDescription.text = CardSourceImplTrain(activity).getCardData(
+                                onItemClickPositionDe
+                        ).description.toString()
+                        // binding.trainImageView =  CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).picture
+                }
+
+
+        )
+    }
+    */
 
 
 

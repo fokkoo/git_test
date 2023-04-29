@@ -22,8 +22,8 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         1,
-                        0,
-                        0,
+                        50,
+                        1,
                         false
                 ),
                 new CardRepetitionWorkout(
@@ -31,8 +31,8 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         2,
-                        0,
-                        0,
+                        51,
+                        2,
                         false
                 ),
                 new CardRepetitionWorkout(
@@ -40,8 +40,8 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         3,
-                        0,
-                        0,
+                        52,
+                        3,
                         false
                 ),
                 new CardRepetitionWorkout(
@@ -49,8 +49,8 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         4,
-                        0,
-                        0,
+                        54,
+                        5,
                         false
                 ),
                 new CardRepetitionWorkout(
@@ -58,8 +58,8 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         5,
-                        0,
-                        0,
+                        50,
+                        6,
                         false
                 ),
                 new CardRepetitionWorkout(

@@ -28,11 +28,7 @@ class StartMenuFragment : Fragment() {
 
     private fun buttonsControl() {
 
-
     }
-
-
-
 
 
     override fun onCreateView(

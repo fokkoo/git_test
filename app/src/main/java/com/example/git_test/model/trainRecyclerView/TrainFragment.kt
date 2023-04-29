@@ -16,6 +16,7 @@ import com.example.git_test.getRussianCities
 import com.example.git_test.model.DetailViewModel
 import com.example.git_test.model.database.City
 import com.example.git_test.model.dayTrain.CardSourceDayTrain
+import com.example.git_test.model.dayTrain.DayTrainFragment
 import com.example.git_test.model.dayTrain.itemAdapterDayTrain
 import com.example.git_test.model.viewmodel.HistoryViewModel
 
@@ -116,7 +117,8 @@ class TrainFragment : Fragment() {
         }
 
         binding.backProgram.setOnClickListener(){
-            val Statistics = DeliteFragment()
+          //  val Statistics = DeliteFragment()
+            val Statistics = DayTrainFragment()
             val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, Statistics)
             transaction.commit()

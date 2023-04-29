@@ -27,8 +27,8 @@
             android:id="@+id/train_title"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-
-            android:text="Программы тренировок" />
+            android:textSize="50dp"
+            android:text="Train Fragment" />
         <TextView
             android:id="@+id/train_description"
             android:layout_width="match_parent"

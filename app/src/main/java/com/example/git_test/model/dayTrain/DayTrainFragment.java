@@ -91,7 +91,7 @@ public class DayTrainFragment extends Fragment {
               // ********************************
                 DayTrainFragment fragment = new DayTrainFragment();
                 Bundle textBundle = new Bundle();
-                textBundle.putString("text from DTF","text from DTF");
+                textBundle.putInt("text from DTF",currentPosition);
                 fragment.setArguments(textBundle);
                 getParentFragmentManager().setFragmentResult("text from DTF",textBundle);
                 // ********************************

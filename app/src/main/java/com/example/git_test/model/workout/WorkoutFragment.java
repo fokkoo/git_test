@@ -27,6 +27,7 @@ import com.example.git_test.model.dayTrain.DayTrainFragment;
 import com.example.git_test.model.dayTrain.itemAdapterDayTrain;
 import com.example.git_test.model.repetitionWorkout.MyRepetitionWorkoutFragment;
 import com.example.git_test.model.repetitionWorkout.RepetitionWorkoutFragment;
+import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
 
 public class WorkoutFragment extends Fragment {
 
@@ -88,10 +89,15 @@ public class WorkoutFragment extends Fragment {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
 
-                String data = textBundle.getString("text from DTF");
+               Integer data = textBundle.getInt("text from DTF");
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
 
-                textMod.setText(data.toString());
+           //     textMod.setText(data.toString());
+
+             //   CardSourceImplTrain(getActivity().getSupportFragmentManager())).
+             //   textMod.setText(CardSourceImplTrain().getCardData(data).title.toString());
+
+
             }
         });
 

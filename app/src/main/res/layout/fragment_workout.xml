@@ -8,6 +8,13 @@
     tools:context=".model.workout.WorkoutFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/buttonBack"
+
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="Back " />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"

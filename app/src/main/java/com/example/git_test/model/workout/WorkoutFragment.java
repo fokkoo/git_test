@@ -1,6 +1,7 @@
 package com.example.git_test.model.workout;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,7 +76,25 @@ public class WorkoutFragment extends Fragment {
      //   View rootView = inflater.inflate(R.layout.activity_main, container, false);
      //   TextView btn = rootView.findViewById(R.id.WorkOutText);
         View v = inflater.inflate(R.layout.fragment_workout, container, false);
+
+        Button button = (Button) v.findViewById(R.id.buttonBack);
         TextView textMod = (TextView) v.findViewById(R.id.WorkOutText);
+
+
+
+        //***********************************
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new DayTrainFragment());
+                fragmentTransaction.commit();
+            }
+        });
+//***********************************
 
         if (getArguments() != null) {
              text = getArguments().getString("dataFromFDelite");
@@ -95,9 +114,9 @@ public class WorkoutFragment extends Fragment {
            //     textMod.setText(data.toString());
 
              //   CardSourceImplTrain(getActivity().getSupportFragmentManager())).
-             //   textMod.setText(CardSourceImplTrain().getCardData(data).title.toString());
-
-
+            //    textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).toString());
+                textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).getTitle().toString());
+              //  new CardSourceImplTrain(getActivity()).getCardData(1).toString();
             }
         });
 

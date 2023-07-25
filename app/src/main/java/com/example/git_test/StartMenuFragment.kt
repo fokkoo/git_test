@@ -75,8 +75,12 @@ class StartMenuFragment : Fragment() {
 
         binding.buttonData.setOnClickListener(){
 
-            val KnolegFragment = KnolegFragment()
-            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+
+
+   //         val KnolegFragment = KnolegFragment()
+            val KnolegFragment = AddDataFragment()
+
+           val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
             transaction.replace(R.id.fragment_container, KnolegFragment)
             transaction.commit()
 

@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.git_test.databinding.FragmentHistoryBinding
+import com.example.git_test.model.DetailViewModel
+import com.example.git_test.model.database.City
 import com.example.git_test.model.viewmodel.HistoryAdapter
 import com.example.git_test.model.viewmodel.HistoryViewModel
 import com.github.mikephil.charting.charts.BarChart
@@ -18,7 +20,9 @@ import kotlinx.android.synthetic.main.fragment_history.*
 
 class HistoryFragment : Fragment() {
 
-
+    private val viewModell: DetailViewModel by lazy {
+        ViewModelProvider(this).get(DetailViewModel::class.java)
+    }
 
 
     private val viewModel: HistoryViewModel by lazy {
@@ -28,6 +32,9 @@ class HistoryFragment : Fragment() {
     private var _binding: FragmentHistoryBinding? = null
     private val binding get() = _binding!!
     private val adapter: HistoryAdapter by lazy { HistoryAdapter() }
+
+
+
 
     /*
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,6 +92,15 @@ class HistoryFragment : Fragment() {
 
 
             textViewMySQL.text = viewModel.getAllHistory().size.toString()
+
+            textViewFromEditText.text = editTextNumber.text
+
+            val TestNumberWheit = editTextNumber.text.toString().toInt()
+
+
+
+            viewModell.saveWeather(weather = Weather(City("M", 51.5, 51.5), TestNumberWheit, 1))
+       //     viewModel.saveWeather(weather = Weather(City(CityFromEditTextInn, 51.5, 51.5), 2, 1))
         }
 
 

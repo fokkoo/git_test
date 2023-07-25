@@ -66,6 +66,21 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+/*
+            R.id.idHome-> {
+
+
+                            Log.d("TAG", "idHome is pressed")
+
+                            supportFragmentManager.apply {
+                                beginTransaction().replace(R.id.fragment_container, StartMenuFragment())
+                                    .addToBackStack("")
+                                    .commitAllowingStateLoss()
+                            }
+                           true
+                        }
+
+*/
             R.id.idHistory -> {
 
 

@@ -33,6 +33,31 @@
             android:layout_height="39dp"
             android:text=" Fragment history" />
 
+        <TextView
+            android:id="@+id/textViewMySQL"
+            android:layout_width="399dp"
+            android:layout_height="41dp"
+            android:text="export_text"
+            android:textColor="@color/teal_200"
+            />
+
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="100000"
+            android:inputType="number"
+            android:textColor="@color/teal_200"
+            />
+
+        <TextView
+            android:id="@+id/textViewFromEditText"
+            android:layout_width="399dp"
+            android:layout_height="41dp"
+            android:text="export_text"
+            android:textColor="@color/teal_200"
+            />
 
         <Button
             android:id="@+id/button_start"
@@ -48,7 +73,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewHistory"
             android:layout_width="match_parent"
-            android:layout_height="97dp"
+            android:layout_height="9dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         <Button
             android:id="@+id/button_export_text"
@@ -56,15 +81,11 @@
             android:layout_height="wrap_content"
             android:text="Button export_text"
             />
+
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/barChart"
             android:layout_width="match_parent"
-            android:layout_height="157dp" />
-        <TextView
-            android:id="@+id/textViewMySQL"
-            android:layout_width="399dp"
-            android:layout_height="418dp"
-            android:text="export_text" />
+            android:layout_height="122dp" />
 
 
         <!-- TODO: Update blank fragment layout -->

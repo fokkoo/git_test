@@ -30,7 +30,7 @@ public class RepetitionWorkoutFragment extends Fragment {
     public static final String TAG = "ItemAdapter";
 
 
-    private TextView  MainText ;
+    private TextView MainText;
 
 
     private String recivedData;
@@ -70,7 +70,6 @@ public class RepetitionWorkoutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-
         recyclerView = view.findViewById(R.id.recycleViewRepetitionWorkout);
         cardSource = new CardSourceImplRepetitionWorkout(getActivity().getApplicationContext());
         adapter = new itemAdapterRepetitionWorkout(cardSource);
@@ -80,45 +79,23 @@ public class RepetitionWorkoutFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
-        //   MainText.setText(view.findViewById(R.id.RepetitionMainText)) ;
-
-     //   view.findViewById(R.id.RepetitionMainText).
-
-
-
+//   MainText.setText(view.findViewById(R.id.RepetitionMainText)) ;
+//   view.findViewById(R.id.RepetitionMainText).
 /*
 // getting the bundle back from the android
-        Bundle bundle = getIntent().getExtras();
-
+   Bundle bundle = getIntent().getExtras();
 // getting the string back
-        String title = bundle.getString("key1", "Default");
+   String title = bundle.getString("key1", "Default");
 */
-
-     //   Bundle bundle = getActivity().getIntent().getExtras();
-        //     String data = bundle.getString("keyWorkoutFragmentCurrentPosition");
-
-
+//   Bundle bundle = getActivity().getIntent().getExtras();
+//     String data = bundle.getString("keyWorkoutFragmentCurrentPosition");
 
 
         Bundle bundle = this.getArguments();
-
-
         final String data = "111111111111111111111111111111111111111111111111";
-
-        MainText = (TextView)getActivity().findViewById(R.id.RepetitionMainText);
+        MainText = (TextView) getActivity().findViewById(R.id.RepetitionMainText);
 
 //        String a = bundle.getString("username");
-
 //        MainText.setText(a);
-
-
-
-
-
     }
-
-
-
-
-
 }

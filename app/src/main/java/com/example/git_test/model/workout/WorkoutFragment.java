@@ -152,9 +152,6 @@ public class WorkoutFragment extends Fragment {
                         text = getArguments().getString("dataFromFDelite");
 
 
-
-
-
                 }
 
 

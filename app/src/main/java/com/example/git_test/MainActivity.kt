@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-/*
+
             R.id.idHome-> {
 
 
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                            true
                         }
 
-*/
+
             R.id.idHistory -> {
 
 

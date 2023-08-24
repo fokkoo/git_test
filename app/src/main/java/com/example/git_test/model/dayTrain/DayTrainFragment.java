@@ -80,12 +80,13 @@ public class DayTrainFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
-
+     //   FragmentTransaction var3 = this.getParentFragmentManager().beginTransaction();
 
         adapter.setListener(new itemAdapterDayTrain.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;
+
 
 
               // ********************************
@@ -94,14 +95,23 @@ public class DayTrainFragment extends Fragment {
                 textBundle.putInt("text from DTF",currentPosition);
                 fragment.setArguments(textBundle);
                 getParentFragmentManager().setFragmentResult("text from DTF",textBundle);
+
+                Bundle textTestBundle = new Bundle();
+                textTestBundle.putString("test","test");
+                fragment.setArguments(textTestBundle);
+                getParentFragmentManager().setFragmentResult("test",textTestBundle);
+
+
+
                 // ********************************
 
-                Bundle result = new Bundle();
-                result.putInt("df1",currentPosition);
-                getParentFragmentManager().setFragmentResult("dataFromFDelite",result);
+
 
 
                 Log.d(TAG, "OnItemClickListener" + currentPosition);
+
+
+
 
 
                 //  FragmentManager fragmentManager = getSupportFragmentManager();

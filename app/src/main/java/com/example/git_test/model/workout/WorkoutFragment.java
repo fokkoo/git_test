@@ -32,9 +32,6 @@ import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
 
 public class WorkoutFragment extends Fragment {
 
-
-
-
     private String text;
 
     private itemAdapterWorkout adapter;
@@ -60,8 +57,6 @@ public class WorkoutFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         if (getArguments() != null) {
         //    text = getArguments().getString("dataFromFDelite");
 
@@ -79,6 +74,7 @@ public class WorkoutFragment extends Fragment {
 
         Button button = (Button) v.findViewById(R.id.buttonBack);
         TextView textMod = (TextView) v.findViewById(R.id.WorkOutText);
+        TextView textMod2 = (TextView) v.findViewById(R.id.WorkOutText2);
 
 
 
@@ -87,6 +83,9 @@ public class WorkoutFragment extends Fragment {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+
+
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
@@ -122,6 +121,28 @@ public class WorkoutFragment extends Fragment {
 
 
         //****************************
+
+
+        //******************************** прием текста из фрагмента2
+        getParentFragmentManager().setFragmentResultListener("test", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textTestBundle) {
+
+               String textTest = textTestBundle.getString("test");
+                TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
+
+                //     textMod.setText(data.toString());
+
+                //   CardSourceImplTrain(getActivity().getSupportFragmentManager())).
+                //    textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).toString());
+                textMod2.setText( textTest);
+                //  new CardSourceImplTrain(getActivity()).getCardData(1).toString();
+            }
+        });
+
+
+        //****************************
+
 
         return v;
     }

@@ -5,7 +5,9 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentResultListener;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,9 +15,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.git_test.AddDataFragment;
+import com.example.git_test.FirstFragment;
+import com.example.git_test.FragmentBar;
 import com.example.git_test.R;
+import com.example.git_test.model.dayTrain.DayTrainFragment;
+import com.example.git_test.model.knolegData.KnolegFragment;
+import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
+import com.example.git_test.model.trainRecyclerView.TrainFragment;
 import com.example.git_test.model.workout.CardSourceImplWorkout;
 import com.example.git_test.model.workout.CardSourceWorkout;
 import com.example.git_test.model.workout.itemAdapterWorkout;
@@ -50,6 +60,8 @@ public class RepetitionWorkoutFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
 
         }
@@ -59,15 +71,61 @@ public class RepetitionWorkoutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_repetition_workout, container, false);
+        View v = inflater.inflate(R.layout.fragment_repetition_workout, container, false);
+
+        TextView textMod2 = (TextView) v.findViewById(R.id.RepetitionMainText);
+
+        Button buttonAddRepTrain = (Button) v.findViewById(R.id.buttonAddRepTrain);
+
+        buttonAddRepTrain.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new AddDataFragment());
+                fragmentTransaction.commit();
+            }
+        });
 
 
+
+
+        //******************************** прием текста из фрагмента
+        getParentFragmentManager().setFragmentResultListener("text from DTF", this, new FragmentResultListener() {
+
+
+
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
+
+
+                Integer data = textBundle.getInt("text from DTF");
+                TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
+
+          //      textView.setText( new CardSourceImplTrain(getActivity()).getCardData(3).getTitle().toString());
+
+                textMod2.setText( new CardSourceImplTrain(getActivity()).getCardData(3).getTitle().toString());
+             //   textMod2.setText( new CardSourceImplTrain(getActivity()).getCardData(data).getTitle().toString());
+             //   textMod2.setText("teeeeccecece");
+            }
+
+
+
+
+
+        });
+
+      //  return inflater.inflate(R.layout.fragment_repetition_workout, container, false);
+        return v;
     }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+
 
 
         recyclerView = view.findViewById(R.id.recycleViewRepetitionWorkout);

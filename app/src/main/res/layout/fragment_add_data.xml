@@ -89,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Сохранить"
@@ -101,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Сохранить и отдохнуть"
-        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonSave"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
@@ -109,9 +109,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textSize="50dp"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSave" />
 
     <TextView
         android:id="@+id/textViewMaximum"
@@ -119,9 +119,38 @@
         android:layout_height="wrap_content"
 
         android:hint="Max Wheit"
-        android:textSize="50dp"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textViewTypeSportProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="Тип программы"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMaximum" />
+    <TextView
+        android:id="@+id/textViewNumberSportProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="номер дня программы"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTypeSportProgram" />
+    <TextView
+        android:id="@+id/textViewTypeSportExercice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="вид упражнения"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumberSportProgram" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

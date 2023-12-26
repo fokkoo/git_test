@@ -108,6 +108,15 @@ public class WorkoutFragment extends Fragment {
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
                 textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).getTitle().toString());
 
+                // ******************************** отправка текста
+                MyRepetitionWorkoutFragment fragment = new MyRepetitionWorkoutFragment();
+                Bundle textBundleNEW = new Bundle();
+                textBundleNEW.putInt("text from DTF1",data);
+                fragment.setArguments(textBundleNEW);
+                getParentFragmentManager().setFragmentResult("text from DTF1",textBundleNEW);
+
+                // ********************************
+
             }
         });
         //****************************
@@ -153,6 +162,9 @@ public class WorkoutFragment extends Fragment {
                 if (getArguments() != null) {
                         text = getArguments().getString("dataFromFDelite");
                 }
+
+
+                //****************************
 
                 // ********************************
                 MyRepetitionWorkoutFragment fragment = new MyRepetitionWorkoutFragment();

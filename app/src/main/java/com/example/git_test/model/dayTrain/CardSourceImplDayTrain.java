@@ -30,7 +30,7 @@ public class CardSourceImplDayTrain implements CardSourceDayTrain {
                 new CardDataTrain(
                         context.getResources().getString(R.string.day2),
                         context.getResources().getString(R.string.description1),
-                        R.drawable.program2_circuit_workout,
+                        R.drawable.circuit_workout,
                         false
                 ),
                 new CardDataTrain(

@@ -92,6 +92,20 @@ public class RepetitionWorkoutFragment extends Fragment {
         buttonAddRepTrain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                // ********************************
+                AddDataFragment fragment = new AddDataFragment();
+
+                int [] abc = new int[0];
+                Bundle bundle =new Bundle();
+                bundle.putIntArray("some string",abc);
+
+                Bundle textBundleADF = new Bundle();
+                textBundleADF.putInt("text from ADF",currentPosition);
+                fragment.setArguments(textBundleADF);
+                getParentFragmentManager().setFragmentResult("text from RWF",textBundleADF);
+
+                // ********************************
+
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
@@ -100,8 +114,41 @@ public class RepetitionWorkoutFragment extends Fragment {
             }
         });
 
+        //******************************** прием текста из фрагмента DayTrainFragment
+        getParentFragmentManager().setFragmentResultListener("text from DTF1", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
+
+                Integer data = textBundle.getInt("text from DTF1");
+                TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
+                textExercise.setText(data.toString());
+
+            }
+        });
+        //****************************
+
+        //******************************** прием текста из фрагмента
+        getParentFragmentManager().setFragmentResultListener("text from RWF", this, new FragmentResultListener() {
+
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
+
+                Integer data = textBundle.getInt("text from RWF");
+                Integer data2 = textBundle.getInt("text from DTF");
+
+                TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
+
+                textMod2.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
+              //  textExercise.setText("textExerciseMYYYYYY".toString());
+                textDay.setText(data.toString());
+
+            }
+        });
 
 
+
+
+        /*
 
         //******************************** прием текста из фрагмента
         getParentFragmentManager().setFragmentResultListener("text from RWF", this, new FragmentResultListener() {
@@ -112,12 +159,17 @@ public class RepetitionWorkoutFragment extends Fragment {
 
 
                 Integer data = textBundle.getInt("text from RWF");
+                Integer data2 = textBundle.getInt("text from DTF");
+
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
 
                 textMod2.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
 
-                textBlock.setText(new CardSourceImplDayTrain(getActivity()).getCardData(data).getTitle().toString());
-              textDay.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
+                textBlock.setText(data.toString());
+             //  textDay.setText(data2.toString());
+
+            //    textBlock.setText(new CardSourceImplDayTrain(getActivity()).getCardData(data).getTitle().toString());
+            //    textDay.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
            //     textExercise.setText(new CardSourceImplRepetitionWorkout(getActivity()).getCardData(data).getTitleWorkout().toString());
 
           //      textView.setText( new CardSourceImplTrain(getActivity()).getCardData(3).getTitle().toString());
@@ -131,7 +183,11 @@ public class RepetitionWorkoutFragment extends Fragment {
 
 
 
-        });
+        });*/
+
+
+
+
 
       //  return inflater.inflate(R.layout.fragment_repetition_workout, container, false);
         return v;

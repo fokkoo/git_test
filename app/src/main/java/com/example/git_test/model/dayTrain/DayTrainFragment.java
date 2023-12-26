@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 
 import com.example.git_test.MainActivity;
 import com.example.git_test.R;
+import com.example.git_test.model.repetitionWorkout.MyRepetitionWorkoutFragment;
 import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceTrain;
 import com.example.git_test.model.trainRecyclerView.DeliteFragment;
@@ -99,10 +100,20 @@ public class DayTrainFragment extends Fragment {
                 textTestBundle.putString("test","test");
                 fragment.setArguments(textTestBundle);
                 getParentFragmentManager().setFragmentResult("test",textTestBundle);
-
+                // ********************************
 
 
                 // ********************************
+                MyRepetitionWorkoutFragment fragmentDTF = new MyRepetitionWorkoutFragment();
+                Bundle textBundleDTF = new Bundle();
+                textBundleDTF.putInt("text from DTF",currentPosition);
+                fragmentDTF.setArguments(textBundleDTF);
+                getParentFragmentManager().setFragmentResult("text from DTF",textBundleDTF);
+
+                // ********************************
+
+
+
 
 
 

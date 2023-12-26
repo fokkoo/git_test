@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         val recyclerView: RecyclerView = binding.recyclerViewMainActvity
 
         val cardSours: CardSource = CardSourceImpl(this)

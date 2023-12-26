@@ -66,10 +66,7 @@ public class WorkoutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
 
-     //   View rootView = inflater.inflate(R.layout.activity_main, container, false);
-     //   TextView btn = rootView.findViewById(R.id.WorkOutText);
         View v = inflater.inflate(R.layout.fragment_workout, container, false);
 
         Button button = (Button) v.findViewById(R.id.buttonBack);
@@ -102,24 +99,17 @@ public class WorkoutFragment extends Fragment {
 
 
 
-        //******************************** прием текста из фрагмента
+        //******************************** прием текста из фрагмента DayTrainFragment
         getParentFragmentManager().setFragmentResultListener("text from DTF", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
 
                Integer data = textBundle.getInt("text from DTF");
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
-
-           //     textMod.setText(data.toString());
-
-             //   CardSourceImplTrain(getActivity().getSupportFragmentManager())).
-            //    textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).toString());
                 textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).getTitle().toString());
-              //  new CardSourceImplTrain(getActivity()).getCardData(1).toString();
+
             }
         });
-
-
         //****************************
 
 
@@ -130,13 +120,8 @@ public class WorkoutFragment extends Fragment {
 
                String textTest = textTestBundle.getString("test");
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
-
-                //     textMod.setText(data.toString());
-
-                //   CardSourceImplTrain(getActivity().getSupportFragmentManager())).
-                //    textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).toString());
                 textMod2.setText( textTest);
-                //  new CardSourceImplTrain(getActivity()).getCardData(1).toString();
+
             }
         });
 
@@ -160,10 +145,6 @@ public class WorkoutFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
-
-
-
-
         adapter.setListener(new itemAdapterWorkout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
@@ -171,16 +152,20 @@ public class WorkoutFragment extends Fragment {
 
                 if (getArguments() != null) {
                         text = getArguments().getString("dataFromFDelite");
-
-
                 }
 
+                // ********************************
+                MyRepetitionWorkoutFragment fragment = new MyRepetitionWorkoutFragment();
+                Bundle textBundle = new Bundle();
+                textBundle.putInt("text from RWF",currentPosition);
+                fragment.setArguments(textBundle);
+                getParentFragmentManager().setFragmentResult("text from RWF",textBundle);
+
+                // ********************************
 
                 Fragment frag = new MyRepetitionWorkoutFragment();
-
                 Bundle result = new Bundle();
                 result.putString("df1","my long texteeeeeeeeeeeeeeeeee");
-
                 result.putString("dataFromFWorout","String Value");
                 frag.setArguments(result);
 
@@ -190,39 +175,8 @@ public class WorkoutFragment extends Fragment {
              //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
                 fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
                 fragmentTransaction.commit();
-
             }
         });
-
-
-
-
     }
-
-
-
-/*
-    private fun writeData() {
-        parentFragmentManager.setFragmentResultListener("dataFromFDelite", this,
-                { requestKey, result ->
-                        val onItemClickPositionDe = result.getInt("df1")
-
-                        binding.trainTitle.text = CardSourceImplTrain(activity).getCardData(
-                                onItemClickPositionDe
-                        ).title.toString()
-
-                        binding.trainDescription.text = CardSourceImplTrain(activity).getCardData(
-                                onItemClickPositionDe
-                        ).description.toString()
-                        // binding.trainImageView =  CardSourceImplTrain(activity).getCardData(onItemClickPositionDe).picture
-                }
-
-
-        )
-    }
-    */
-
-
-
 
 }

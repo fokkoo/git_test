@@ -74,6 +74,16 @@ class AddDataFragment : Fragment() {
 
 
 
+                var dataArgum = this.arguments
+
+              //  dataArgum?.get("dataFromFDelite").toString()
+
+
+                textViewTypeSportProgram.text = dataArgum?.get("test").toString()
+
+                    //getArguments().getString("dataFromFDelite");
+
+
             viewModell.saveWeather(weather = Weather(City("M", 51.5, weight_number),set_number , 1))
             }
           //  binding.textViewTypeSportExercice.text = "text is here123"

@@ -22,6 +22,7 @@ import com.example.git_test.AddDataFragment;
 import com.example.git_test.FirstFragment;
 import com.example.git_test.FragmentBar;
 import com.example.git_test.R;
+import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
 import com.example.git_test.model.knolegData.KnolegFragment;
 import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
@@ -71,9 +72,20 @@ public class RepetitionWorkoutFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
+
         View v = inflater.inflate(R.layout.fragment_repetition_workout, container, false);
 
         TextView textMod2 = (TextView) v.findViewById(R.id.RepetitionMainText);
+
+        TextView textBlock = (TextView) v.findViewById(R.id.textView16);
+        TextView textDay = (TextView) v.findViewById(R.id.textView19);
+        TextView textExercise = (TextView) v.findViewById(R.id.textView21);
+
+
+
+       // textMod2.setText("Text rewire");
 
         Button buttonAddRepTrain = (Button) v.findViewById(R.id.buttonAddRepTrain);
 
@@ -92,20 +104,25 @@ public class RepetitionWorkoutFragment extends Fragment {
 
 
         //******************************** прием текста из фрагмента
-        getParentFragmentManager().setFragmentResultListener("text from DTF", this, new FragmentResultListener() {
-
-
+        getParentFragmentManager().setFragmentResultListener("text from RWF", this, new FragmentResultListener() {
 
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
 
 
-                Integer data = textBundle.getInt("text from DTF");
+
+                Integer data = textBundle.getInt("text from RWF");
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
+
+                textMod2.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
+
+                textBlock.setText(new CardSourceImplDayTrain(getActivity()).getCardData(data).getTitle().toString());
+              textDay.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
+           //     textExercise.setText(new CardSourceImplRepetitionWorkout(getActivity()).getCardData(data).getTitleWorkout().toString());
 
           //      textView.setText( new CardSourceImplTrain(getActivity()).getCardData(3).getTitle().toString());
 
-                textMod2.setText( new CardSourceImplTrain(getActivity()).getCardData(3).getTitle().toString());
+            //    textMod2.setText( new CardSourceImplTrain(getActivity()).getCardData(3).getTitle().toString());
              //   textMod2.setText( new CardSourceImplTrain(getActivity()).getCardData(data).getTitle().toString());
              //   textMod2.setText("teeeeccecece");
             }

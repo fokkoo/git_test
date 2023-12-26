@@ -88,7 +88,6 @@ public class DayTrainFragment extends Fragment {
                 currentPosition = position;
 
 
-
               // ********************************
                 DayTrainFragment fragment = new DayTrainFragment();
                 Bundle textBundle = new Bundle();

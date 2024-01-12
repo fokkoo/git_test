@@ -21,19 +21,19 @@ public class CardSourceImplWorkout implements CardSourceWorkout {
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardDataTrain(
-                        context.getResources().getString(R.string.DTF_base_program),
+                        context.getResources().getString(R.string.day1),
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.DTF_circuit_workout),
+                        context.getResources().getString(R.string.day2),
                         context.getResources().getString(R.string.description1),
                         R.drawable.program2_circuit_workout,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.DTF_three_day_split_workout),
+                        context.getResources().getString(R.string.day3),
                         context.getResources().getString(R.string.description2),
                         R.drawable.program3_fat_burn,
                         false

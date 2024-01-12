@@ -1,5 +1,6 @@
 package com.example.git_test
 
+import android.R.attr
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +17,10 @@ import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import kotlinx.android.synthetic.main.fragment_history.*
+import android.R.attr.defaultValue
+
+
+
 
 
 class HistoryFragment : Fragment() {
@@ -53,6 +58,18 @@ class HistoryFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_history, container, false)
         _binding = FragmentHistoryBinding.bind(view)
 
+        if (arguments?.getString("key") != null) {
+            val myInt = arguments?.getString("key","156")
+            textView24.text = myInt.toString()
+        }
+
+/*
+        val bundleHF = this.arguments
+        if (bundleHF != null) {
+            val myInt = bundleHF.getInt("key",156)
+            textView24.text = myInt.toString()
+        }
+*/
 
         val bundle = arguments
         if (bundle != null) {

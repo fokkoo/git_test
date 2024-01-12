@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.git_test.AddDataFragment;
 import com.example.git_test.MainActivity;
 import com.example.git_test.R;
 import com.example.git_test.model.dayTrain.CardSourceDayTrain;
@@ -58,7 +59,7 @@ public class WorkoutFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-        //    text = getArguments().getString("dataFromFDelite");
+            //    text = getArguments().getString("dataFromFDelite");
 
         }
     }
@@ -74,13 +75,11 @@ public class WorkoutFragment extends Fragment {
         TextView textMod2 = (TextView) v.findViewById(R.id.WorkOutText2);
 
 
-
         //***********************************
 
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-
 
 
                 FragmentManager fragmentManager = getFragmentManager();
@@ -93,10 +92,9 @@ public class WorkoutFragment extends Fragment {
 //***********************************
 
         if (getArguments() != null) {
-             text = getArguments().getString("dataFromFDelite");
+            text = getArguments().getString("dataFromFDelite");
 
         }
-
 
 
         //******************************** прием текста из фрагмента DayTrainFragment
@@ -104,16 +102,16 @@ public class WorkoutFragment extends Fragment {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
 
-               Integer data = textBundle.getInt("text from DTF");
+                Integer data = textBundle.getInt("text from DTF");
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
-                textMod.setText( new CardSourceImplTrain(getActivity()).getCardData(data).getTitle().toString());
+                textMod.setText(new CardSourceImplTrain(getActivity()).getCardData(data).getTitle().toString());
 
                 // ******************************** отправка текста
                 MyRepetitionWorkoutFragment fragment = new MyRepetitionWorkoutFragment();
                 Bundle textBundleNEW = new Bundle();
-                textBundleNEW.putInt("text from DTF1",data);
+                textBundleNEW.putInt("text from DTF1", data);
                 fragment.setArguments(textBundleNEW);
-                getParentFragmentManager().setFragmentResult("text from DTF1",textBundleNEW);
+                getParentFragmentManager().setFragmentResult("text from DTF1", textBundleNEW);
 
                 // ********************************
 
@@ -127,9 +125,9 @@ public class WorkoutFragment extends Fragment {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textTestBundle) {
 
-               String textTest = textTestBundle.getString("test");
+                String textTest = textTestBundle.getString("test");
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
-                textMod2.setText( textTest);
+                textMod2.setText(textTest);
 
             }
         });
@@ -160,31 +158,38 @@ public class WorkoutFragment extends Fragment {
                 currentPosition = position;
 
                 if (getArguments() != null) {
-                        text = getArguments().getString("dataFromFDelite");
+                    text = getArguments().getString("dataFromFDelite");
                 }
 
 
                 //****************************
+                AddDataFragment fragmentAdd = new AddDataFragment();
+                Bundle textBundleAdd = new Bundle();
+                textBundleAdd.putString("text from RWF", "text from RWF");
+
+                fragmentAdd.setArguments(textBundleAdd);
+                getParentFragmentManager().setFragmentResult("text from RWF", textBundleAdd);
+
 
                 // ********************************
                 MyRepetitionWorkoutFragment fragment = new MyRepetitionWorkoutFragment();
                 Bundle textBundle = new Bundle();
-                textBundle.putInt("text from RWF",currentPosition);
+                textBundle.putInt("text from RWF", currentPosition);
                 fragment.setArguments(textBundle);
-                getParentFragmentManager().setFragmentResult("text from RWF",textBundle);
+                getParentFragmentManager().setFragmentResult("text from RWF", textBundle);
 
                 // ********************************
 
                 Fragment frag = new MyRepetitionWorkoutFragment();
                 Bundle result = new Bundle();
-                result.putString("df1","my long texteeeeeeeeeeeeeeeeee");
-                result.putString("dataFromFWorout","String Value");
+                result.putString("df1", "my long texteeeeeeeeeeeeeeeeee");
+                result.putString("dataFromFWorout", "String Value");
                 frag.setArguments(result);
 
 
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-             //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
+                //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
                 fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
                 fragmentTransaction.commit();
             }

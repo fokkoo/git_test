@@ -27,7 +27,7 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         false
                 ),
                 new CardRepetitionWorkout(
-                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.day2),
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         2,
@@ -36,7 +36,7 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         false
                 ),
                 new CardRepetitionWorkout(
-                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.day3),
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         3,

@@ -40,4 +40,8 @@
     <string name="DTF_fat_burn_workout">Жиросжигающая высокоэнергетичная программа DTF</string>
     <string name="DTF_your_workout">Ваша программа DTF</string>
 
+    <string name="DTF_base_program_description">Классическая программа, основанная на применениии базовых упражнений DTF</string>
+    <string name="DTF_circuit_description">Использование упражнений на все группы мышц в циклическом виде DTF</string>
+    <string name="DTF_fat_burn_description">Тренировка, задействующая наиболее энергозатратные многоповторные упражнения с низкими весами DTF</string>
+
 </resources>

@@ -93,7 +93,7 @@
         android:id="@+id/textView15"
         android:layout_width="176dp"
         android:layout_height="41dp"
-        android:text="Тип блока"
+        android:text="Тип Программы"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintStart_toStartOf="parent" />

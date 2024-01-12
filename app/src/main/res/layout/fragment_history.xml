@@ -87,6 +87,12 @@
             android:layout_width="match_parent"
             android:layout_height="122dp" />
 
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
 
         <!-- TODO: Update blank fragment layout -->
 

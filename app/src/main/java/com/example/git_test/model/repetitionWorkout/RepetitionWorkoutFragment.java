@@ -22,6 +22,8 @@ import com.example.git_test.AddDataFragment;
 import com.example.git_test.FirstFragment;
 import com.example.git_test.FragmentBar;
 import com.example.git_test.R;
+import com.example.git_test.model.AddDataFragmentJava;
+import com.example.git_test.model.CardSourceImpl;
 import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
 import com.example.git_test.model.knolegData.KnolegFragment;
@@ -74,42 +76,42 @@ public class RepetitionWorkoutFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-
         View v = inflater.inflate(R.layout.fragment_repetition_workout, container, false);
 
         TextView textMod2 = (TextView) v.findViewById(R.id.RepetitionMainText);
 
-        TextView textBlock = (TextView) v.findViewById(R.id.textView16);
-        TextView textDay = (TextView) v.findViewById(R.id.textView19);
+        TextView textBlock = (TextView) v.findViewById(R.id.textView19);
+        TextView textDay = (TextView) v.findViewById(R.id.textView16);
         TextView textExercise = (TextView) v.findViewById(R.id.textView21);
 
 
-
-       // textMod2.setText("Text rewire");
+        // textMod2.setText("Text rewire");
 
         Button buttonAddRepTrain = (Button) v.findViewById(R.id.buttonAddRepTrain);
 
         buttonAddRepTrain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+
                 // ********************************
                 AddDataFragment fragment = new AddDataFragment();
+                int[] abc = {2, 5, 7, 8, 3, 0};
 
-                int [] abc = new int[0];
-                Bundle bundle =new Bundle();
-                bundle.putIntArray("some string",abc);
 
-                Bundle textBundleADF = new Bundle();
-                textBundleADF.putInt("text from ADF",currentPosition);
-                fragment.setArguments(textBundleADF);
-                getParentFragmentManager().setFragmentResult("text from RWF",textBundleADF);
+                Bundle bundleADF = new Bundle();
+                bundleADF.putIntArray("text from RWF", abc);
+
+              /*  Bundle textBundleADF = new Bundle();
+                textBundleADF.putInt("text from ADF",currentPosition);*/
+                fragment.setArguments(bundleADF);
+                getParentFragmentManager().setFragmentResult("text from RWF", bundleADF);
 
                 // ********************************
 
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
-                fragmentTransaction.replace(R.id.fragment_container, new AddDataFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new AddDataFragmentJava());
                 fragmentTransaction.commit();
             }
         });
@@ -121,7 +123,18 @@ public class RepetitionWorkoutFragment extends Fragment {
 
                 Integer data = textBundle.getInt("text from DTF1");
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
-                textExercise.setText(data.toString());
+                textExercise.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
+
+
+                int data5 = data;
+                // ******************************** Отправка в AddDataFragment
+                AddDataFragment fragment = new AddDataFragment();
+                Bundle textBundleRWF = new Bundle();
+                textBundleRWF.putString("text from RWF", "massege1233333333");
+                fragment.setArguments(textBundleRWF);
+                getParentFragmentManager().setFragmentResult("text from RWF", textBundleRWF);
+
+                // ********************************
 
             }
         });
@@ -134,17 +147,14 @@ public class RepetitionWorkoutFragment extends Fragment {
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
 
                 Integer data = textBundle.getInt("text from RWF");
-                Integer data2 = textBundle.getInt("text from DTF");
-
                 TextView textView = (TextView) v.findViewById(R.id.WorkOutText);
-
                 textMod2.setText(new CardSourceImplWorkout(getActivity()).getCardData(data).getTitle().toString());
-              //  textExercise.setText("textExerciseMYYYYYY".toString());
-                textDay.setText(data.toString());
+                //  textExercise.setText("textExerciseMYYYYYY".toString());
+                textDay.setText(new CardSourceImplDayTrain(getActivity()).getCardData(data).getTitle().toString());
 
             }
         });
-
+//****************************
 
 
 
@@ -186,10 +196,7 @@ public class RepetitionWorkoutFragment extends Fragment {
         });*/
 
 
-
-
-
-      //  return inflater.inflate(R.layout.fragment_repetition_workout, container, false);
+        //  return inflater.inflate(R.layout.fragment_repetition_workout, container, false);
         return v;
     }
 
@@ -197,8 +204,6 @@ public class RepetitionWorkoutFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
 
 
         recyclerView = view.findViewById(R.id.recycleViewRepetitionWorkout);

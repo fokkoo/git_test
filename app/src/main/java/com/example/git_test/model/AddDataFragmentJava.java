@@ -84,7 +84,7 @@ public class AddDataFragmentJava extends Fragment {
             public void onClick(View v) {
 
 
-             /*   String As = text1.getText().toString();
+                String As = text1.getText().toString();
                 int weight_number = new Integer(As).intValue();
 
                 String Bs = text2.getText().toString();
@@ -103,16 +103,25 @@ public class AddDataFragmentJava extends Fragment {
 
 
                 weight_number_double = (double) weight_number;
-
+                /*
 
               */
+                getSampleLifecycleListener().saveWeather(
+                        new Weather(
+                                new City("M", 51.5, weight_number_double),
+                                set_number,
+                                1
+                        )
+                );
           /*      viewModell.saveWeather(
                         new Weather(
                                 new City("M", 51.5, weight_number_double),
                                 set_number,
                                 1
                         )
-                );*/
+                );
+
+                */
 
             }
         });

@@ -73,7 +73,7 @@ class DetailFragment : Fragment() {
 
 
         val CityFromEditTextIn = binding.editTextTextPersonName.text.toString()
-        viewModel.saveWeather(weather = Weather(City(CityFromEditTextIn, 51.5, 51.5), 2, 1))
+        viewModel.saveWeather(weather = Weather(City(CityFromEditTextIn, 51.5, 51.5,"w","w","w",50.6,50.0,50.0,50.0), 2, 1))
 
     }
 

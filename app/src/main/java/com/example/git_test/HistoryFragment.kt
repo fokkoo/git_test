@@ -116,7 +116,7 @@ class HistoryFragment : Fragment() {
 
 
 
-            viewModell.saveWeather(weather = Weather(City("M", 51.5, 51.5), TestNumberWheit, 1))
+            viewModell.saveWeather(weather = Weather(City("M", 51.5, 51.5,"w","w","w",50.6,50.0,50.0,50.0), TestNumberWheit, 1))
        //     viewModel.saveWeather(weather = Weather(City(CityFromEditTextInn, 51.5, 51.5), 2, 1))
         }
 

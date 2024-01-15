@@ -124,7 +124,7 @@ textView22.text = text.toString()
 
                 viewModell.saveWeather(
                     weather = Weather(
-                        City("M", 51.5, weight_number),
+                        City("M", 51.5, weight_number,"w","w","w",50.6,50.0,50.0,50.0),
                         set_number,
                         1
                     )

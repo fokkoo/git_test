@@ -138,7 +138,7 @@ public class AddDataFragmentJava extends Fragment {
               */
                 getSampleLifecycleListener().saveWeather(
                         new Weather(
-                                new City(textViewWorkOut.getText().toString(), 51.5, weight_number_double),
+                                new City(textViewWorkOut.getText().toString(), 51.5, weight_number_double,"w","w","w",50.6,50.0,50.0,50.0),
                                 set_number,
                                 1
                         )

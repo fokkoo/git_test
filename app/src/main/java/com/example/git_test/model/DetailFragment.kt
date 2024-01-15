@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.git_test.R
 import com.example.git_test.Weather
 import com.example.git_test.databinding.DetailFragmentBinding
-import com.example.git_test.getDefaultCity
 import com.example.git_test.getRussianCities
 import com.example.git_test.model.database.City
 
@@ -50,7 +49,7 @@ class DetailFragment : Fragment() {
         binding.buttonDetailFragmentWriteData.setOnClickListener() {
             val weather = arguments?.getParcelable(WEATHER_EXTRA) ?: Weather()
 
-            binding.textDetailFragmentCity.text = getRussianCities()[0].city.name.toString()
+            binding.textDetailFragmentCity.text = getRussianCities()[0].city.name_exersice.toString()
 
             val toast = Toast.makeText(context, CityFromEditText, Toast.LENGTH_SHORT)
 

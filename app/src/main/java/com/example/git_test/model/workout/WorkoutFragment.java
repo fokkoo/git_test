@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.git_test.AddDataFragment;
 import com.example.git_test.MainActivity;
 import com.example.git_test.R;
+import com.example.git_test.model.AddDataFragmentJava;
 import com.example.git_test.model.dayTrain.CardSourceDayTrain;
 import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
@@ -160,6 +161,15 @@ public class WorkoutFragment extends Fragment {
                 if (getArguments() != null) {
                     text = getArguments().getString("dataFromFDelite");
                 }
+
+                // ********************************
+                AddDataFragmentJava fragmentADFJ = new AddDataFragmentJava();
+                Bundle position_number_workout = new Bundle();
+                position_number_workout.putInt("text from WOF to AFJ",currentPosition);
+                fragmentADFJ.setArguments(position_number_workout);
+                getParentFragmentManager().setFragmentResult("text from WOF to AFJ",position_number_workout);
+
+                // ********************************
 
 
                 //****************************

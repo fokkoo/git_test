@@ -5,19 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.FragmentResultListener
 import androidx.lifecycle.ViewModelProvider
 import com.example.git_test.databinding.FragmentAddDataBinding
 import com.example.git_test.model.DetailViewModel
 import com.example.git_test.model.database.City
-import com.example.git_test.model.dayTrain.CardSourceImplDayTrain
-import com.example.git_test.model.repetitionWorkout.RepetitionWorkoutFragment
-import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain
-import com.example.git_test.model.workout.CardSourceImplWorkout
-import com.example.git_test.model.workout.WorkoutFragment
 import kotlinx.android.synthetic.main.fragment_add_data.*
-import kotlinx.android.synthetic.main.fragment_repetition_workout.*
 
 
 class AddDataFragment : Fragment() {
@@ -92,7 +84,7 @@ parentFragmentManager.setFragmentResultListener("text from RWF", this,
         val bundle = this.arguments
         if (bundle != null) {
             val myInt = bundle.getInt("text from RWF", android.R.attr.defaultValue)
-            textView22.text = myInt.toString()
+            textView222.text = myInt.toString()
         }
 
 

@@ -96,7 +96,7 @@ class TrainFragment : Fragment() {
             counter= counter+1
             binding.trainTitle.text = "yes"+counter.toString()
 
-            binding.trainToastText.text = getRussianCities()[0].city.name.toString()
+            binding.trainToastText.text = getRussianCities()[0].city.name_exersice.toString()
 
 
             val CityFromEditTextInn = binding.trainFragmenteditText.text.toString()

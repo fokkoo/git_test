@@ -16,7 +16,7 @@ class DetailViewModel : ViewModel() {
         localRepository.saveEntity(
                 HistoryEntity(
                         id=0,
-                        city = weather.city.name,
+                        city = weather.city.name_exersice,
                         temperature = weather.temperature,
                         timestamp = Date().time
                 )

@@ -128,7 +128,11 @@ public class RepetitionWorkoutFragment extends Fragment {
 
                 int data5 = data;
                 // ******************************** Отправка в AddDataFragment
-                AddDataFragment fragment = new AddDataFragment();
+
+
+
+
+                AddDataFragmentJava fragment = new AddDataFragmentJava();
                 Bundle textBundleRWF = new Bundle();
                 textBundleRWF.putString("text from RWF", "massege1233333333");
                 fragment.setArguments(textBundleRWF);

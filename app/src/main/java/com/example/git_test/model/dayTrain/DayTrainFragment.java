@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 
 import com.example.git_test.MainActivity;
 import com.example.git_test.R;
+import com.example.git_test.model.AddDataFragmentJava;
 import com.example.git_test.model.repetitionWorkout.MyRepetitionWorkoutFragment;
 import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceTrain;
@@ -112,7 +113,14 @@ public class DayTrainFragment extends Fragment {
 
                 // ********************************
 
+                // ********************************
+                AddDataFragmentJava fragmentADFJ = new AddDataFragmentJava();
+                Bundle position_number_day_train = new Bundle();
+                position_number_day_train.putInt("text from DTF to AFJ",currentPosition);
+                fragmentADFJ.setArguments(position_number_day_train);
+                getParentFragmentManager().setFragmentResult("text from DTF to AFJ",position_number_day_train);
 
+                // ********************************
 
 
 

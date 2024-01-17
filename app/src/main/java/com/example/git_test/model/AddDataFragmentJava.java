@@ -115,14 +115,14 @@ public class AddDataFragmentJava extends Fragment {
                 String As = text1.getText().toString();
                 int weight_number = new Integer(As).intValue();
 
-
+                int set_number = 1;
 
                 String Bs = text2.getText().toString();
-                int set_number = new Integer(As).intValue();
+                int repetition_number = new Integer(As).intValue();
 
                 int C_number;
 
-                C_number = set_number*weight_number;
+                C_number = repetition_number*weight_number;
 
 
                 String strI = Integer.toString(C_number);
@@ -138,15 +138,15 @@ public class AddDataFragmentJava extends Fragment {
               */
                 getSampleLifecycleListener().saveWeather(
                         new Weather(
-                                new City(textViewWorkOut.getText().toString(), 51.5, weight_number_double,"w","w","w",50.6,50.0,50.0,50.0),
-                                set_number,
+                                new City("non", 51.5, weight_number_double,textViewWorkOut.getText().toString(),textView.getText().toString(),"w",set_number,repetition_number,weight_number,50.0),
+                                repetition_number,
                                 1
                         )
                 );
           /*      viewModell.saveWeather(
                         new Weather(
                                 new City("M", 51.5, weight_number_double),
-                                set_number,
+                                repetition_number,
                                 1
                         )
                 );

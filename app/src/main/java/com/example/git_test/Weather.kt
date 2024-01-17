@@ -28,3 +28,4 @@ fun getRussianCities(): List <Weather> = listOf(
     Weather(City("Kazan",55.8,49.12,"w","w","w",50.6,50.0,50.0,50.0),5,5),
     Weather(City("Vostok Antarctic station",-78.28,106.50,"w","w","w",50.6,50.0,50.0,50.0),5,5),
 )
+

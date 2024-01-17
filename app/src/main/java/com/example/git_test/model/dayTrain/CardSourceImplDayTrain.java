@@ -5,8 +5,6 @@ import android.content.Context;
 import com.example.git_test.R;
 import com.example.git_test.model.trainRecyclerView.CardDataTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceResponseTrain;
-import com.example.git_test.model.trainRecyclerView.CardSourceTrain;
-import com.example.git_test.model.dayTrain.CardSourceDayTrain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +28,7 @@ public class CardSourceImplDayTrain implements CardSourceDayTrain {
                 new CardDataTrain(
                         context.getResources().getString(R.string.DTF_circuit_workout),
                         context.getResources().getString(R.string.DTF_circuit_description),
-                        R.drawable.circuit_workout,
+                        R.drawable.circuit1workout,
                         false
                 ),
                 new CardDataTrain(

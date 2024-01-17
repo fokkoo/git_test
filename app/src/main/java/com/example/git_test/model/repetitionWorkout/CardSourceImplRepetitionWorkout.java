@@ -103,6 +103,10 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
         );
     }
 
+
+
+
+
     @Override
     public CardRepetitionWorkout getCardData(int position) {
         return cards.get(position);

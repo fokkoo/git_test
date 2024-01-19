@@ -17,14 +17,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.git_test.R;
+import com.example.git_test.model.Delite.CardSourceDelite;
+import com.example.git_test.model.Delite.CardSourceImplDelite;
+
+import com.example.git_test.model.Delite.itemAdapterDelite;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
 
 
 public class DeliteFragment extends Fragment {
 
 
-    private itemAdapterTrain adapter;
-    private CardSourceTrain cardSource;
+    private itemAdapterDelite adapter;
+    private CardSourceDelite cardSource;
     private RecyclerView recyclerView;
     private int currentPosition = -1;
     public static final String TAG = "ItemAdapter";
@@ -67,15 +71,16 @@ public class DeliteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.train_delite_recycleView);
-        cardSource = new CardSourceImplTrain(getActivity().getApplicationContext());
-        adapter = new itemAdapterTrain(cardSource);
+        cardSource = new CardSourceImplDelite(getActivity().getApplicationContext());
+        adapter = new itemAdapterDelite(cardSource);
 
         recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
-        adapter.setListener(new itemAdapterTrain.OnItemClickListener() {
+
+        adapter.setListener(new itemAdapterDelite.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;

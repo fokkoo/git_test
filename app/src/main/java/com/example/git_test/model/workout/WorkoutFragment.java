@@ -31,6 +31,7 @@ import com.example.git_test.model.dayTrain.itemAdapterDayTrain;
 import com.example.git_test.model.repetitionWorkout.MyRepetitionWorkoutFragment;
 import com.example.git_test.model.repetitionWorkout.RepetitionWorkoutFragment;
 import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
+import com.example.git_test.model.trainRecyclerView.DeliteFragment;
 
 public class WorkoutFragment extends Fragment {
 
@@ -200,7 +201,8 @@ public class WorkoutFragment extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 //   fragmentTransaction.replace(R.id.fragment_container, new MyRepetitionWorkoutFragment());
-                fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
+               // fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new DeliteFragment());
                 fragmentTransaction.commit();
             }
         });

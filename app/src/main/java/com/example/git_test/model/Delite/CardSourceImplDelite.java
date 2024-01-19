@@ -46,10 +46,10 @@ public class CardSourceImplDelite implements CardSourceDelite {
 
 
 
-    public CardSourceImplDelite(Context context) {
+    public CardSourceImplDelite(Context context, int Number) {
         //    this.context = context;
 
-        if (1>2){
+        if (Number>2){
             //////////
             cards = new ArrayList(Arrays.asList(
                     new CardDataDelite(

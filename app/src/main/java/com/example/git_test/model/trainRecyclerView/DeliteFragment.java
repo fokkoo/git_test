@@ -71,7 +71,7 @@ public class DeliteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.train_delite_recycleView);
-        cardSource = new CardSourceImplDelite(getActivity().getApplicationContext());
+        cardSource = new CardSourceImplDelite(getActivity().getApplicationContext(),3);
         adapter = new itemAdapterDelite(cardSource);
 
         recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее

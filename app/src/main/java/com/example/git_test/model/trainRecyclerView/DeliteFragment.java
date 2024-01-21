@@ -15,13 +15,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.git_test.R;
 import com.example.git_test.model.Delite.CardSourceDelite;
 import com.example.git_test.model.Delite.CardSourceImplDelite;
 
 import com.example.git_test.model.Delite.itemAdapterDelite;
+import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
+import com.example.git_test.model.workout.CardSourceImplWorkout;
 
 
 public class DeliteFragment extends Fragment {
@@ -42,7 +45,6 @@ public class DeliteFragment extends Fragment {
     public static DeliteFragment newInstance(String param1, String param2) {
         DeliteFragment fragment = new DeliteFragment();
         Bundle args = new Bundle();
-
         fragment.setArguments(args);
         return fragment;
     }
@@ -62,23 +64,75 @@ public class DeliteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
+        View v = inflater.inflate(R.layout.fragment_delite, container, false);
 
-        return inflater.inflate(R.layout.fragment_delite, container, false);
+        TextView textViewNameDaytrain = (TextView) v.findViewById(R.id.textDayTrain);
+        TextView textViewNameWorkout = (TextView) v.findViewById(R.id.textWorkout);
+
+
+        //******************************** прием текста из фрагмента DayTrainFragment
+        getParentFragmentManager().setFragmentResultListener("text from DTF to AFJ", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
+
+                Integer number_day_train_position = textBundle.getInt("text from DTF to AFJ");
+                String nameWorkout  = new CardSourceImplWorkout(getActivity()).getCardData(number_day_train_position).getTitle().toString();
+
+                textViewNameWorkout.setText(nameWorkout);
+
+
+            }
+        });
+
+        //******************************** прием текста из фрагмента DayTrainFragment
+        getParentFragmentManager().setFragmentResultListener("text from WOF to AFJ", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
+
+                Integer number_workout_train_position = textBundle.getInt("text from WOF to AFJ");
+                String nameDayTrain  = new CardSourceImplDayTrain(getActivity()).getCardData(number_workout_train_position).getTitle().toString();
+
+                textViewNameDaytrain.setText(nameDayTrain);
+
+            }
+        });
+
+        return v;
     }
+
+
+
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+        //******************************** прием текста из фрагмента DayTrainFragment
+        getParentFragmentManager().setFragmentResultListener("text from WOF to AFJ", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
+
+                Integer number_workout_train_position = textBundle.getInt("text from WOF to AFJ");
+                String nameWorkout  = new CardSourceImplWorkout(getActivity()).getCardData(number_workout_train_position).getTitle().toString();
+
+                Integer number_day_train_position = textBundle.getInt("text from DTF to AFJ");
+                String nameDayTrain  = new CardSourceImplDayTrain(getActivity()).getCardData(number_day_train_position).getTitle().toString();
+
+
+
+
+
+
+
         recyclerView = view.findViewById(R.id.train_delite_recycleView);
-        cardSource = new CardSourceImplDelite(getActivity().getApplicationContext(),3);
+        cardSource = new CardSourceImplDelite(getActivity().getApplicationContext(),nameWorkout,nameDayTrain);
         adapter = new itemAdapterDelite(cardSource);
 
         recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-
-
 
         adapter.setListener(new itemAdapterDelite.OnItemClickListener() {
             @Override
@@ -106,6 +160,7 @@ public class DeliteFragment extends Fragment {
 
 
 
-
+            }
+        });
     }
 }

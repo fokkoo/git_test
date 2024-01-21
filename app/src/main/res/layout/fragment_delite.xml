@@ -14,6 +14,18 @@
         android:layout_height="50dp"
         android:textSize="50dp"
         android:text="Hello Delite Fragment" />
+    <TextView
+        android:id="@+id/textDayTrain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="50dp"
+        android:text="Hello Delite Fragment" />
+    <TextView
+        android:id="@+id/textWorkout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="50dp"
+        android:text="Hello Delite Fragment" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/train_delite_recycleView"

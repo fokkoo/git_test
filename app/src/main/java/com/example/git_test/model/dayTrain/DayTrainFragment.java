@@ -122,7 +122,14 @@ public class DayTrainFragment extends Fragment {
 
                 // ********************************
 
+                // ********************************
+                DeliteFragment fragmentDF = new DeliteFragment();
+                Bundle position_number_day_trainDF = new Bundle();
+                position_number_day_trainDF.putInt("text from DTF to AFJ",currentPosition);
+                fragmentDF.setArguments(position_number_day_trainDF);
+                getParentFragmentManager().setFragmentResult("text from DTF to AFJ",position_number_day_trainDF);
 
+                // ********************************
 
 
 

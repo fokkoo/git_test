@@ -154,14 +154,37 @@ public class WorkoutFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
+        //******************************** прием текста из фрагмента2
+        getParentFragmentManager().setFragmentResultListener("text from DTF to AFJA", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textTestBundle) {
+
+                int[] DayAndWorkoutPosition = textTestBundle.getIntArray("text from DTF to AFJA");
+
+
+
+
+
         adapter.setListener(new itemAdapterWorkout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 currentPosition = position;
 
+                DayAndWorkoutPosition[1] = position;
+
                 if (getArguments() != null) {
                     text = getArguments().getString("dataFromFDelite");
                 }
+
+
+                // ********************************
+                DeliteFragment fragmentDFA = new DeliteFragment();
+                Bundle position_number_day_trainDFA = new Bundle();
+                position_number_day_trainDFA.putIntArray("text from WOF to AFJA",DayAndWorkoutPosition);
+                fragmentDFA.setArguments(position_number_day_trainDFA);
+                getParentFragmentManager().setFragmentResult("text from WOF to AFJA",position_number_day_trainDFA);
+
+                // ********************************
 
                 // ********************************
                 AddDataFragmentJava fragmentADFJ = new AddDataFragmentJava();
@@ -206,6 +229,10 @@ public class WorkoutFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+
+            }
+        });
+
     }
 
 }

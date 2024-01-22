@@ -46,16 +46,16 @@ public class CardSourceImplDelite implements CardSourceDelite {
 
 
 
-    public CardSourceImplDelite(Context context, String dayNameVar, String workoutNameVar) {
+    public CardSourceImplDelite(Context context, String dayName, String workoutName) {
         //    this.context = context;
       /*  if (DayNumber == 1){
 
         }*/
 
-        String dayName = context.getResources().getString(R.string.base_program);
-        String workoutName = context.getResources().getString(R.string.day1);
+     //   String dayName = context.getResources().getString(R.string.base_program);
+      //  String workoutName = context.getResources().getString(R.string.day1);
 
-        if (dayName == context.getResources().getString(R.string.base_program)){
+        if (dayName == context.getResources().getString(R.string.DTF_base_program)){
 
             // Базовая программа
 
@@ -65,14 +65,20 @@ public class CardSourceImplDelite implements CardSourceDelite {
 
                 cards = new ArrayList(Arrays.asList(
                         new CardDataDelite(
-                                context.getResources().getString(R.string.base_program),
+                                "1-1",
                                 context.getResources().getString(R.string.description1),
                                 R.drawable.program1_base_program,
                                 false
                         ),
                         new CardDataDelite(
-                                context.getResources().getString(R.string.your_workout),
-                                context.getResources().getString(R.string.description1),
+                                dayName,
+                                workoutName,
+                                R.drawable.program1_base_program,
+                                false
+                        ),
+                        new CardDataDelite(
+                                context.getResources().getString(R.string.DTF_base_program),
+                                context.getResources().getString(R.string.day1),
                                 R.drawable.program2_circuit_workout,
                                 false
                         )
@@ -85,8 +91,20 @@ public class CardSourceImplDelite implements CardSourceDelite {
                 // Базовая программа день 2
                 cards = new ArrayList(Arrays.asList(
                         new CardDataDelite(
-                                context.getResources().getString(R.string.base_program),
+                                "1-2",
                                 context.getResources().getString(R.string.description1),
+                                R.drawable.program_chest,
+                                false
+                        ),
+                        new CardDataDelite(
+                                dayName,
+                                workoutName,
+                                R.drawable.program1_base_program,
+                                false
+                        ),
+                        new CardDataDelite(
+                                context.getResources().getString(R.string.DTF_base_program),
+                                context.getResources().getString(R.string.day2),
                                 R.drawable.program_chest,
                                 false
                         ),
@@ -102,12 +120,30 @@ public class CardSourceImplDelite implements CardSourceDelite {
 
             }
 
-        } else if (workoutName == context.getResources().getString(R.string.circuit_workout)) {
+        } else if (dayName == context.getResources().getString(R.string.DTF_circuit_workout)) {
             if (workoutName == context.getResources().getString(R.string.day1)){
 
                 // Базовая программа день 1
 
                 cards = new ArrayList(Arrays.asList(
+                        new CardDataDelite(
+                                "2-1",
+                                context.getResources().getString(R.string.description1),
+                                R.drawable.program_legs,
+                                false
+                        ),
+                        new CardDataDelite(
+                                dayName,
+                                workoutName,
+                                R.drawable.program1_base_program,
+                                false
+                        ),
+                        new CardDataDelite(
+                                context.getResources().getString(R.string.DTF_circuit_workout),
+                                context.getResources().getString(R.string.day1),
+                                R.drawable.program_legs,
+                                false
+                        ),
                         new CardDataDelite(
                                 context.getResources().getString(R.string.base_program),
                                 context.getResources().getString(R.string.description1),
@@ -129,6 +165,30 @@ public class CardSourceImplDelite implements CardSourceDelite {
                 // Базовая программа день 2
                 cards = new ArrayList(Arrays.asList(
                         new CardDataDelite(
+                                "2-2",
+                                context.getResources().getString(R.string.description1),
+                                R.drawable.program4_three_day_split,
+                                false
+                        ),
+                        new CardDataDelite(
+                                dayName,
+                                workoutName,
+                                R.drawable.program1_base_program,
+                                false
+                        ),
+                        new CardDataDelite(
+                                context.getResources().getString(R.string.DTF_circuit_workout),
+                                context.getResources().getString(R.string.day2),
+                                R.drawable.program4_three_day_split,
+                                false
+                        ),
+                        new CardDataDelite(
+                                context.getResources().getString(R.string.base_program),
+                                context.getResources().getString(R.string.description1),
+                                R.drawable.program4_three_day_split,
+                                false
+                        ),
+                        new CardDataDelite(
                                 context.getResources().getString(R.string.base_program),
                                 context.getResources().getString(R.string.description1),
                                 R.drawable.program4_three_day_split,
@@ -145,6 +205,24 @@ public class CardSourceImplDelite implements CardSourceDelite {
                 );
 
             }
+
+        }else{
+            cards = new ArrayList(Arrays.asList(
+                    new CardDataDelite(
+                            dayName.toString(),
+                            context.getResources().getString(R.string.base_program),
+                            R.drawable.program1_base_program,
+                            false
+                    ),
+                    new CardDataDelite(
+                            workoutName.toString(),
+                            context.getResources().getString(R.string.day1),
+                            R.drawable.program2_circuit_workout,
+                            false
+                    )
+
+            )
+            );
 
         }
 

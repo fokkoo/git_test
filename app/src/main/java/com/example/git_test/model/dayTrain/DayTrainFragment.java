@@ -27,6 +27,9 @@ import com.example.git_test.model.trainRecyclerView.TrainFragment;
 import com.example.git_test.model.trainRecyclerView.itemAdapterTrain;
 import com.example.git_test.model.workout.WorkoutFragment;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class DayTrainFragment extends Fragment {
 
@@ -90,6 +93,8 @@ public class DayTrainFragment extends Fragment {
                 currentPosition = position;
 
 
+                int[] positionNumber = {position, 3};
+
               // ********************************
                 DayTrainFragment fragment = new DayTrainFragment();
                 Bundle textBundle = new Bundle();
@@ -131,7 +136,14 @@ public class DayTrainFragment extends Fragment {
 
                 // ********************************
 
+                // ********************************
+                WorkoutFragment fragmentDFA = new WorkoutFragment();
+                Bundle position_number_day_trainDFA = new Bundle();
+                position_number_day_trainDFA.putIntArray("text from DTF to AFJA",positionNumber);
+                fragmentDFA.setArguments(position_number_day_trainDFA);
+                getParentFragmentManager().setFragmentResult("text from DTF to AFJA",position_number_day_trainDFA);
 
+                // ********************************
 
                 Log.d(TAG, "OnItemClickListener" + currentPosition);
 

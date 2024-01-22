@@ -110,15 +110,15 @@ public class DeliteFragment extends Fragment {
 
 
         //******************************** прием текста из фрагмента DayTrainFragment
-        getParentFragmentManager().setFragmentResultListener("text from WOF to AFJ", this, new FragmentResultListener() {
+        getParentFragmentManager().setFragmentResultListener("text from WOF to AFJA", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle textBundle) {
 
-                Integer number_workout_train_position = textBundle.getInt("text from WOF to AFJ");
-                String nameWorkout  = new CardSourceImplWorkout(getActivity()).getCardData(number_workout_train_position).getTitle().toString();
+                int[] DayAndWorkoutPosition = textBundle.getIntArray("text from WOF to AFJA");
 
-                Integer number_day_train_position = textBundle.getInt("text from DTF to AFJ");
-                String nameDayTrain  = new CardSourceImplDayTrain(getActivity()).getCardData(number_day_train_position).getTitle().toString();
+
+                String nameDayTrain  = new CardSourceImplDayTrain(getActivity()).getCardData(DayAndWorkoutPosition[0]).getTitle().toString();
+                String nameWorkout  = new CardSourceImplWorkout(getActivity()).getCardData(DayAndWorkoutPosition[1]).getTitle().toString();
 
 
 
@@ -127,7 +127,7 @@ public class DeliteFragment extends Fragment {
 
 
         recyclerView = view.findViewById(R.id.train_delite_recycleView);
-        cardSource = new CardSourceImplDelite(getActivity().getApplicationContext(),nameWorkout,nameDayTrain);
+        cardSource = new CardSourceImplDelite(getActivity().getApplicationContext(),nameDayTrain,nameWorkout);
         adapter = new itemAdapterDelite(cardSource);
 
         recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее

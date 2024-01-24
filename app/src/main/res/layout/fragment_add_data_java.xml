@@ -60,6 +60,7 @@ tools:context=".model.AddDataFragmentJava">
     android:ems="10"
     android:inputType="number"
     android:hint="Кг"
+    android:text="0"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
@@ -73,13 +74,24 @@ tools:context=".model.AddDataFragmentJava">
 
 <EditText
     android:id="@+id/editSetNumber"
-    android:layout_width="wrap_content"
+    android:layout_width="100dp"
     android:layout_height="wrap_content"
     android:hint="Раз"
+    android:text="0"
     android:ems="10"
     android:inputType="number"
     app:layout_constraintStart_toEndOf="@+id/textView11"
     app:layout_constraintTop_toTopOf="@+id/editTextNumber2" />
+    <EditText
+        android:id="@+id/editTime"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="120"
+
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/editSetNumber"
+        app:layout_constraintTop_toTopOf="@+id/editSetNumber" />
 
 <TextView
     android:id="@+id/textView12"
@@ -153,7 +165,7 @@ tools:context=".model.AddDataFragmentJava">
     app:layout_constraintTop_toBottomOf="@+id/textViewNumberSportProgram" />
 
 <TextView
-    android:id="@+id/textView18"
+    android:id="@+id/textViewWorkoutADJ"
     android:layout_width="123dp"
     android:layout_height="33dp"
     android:layout_marginStart="128dp"
@@ -164,22 +176,40 @@ tools:context=".model.AddDataFragmentJava">
     app:layout_constraintStart_toEndOf="@+id/textViewNumberSportProgram" />
 
 <TextView
-    android:id="@+id/textView222"
+    android:id="@+id/textViewDayTrainADJ"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="25dp"
     android:text="TextView"
-    app:layout_constraintBottom_toTopOf="@+id/textView18"
-    app:layout_constraintStart_toStartOf="@+id/textView18" />
+    app:layout_constraintBottom_toTopOf="@+id/textViewWorkoutADJ"
+    app:layout_constraintStart_toStartOf="@+id/textViewWorkoutADJ" />
 
 <TextView
-    android:id="@+id/textView23"
+    android:id="@+id/textViewExerciseADJ"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textSize="25dp"
     android:text="TextView"
-    app:layout_constraintStart_toStartOf="@+id/textView18"
-    app:layout_constraintTop_toBottomOf="@+id/textView18" />
+    app:layout_constraintStart_toStartOf="@+id/textViewWorkoutADJ"
+    app:layout_constraintTop_toBottomOf="@+id/textViewWorkoutADJ" />
+
+    <Chronometer
+        android:id="@+id/chronometerCountDown"
+        android:countDown="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewExerciseADJ" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

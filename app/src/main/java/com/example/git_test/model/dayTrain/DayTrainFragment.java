@@ -93,7 +93,7 @@ public class DayTrainFragment extends Fragment {
                 currentPosition = position;
 
 
-                int[] positionNumber = {position, 3};
+                int[] positionNumber = {position, 0,0};
 
               // ********************************
                 DayTrainFragment fragment = new DayTrainFragment();

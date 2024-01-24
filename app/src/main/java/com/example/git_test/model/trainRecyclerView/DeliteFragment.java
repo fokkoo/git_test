@@ -18,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.git_test.R;
+import com.example.git_test.model.AddDataFragmentJava;
 import com.example.git_test.model.Delite.CardSourceDelite;
 import com.example.git_test.model.Delite.CardSourceImplDelite;
 
@@ -25,6 +26,7 @@ import com.example.git_test.model.Delite.itemAdapterDelite;
 import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.dayTrain.DayTrainFragment;
 import com.example.git_test.model.workout.CardSourceImplWorkout;
+import com.example.git_test.model.workout.WorkoutFragment;
 
 
 public class DeliteFragment extends Fragment {
@@ -109,6 +111,8 @@ public class DeliteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+
+
         //******************************** прием текста из фрагмента DayTrainFragment
         getParentFragmentManager().setFragmentResultListener("text from WOF to AFJA", this, new FragmentResultListener() {
             @Override
@@ -140,6 +144,17 @@ public class DeliteFragment extends Fragment {
                 currentPosition = position;
 
 
+                DayAndWorkoutPosition[2] = currentPosition;
+
+                // ********************************
+                AddDataFragmentJava fragmentDFA = new AddDataFragmentJava();
+                Bundle position_number_day_trainDFA = new Bundle();
+                position_number_day_trainDFA.putIntArray("text from DelF to AFJA",DayAndWorkoutPosition);
+                fragmentDFA.setArguments(position_number_day_trainDFA);
+                getParentFragmentManager().setFragmentResult("text from DelF to AFJA",position_number_day_trainDFA);
+
+                // ********************************
+
                 Bundle result = new Bundle();
                 result.putInt("df1",currentPosition);
                 getParentFragmentManager().setFragmentResult("dataFromFDelite",result);
@@ -153,7 +168,7 @@ public class DeliteFragment extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
              //   fragmentTransaction.replace(R.id.fragment_container, new DayTrainFragment());
-                fragmentTransaction.replace(R.id.fragment_container, new TrainFragment());
+                fragmentTransaction.replace(R.id.fragment_container, new AddDataFragmentJava());
                 fragmentTransaction.commit();
             }
         });

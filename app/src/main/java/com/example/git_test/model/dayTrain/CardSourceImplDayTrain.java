@@ -22,26 +22,26 @@ public class CardSourceImplDayTrain implements CardSourceDayTrain {
                 new CardDataTrain(
                         context.getResources().getString(R.string.DTF_base_program),
                         context.getResources().getString(R.string.DTF_base_program_description),
-                        R.drawable.program1_base_program,
+                        R.drawable.day_train_base_program,
                         false
                 ),
                 new CardDataTrain(
                         context.getResources().getString(R.string.DTF_circuit_workout),
                         context.getResources().getString(R.string.DTF_circuit_description),
-                        R.drawable.circuit1workout,
+                        R.drawable.day_train_circuit_workout,
                         false
                 ),
                 new CardDataTrain(
                         context.getResources().getString(R.string.DTF_fat_burn_workout),
                         context.getResources().getString(R.string.DTF_fat_burn_description),
-                        R.drawable.program3_fat_burn,
+                        R.drawable.day_train_fat_burn,
                         false
                 ),
 
                 new CardDataTrain(
-                        context.getResources().getString(R.string.day1),
+                        context.getResources().getString(R.string.three_day_split_workout),
                         context.getResources().getString(R.string.description2),
-                        R.drawable.program4_three_day_split,
+                        R.drawable.day_train_three_day_split,
                         false
                 )
         )

@@ -84,7 +84,7 @@ parentFragmentManager.setFragmentResultListener("text from RWF", this,
         val bundle = this.arguments
         if (bundle != null) {
             val myInt = bundle.getInt("text from RWF", android.R.attr.defaultValue)
-            textView222.text = myInt.toString()
+            textViewDayTrainADJ.text = myInt.toString()
         }
 
 
@@ -167,7 +167,7 @@ fragment123.arguments = bundle123*/
 
             val args = this.arguments
             val data = args?.get("text from RWF")
-            textView23.text = data.toString()
+            textViewExerciseADJ.text = data.toString()
 
             val textFromDTF = args?.get("hi")
 

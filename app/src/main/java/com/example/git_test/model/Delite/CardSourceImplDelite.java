@@ -2,6 +2,8 @@ package com.example.git_test.model.Delite;
 
 import android.content.Context;
 
+import androidx.fragment.app.FragmentActivity;
+
 import com.example.git_test.R;
 import com.example.git_test.model.trainRecyclerView.CardDataTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceResponseTrain;
@@ -23,8 +25,6 @@ public class CardSourceImplDelite implements CardSourceDelite {
             "http://placekitten.com/400/400"
 
     )) ;
-
-
 
 
     public List<CardDataDelite> getCards() {

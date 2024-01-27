@@ -80,6 +80,8 @@ public class WorkoutFragment extends Fragment {
         //***********************************
 
 
+
+
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -145,6 +147,8 @@ public class WorkoutFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Button button = (Button) getView().findViewById(R.id.buttonBack);
+
         recyclerView = view.findViewById(R.id.recycleViewWorkout);
         cardSource = new CardSourceImplWorkout(getActivity().getApplicationContext());
         adapter = new itemAdapterWorkout(cardSource);
@@ -162,12 +166,26 @@ public class WorkoutFragment extends Fragment {
                 int[] DayAndWorkoutPosition = textTestBundle.getIntArray("text from DTF to AFJA");
 
 
-
-
+                final boolean[] buttonVisible = {true};
 
         adapter.setListener(new itemAdapterWorkout.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
+
+
+
+               if (buttonVisible[0]== true){
+                   button.setVisibility(getView().INVISIBLE);
+                   buttonVisible[0] = false;
+               } else{button.setVisibility(getView().VISIBLE);
+                   buttonVisible[0] = true;
+               }
+               ;
+
+              //  button.setVisibility(getView().VISIBLE);
+
+                /*
+
                 currentPosition = position;
 
                 DayAndWorkoutPosition[1] = position;
@@ -227,6 +245,7 @@ public class WorkoutFragment extends Fragment {
                // fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
                 fragmentTransaction.replace(R.id.fragment_container, new DeliteFragment());
                 fragmentTransaction.commit();
+                */
             }
         });
 

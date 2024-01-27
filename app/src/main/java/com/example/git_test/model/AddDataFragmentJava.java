@@ -138,7 +138,7 @@ public class AddDataFragmentJava extends Fragment {
 
                 textViewDayTrainADJ.setText(new CardSourceImplDayTrain(getActivity()).getCardData(DayWorkoutAndExersicePosition[0]).getTitle().toString());
                 textViewWorkoutADJ.setText(new CardSourceImplWorkout(getActivity()).getCardData(DayWorkoutAndExersicePosition[1]).getTitle().toString());
-            //    textViewExerciseADJ.setText(new CardSourceImplDelite(getActivity()).getCardData(DayWorkoutAndExersicePosition[2]).getTitle().toString());
+                textViewExerciseADJ.setText(new CardSourceImplDelite(getActivity(),new CardSourceImplDayTrain(getActivity()).getCardData(DayWorkoutAndExersicePosition[0]).getTitle().toString(),new CardSourceImplWorkout(getActivity()).getCardData(DayWorkoutAndExersicePosition[1]).getTitle().toString()).getCardData(DayWorkoutAndExersicePosition[2]).getTitle().toString());
             }
         });
 
@@ -147,6 +147,9 @@ public class AddDataFragmentJava extends Fragment {
 ////////////************
         buttonSaveAndTime.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+
+
+
                   counter = new Integer(textEditTime.getText().toString()).intValue();
                 int agd     = new Integer(textEditTime.getText().toString()).intValue();
                 doStart();

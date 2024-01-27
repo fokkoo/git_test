@@ -10,10 +10,12 @@ public interface CardSourceDelite {
     CardSourceDelite init(CardSourceResponseTrain response);
 
     void deliteCardData (int position);
-    void updateCardData (int position, CardDataDelite cardData);
-    void addCardData ( CardDataDelite cardData);
-    void clearCardData ();
 
+    void updateCardData (int position, CardDataDelite cardData);
+
+    void addCardData ( CardDataDelite cardData);
+
+    void clearCardData ();
 
     int size();
 }

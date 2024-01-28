@@ -148,6 +148,8 @@ public class WorkoutFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button button = (Button) getView().findViewById(R.id.buttonBack);
+        Button buttonWorkoutStart = (Button) getView().findViewById(R.id.buttonWorkoutStart);
+        Button buttonWorkoutFinish = (Button) getView().findViewById(R.id.buttonWorkoutFinish);
 
         recyclerView = view.findViewById(R.id.recycleViewWorkout);
         cardSource = new CardSourceImplWorkout(getActivity().getApplicationContext());
@@ -167,6 +169,7 @@ public class WorkoutFragment extends Fragment {
 
 
                 final boolean[] buttonVisible = {true};
+                buttonWorkoutStart.setVisibility(getView().INVISIBLE);
 
         adapter.setListener(new itemAdapterWorkout.OnItemClickListener() {
             @Override
@@ -175,7 +178,7 @@ public class WorkoutFragment extends Fragment {
 
 
                if (buttonVisible[0]== true){
-                   button.setVisibility(getView().INVISIBLE);
+                   buttonWorkoutStart.setVisibility(getView().INVISIBLE);
                    buttonVisible[0] = false;
                } else{button.setVisibility(getView().VISIBLE);
                    buttonVisible[0] = true;

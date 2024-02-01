@@ -168,7 +168,7 @@ public class WorkoutFragment extends Fragment {
                 int[] DayAndWorkoutPosition = textTestBundle.getIntArray("text from DTF to AFJA");
 
 
-                final boolean[] buttonVisible = {true};
+                final boolean[] buttonVisible = {false};
                 buttonWorkoutStart.setVisibility(getView().INVISIBLE);
 
         adapter.setListener(new itemAdapterWorkout.OnItemClickListener() {
@@ -179,13 +179,14 @@ public class WorkoutFragment extends Fragment {
 
                if (buttonVisible[0]== true){
                    buttonWorkoutStart.setVisibility(getView().INVISIBLE);
+               //    button.setVisibility(getView().VISIBLE);
                    buttonVisible[0] = false;
-               } else{button.setVisibility(getView().VISIBLE);
+               } else{buttonWorkoutStart.setVisibility(getView().VISIBLE);
                    buttonVisible[0] = true;
                }
                ;
 
-              //  button.setVisibility(getView().VISIBLE);
+            
 
                 /*
 

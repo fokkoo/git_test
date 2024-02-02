@@ -151,7 +151,7 @@ public class AddDataFragmentJava extends Fragment {
 
 
                   counter = new Integer(textEditTime.getText().toString()).intValue();
-                int agd     = new Integer(textEditTime.getText().toString()).intValue();
+
                 doStart();
             }
         });

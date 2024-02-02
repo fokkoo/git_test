@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,6 +45,7 @@ public class WorkoutFragment extends Fragment {
     public static final String TAG = "ItemAdapter";
 
 
+
     public WorkoutFragment() {
         // Required empty public constructor
     }
@@ -75,6 +77,7 @@ public class WorkoutFragment extends Fragment {
         Button button = (Button) v.findViewById(R.id.buttonBack);
         TextView textMod = (TextView) v.findViewById(R.id.WorkOutText);
         TextView textMod2 = (TextView) v.findViewById(R.id.WorkOutText2);
+
 
 
         //***********************************
@@ -160,6 +163,7 @@ public class WorkoutFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
 
 
+
         //******************************** прием текста из фрагмента2
         getParentFragmentManager().setFragmentResultListener("text from DTF to AFJA", this, new FragmentResultListener() {
             @Override
@@ -186,13 +190,19 @@ public class WorkoutFragment extends Fragment {
                }
                ;
 
-            
 
-                /*
+
+
 
                 currentPosition = position;
 
                 DayAndWorkoutPosition[1] = position;
+
+                buttonWorkoutStart.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+
+
+
 
                 if (getArguments() != null) {
                     text = getArguments().getString("dataFromFDelite");
@@ -249,7 +259,11 @@ public class WorkoutFragment extends Fragment {
                // fragmentTransaction.replace(R.id.fragment_container, new RepetitionWorkoutFragment());
                 fragmentTransaction.replace(R.id.fragment_container, new DeliteFragment());
                 fragmentTransaction.commit();
-                */
+
+
+                    }
+                });
+
             }
         });
 
@@ -257,5 +271,7 @@ public class WorkoutFragment extends Fragment {
         });
 
     }
+
+
 
 }

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Chronometer;
 import android.widget.TextView;
 
 import com.example.git_test.R;
@@ -24,9 +25,7 @@ import com.example.git_test.model.Delite.CardSourceImplDelite;
 
 import com.example.git_test.model.Delite.itemAdapterDelite;
 import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
-import com.example.git_test.model.dayTrain.DayTrainFragment;
 import com.example.git_test.model.workout.CardSourceImplWorkout;
-import com.example.git_test.model.workout.WorkoutFragment;
 
 
 public class DeliteFragment extends Fragment {
@@ -37,6 +36,9 @@ public class DeliteFragment extends Fragment {
     private RecyclerView recyclerView;
     private int currentPosition = -1;
     public static final String TAG = "ItemAdapter";
+
+    private Chronometer chronometerCountWorkout; // инициализация обратного отчета в секундах
+    private int counterDF = 10; // количество секунд отсчитать
 
 
     public DeliteFragment() {
@@ -70,6 +72,21 @@ public class DeliteFragment extends Fragment {
 
         TextView textViewNameDaytrain = (TextView) v.findViewById(R.id.textDayTrain);
         TextView textViewNameWorkout = (TextView) v.findViewById(R.id.textWorkout);
+
+
+
+
+       this.chronometerCountWorkout = (Chronometer) v.findViewById(R.id.chronometerCountWorkout);
+       this.chronometerCountWorkout.setText("Время тренировки"+counterDF+" c");
+       doStart();
+
+
+        this.chronometerCountWorkout.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                onChronometerTickHandler();
+            }
+        });
 
 
         //******************************** прием текста из фрагмента DayTrainFragment
@@ -177,5 +194,17 @@ public class DeliteFragment extends Fragment {
 
             }
         });
+    }
+
+    private void onChronometerTickHandler()  {
+        if(this.counterDF < 0) {
+            this.counterDF = 0;
+        }
+        this.chronometerCountWorkout.setText(counterDF + "");
+        this.counterDF++;
+    }
+
+    private void doStart() {
+        this.chronometerCountWorkout.start();
     }
 }

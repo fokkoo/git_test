@@ -76,7 +76,7 @@ public class AddDataFragmentJava extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_add_data_java, container, false);
 
-        Button button = (Button) v.findViewById(R.id.buttonSaveData);
+        Button buttonSaveData = (Button) v.findViewById(R.id.buttonSaveData);
         Button buttonSaveAndTime = (Button) v.findViewById(R.id.buttonSave);
 
 
@@ -148,7 +148,16 @@ public class AddDataFragmentJava extends Fragment {
         buttonSaveAndTime.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
+                int repetition_number = Integer.parseInt(text1.getText().toString());
 
+
+                getSampleLifecycleListener().saveWeather(
+                        new Weather(
+                                new City("M", 51.5, 51.5,"w","w","w",50.6,50.0,50.0,50.0),
+                                repetition_number,
+                                1
+                        )
+                );
 
                   counter = new Integer(textEditTime.getText().toString()).intValue();
 
@@ -170,7 +179,7 @@ public class AddDataFragmentJava extends Fragment {
 
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonSaveData.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
 
@@ -205,6 +214,10 @@ public class AddDataFragmentJava extends Fragment {
                 /*
 
               */
+              //  viewModell.saveWeather(weather = Weather(City("M", 51.5, 51.5,"w","w","w",50.6,50.0,50.0,50.0), TestNumberWheit, 1));
+
+
+
                 getSampleLifecycleListener().saveWeather(
                         new Weather(
                                 new City("non", 51.5, weight_number_double,textViewWorkOut.getText().toString(),textViewDayTrainADJ.getText().toString(),"w",set_number,repetition_number,weight_number,50.0),

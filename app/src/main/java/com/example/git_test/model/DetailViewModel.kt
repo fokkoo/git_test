@@ -2,6 +2,8 @@ package com.example.git_test.model
 
 import androidx.lifecycle.ViewModel
 import com.example.git_test.Weather
+import com.example.git_test.model.database.Exercise
+import com.example.git_test.model.database.HidtoryEntityExercise
 import com.example.git_test.model.database.HistoryEntity
 import com.example.git_test.model.database.LocalRepositoryImpl
 import com.example.git_test.view.App
@@ -13,6 +15,16 @@ class DetailViewModel : ViewModel() {
 
     fun programdelite(){
 
+    }
+
+    fun saveExercise (exercise:Exercise){
+        localRepository.saveEntityExercise(
+            HidtoryEntityExercise(
+                id=0,
+                workout_ = exercise.workout_,
+                exersice_ = exercise.exersice_,
+            )
+        )
     }
 
     fun saveWeather(weather: Weather){

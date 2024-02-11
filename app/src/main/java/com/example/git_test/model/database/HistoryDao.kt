@@ -16,6 +16,10 @@ interface HistoryDao {
 
     //Dao is smart for autoInsert if conflit - ignor insert
     @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertExercise(entity: HidtoryEntityExercise)
+
+    //Dao is smart for autoInsert if conflit - ignor insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun insert(entity: HistoryEntity)
 
     @Update

@@ -16,5 +16,8 @@ class LocalRepositoryImpl(private val dao: HistoryDao): LocalRepository {
         dao.insert(weather)
     }
 
+    override fun saveEntityExercise(exercise: HidtoryEntityExercise) {
+        dao.insertExercise(exercise)
+    }
 
 }

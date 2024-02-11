@@ -19,6 +19,7 @@ import com.example.git_test.R;
 import com.example.git_test.Weather;
 import com.example.git_test.model.Delite.CardSourceImplDelite;
 import com.example.git_test.model.database.City;
+import com.example.git_test.model.database.Exercise;
 import com.example.git_test.model.dayTrain.CardSourceImplDayTrain;
 import com.example.git_test.model.workout.CardSourceImplWorkout;
 
@@ -150,6 +151,9 @@ public class AddDataFragmentJava extends Fragment {
 
                 int repetition_number = Integer.parseInt(text1.getText().toString());
 
+                getSampleLifecycleListener().saveExercise(
+                        new Exercise("workout","exercise")
+                );
 
                 getSampleLifecycleListener().saveWeather(
                         new Weather(

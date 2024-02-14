@@ -18,7 +18,7 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardRepetitionWorkout(
-                        context.getResources().getString(R.string.day1),
+                        "жим лежа",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         1,
@@ -27,7 +27,7 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         false
                 ),
                 new CardRepetitionWorkout(
-                        context.getResources().getString(R.string.day2),
+                        "Жим стоя",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         2,
@@ -36,7 +36,7 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         false
                 ),
                 new CardRepetitionWorkout(
-                        context.getResources().getString(R.string.day3),
+                        "Жим сидя",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         3,
@@ -45,7 +45,7 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         false
                 ),
                 new CardRepetitionWorkout(
-                        context.getResources().getString(R.string.day1),
+                        "Приседание стоя",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         4,
@@ -54,7 +54,7 @@ public class CardSourceImplRepetitionWorkout implements CardSourceRepetitionWork
                         false
                 ),
                 new CardRepetitionWorkout(
-                        context.getResources().getString(R.string.day1),
+                        "Приседание лежа",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         5,

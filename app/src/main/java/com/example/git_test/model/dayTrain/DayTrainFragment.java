@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,12 +20,17 @@ import android.view.ViewGroup;
 import com.example.git_test.MainActivity;
 import com.example.git_test.R;
 import com.example.git_test.model.AddDataFragmentJava;
+import com.example.git_test.model.DetailViewModel;
+import com.example.git_test.model.database.Exercise;
+import com.example.git_test.model.repetitionWorkout.CardSourceImplRepetitionWorkout;
+import com.example.git_test.model.repetitionWorkout.CardSourceRepetitionWorkout;
 import com.example.git_test.model.repetitionWorkout.MyRepetitionWorkoutFragment;
 import com.example.git_test.model.trainRecyclerView.CardSourceImplTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceTrain;
 import com.example.git_test.model.trainRecyclerView.DeliteFragment;
 import com.example.git_test.model.trainRecyclerView.TrainFragment;
 import com.example.git_test.model.trainRecyclerView.itemAdapterTrain;
+import com.example.git_test.model.viewmodel.HistoryViewModel;
 import com.example.git_test.model.workout.WorkoutFragment;
 
 import java.util.ArrayList;
@@ -36,9 +42,30 @@ public class DayTrainFragment extends Fragment {
 
     private itemAdapterDayTrain adapter;
     private CardSourceDayTrain cardSource;
+    private CardSourceTrain cardSourceRW;
+   // private CardSourceRepetitionWorkout cardSourceRW;
     private RecyclerView recyclerView;
     private int currentPosition = -1;
     public static final String TAG = "ItemAdapter";
+
+    private DetailViewModel sll;
+
+    private HistoryViewModel HistoryViewModel;
+
+    public synchronized HistoryViewModel getSampleLifecycleListenerHistoryViewModel() {
+        if (HistoryViewModel == null) {
+            HistoryViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
+        }
+        return HistoryViewModel;
+    }
+
+
+    public synchronized DetailViewModel getSampleLifecycleListener() {
+        if (sll == null) {
+            sll = new ViewModelProvider(this).get(DetailViewModel.class);
+        }
+        return sll;
+    }
 
 
     public DayTrainFragment() {
@@ -70,6 +97,7 @@ public class DayTrainFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
+
         return inflater.inflate(R.layout.fragment_day_train, container, false);
     }
 
@@ -79,11 +107,37 @@ public class DayTrainFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.Day_train_Recycle_view);
         cardSource = new CardSourceImplDayTrain(getActivity().getApplicationContext());
+        cardSourceRW = new CardSourceImplTrain(getActivity().getApplicationContext());
+
         adapter = new itemAdapterDayTrain(cardSource);
 
         recyclerView.setHasFixedSize(true); // так как все элементы списка одинаковы то recyclerView будет с этим работать быстрее
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext())); // либо уакзать в html activity_main app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+
+        //************WorkOut Data base initialisation
+
+        int sideDataExersice = cardSourceRW.size();
+
+
+        getSampleLifecycleListenerHistoryViewModel().getAllHistoryExercise().get(0).getExersice_();
+
+        if (getSampleLifecycleListenerHistoryViewModel().getAllHistoryExercise().get(0).getExersice_()==null){
+            for (int i = 0; i < sideDataExersice; i++){
+
+                String title = cardSourceRW.getCardData(i).getTitle().toString();
+                String description = cardSourceRW.getCardData(i).getDescription().toString();
+
+                getSampleLifecycleListener().saveExercise(new Exercise(title,description));
+            }
+        }
+
+
+
+
+        //
+
 
      //   FragmentTransaction var3 = this.getParentFragmentManager().beginTransaction();
 

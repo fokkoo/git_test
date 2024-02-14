@@ -7,6 +7,8 @@ class LocalRepositoryImpl(private val dao: HistoryDao): LocalRepository {
 
     override fun getAllHistory(): List<HistoryEntity> = dao.all()
 
+    override fun getAllHistoryExercise(): List<HidtoryEntityExercise> = dao.allExercise()
+
 
   //  override fun deleteAllHistory(): List<HistoryEntity> = dao.delete()
 

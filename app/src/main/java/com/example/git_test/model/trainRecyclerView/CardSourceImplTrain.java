@@ -49,19 +49,19 @@ public class CardSourceImplTrain implements CardSourceTrain {
 
         cards = new ArrayList<>(Arrays.asList(
                 new CardDataTrain(
-                        context.getResources().getString(R.string.base_program),
+                       "становая тягя стоя",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program1_base_program,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.circuit_workout),
+                        "становая тягя лежа",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program2_circuit_workout,
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.three_day_split_workout),
+                        "становая тягя сидя",
                         context.getResources().getString(R.string.description2),
                         R.drawable.program4_three_day_split,
                         false
@@ -74,7 +74,7 @@ public class CardSourceImplTrain implements CardSourceTrain {
                         false
                 ),
                 new CardDataTrain(
-                        context.getResources().getString(R.string.your_workout),
+                        "жим тягя сидя",
                         context.getResources().getString(R.string.description1),
                         R.drawable.program5_your_train,
                         false

@@ -11,6 +11,9 @@ interface HistoryDao {
     @Query("SELECT * FROM HistoryEntity")
     fun all(): List<HistoryEntity>
 
+    @Query("SELECT * FROM HidtoryEntityExercise")
+    fun allExercise(): List<HidtoryEntityExercise>
+
     @Query("SELECT * FROM HistoryEntity WHERE city LIKE :city")
     fun getDatabyWord(city: String): List<HistoryEntity>
 

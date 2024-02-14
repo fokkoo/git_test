@@ -13,4 +13,5 @@ interface LocalRepository  {
 
 
    // fun deleteAllHistory():List<HistoryEntity>
+    fun getAllHistoryExercise(): List<HidtoryEntityExercise>
 }

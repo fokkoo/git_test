@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+
+            android:id="@+id/ExersisesImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heightImage"
+            android:layout_weight="5.1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+
+            android:scaleType="fitXY"
+            tools:src="@tools:sample/avatars" />
+
+        <CheckBox
+            android:id="@+id/Exerciseslike"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="5.5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/ExersisesTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textStyle="bold|italic"
+                android:text="Title"
+                android:textSize="@dimen/textTitle"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/ExercisesDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Description"
+                android:textSize="@dimen/textDescription"
+                tools:text="@tools:sample/lorem/random"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

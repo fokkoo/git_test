@@ -3,6 +3,7 @@ package com.example.git_test.model.dayTrain;
 import android.content.Context;
 
 import com.example.git_test.R;
+import com.example.git_test.model.exercises.CardExercises;
 import com.example.git_test.model.trainRecyclerView.CardDataTrain;
 import com.example.git_test.model.trainRecyclerView.CardSourceResponseTrain;
 
@@ -11,6 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CardSourceImplDayTrain implements CardSourceDayTrain {
+
 
 
     private List<CardDataTrain> cards;

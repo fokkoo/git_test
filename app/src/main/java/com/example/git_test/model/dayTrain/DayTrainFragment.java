@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.git_test.MainActivity;
 import com.example.git_test.R;
@@ -32,6 +33,7 @@ import com.example.git_test.model.trainRecyclerView.TrainFragment;
 import com.example.git_test.model.trainRecyclerView.itemAdapterTrain;
 import com.example.git_test.model.viewmodel.HistoryViewModel;
 import com.example.git_test.model.workout.WorkoutFragment;
+import com.example.git_test.view.App;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,6 +41,7 @@ import java.util.Arrays;
 
 public class DayTrainFragment extends Fragment {
 
+    private App app;
 
     private itemAdapterDayTrain adapter;
     private CardSourceDayTrain cardSource;
@@ -84,10 +87,7 @@ public class DayTrainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         if (getArguments() != null) {
-
         }
     }
 
@@ -95,15 +95,13 @@ public class DayTrainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
-
         return inflater.inflate(R.layout.fragment_day_train, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
 
         recyclerView = view.findViewById(R.id.Day_train_Recycle_view);
         cardSource = new CardSourceImplDayTrain(getActivity().getApplicationContext());
@@ -121,18 +119,18 @@ public class DayTrainFragment extends Fragment {
         int sideDataExersice = cardSourceRW.size();
 
 
-        getSampleLifecycleListenerHistoryViewModel().getAllHistoryExercise().get(0).getExersice_();
 
-        if (getSampleLifecycleListenerHistoryViewModel().getAllHistoryExercise().get(0).getExersice_()==null){
+// однократная инициализация базы данных упражнений в Room при первом запуске приложения, в будущем переделать через App.kt******
+        String name = getSampleLifecycleListenerHistoryViewModel().getAllHistoryExercise().toString();
+
+        if (name=="[]"){
             for (int i = 0; i < sideDataExersice; i++){
-
                 String title = cardSourceRW.getCardData(i).getTitle().toString();
                 String description = cardSourceRW.getCardData(i).getDescription().toString();
-
                 getSampleLifecycleListener().saveExercise(new Exercise(title,description));
             }
         }
-
+//***********************************************************
 
 
 

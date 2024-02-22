@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.git_test.databinding.FragmentStartMenuBinding
 import com.example.git_test.model.dayTrain.DayTrainFragment
+import com.example.git_test.model.exercises.ExercisesFragment
 import com.example.git_test.model.knolegData.KnolegFragment
 import com.example.git_test.model.trainRecyclerView.DeliteFragment
 import com.example.git_test.model.trainRecyclerView.MyTrainFragment
@@ -98,6 +99,11 @@ class StartMenuFragment : Fragment() {
         }
 
         binding.buttonSettings.setOnClickListener(){
+
+            val SettingsMenu = ExercisesFragment()
+            val transaction: FragmentTransaction = requireFragmentManager().beginTransaction()
+            transaction.replace(R.id.fragment_container, SettingsMenu)
+            transaction.commit()
 
             binding.textCheck.text = "Настройки"
         }

@@ -15,6 +15,8 @@ class HistoryViewModel : ViewModel() {
 
     //  fun deliteAllHistory() = historyRepository2.getAllHistory()
 
-    private val historyRepository = LocalRepositoryImpl(App.getHistoryDao())
+     val historyRepository = LocalRepositoryImpl(App.getHistoryDao())
     private val historyRepository2 = LocalRepositoryImpl(App.getHistoryDao())
+
+
 }

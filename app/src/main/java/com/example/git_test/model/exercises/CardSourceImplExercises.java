@@ -52,14 +52,7 @@ public class CardSourceImplExercises implements CardSourceExersises {
                         R.drawable.day_train_three_day_split
                 )
         ));
-
-
-
-
     }
-
-
-
 
     @Override
         public CardExercises getCardData ( int position){

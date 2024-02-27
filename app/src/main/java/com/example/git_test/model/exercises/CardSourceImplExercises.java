@@ -2,9 +2,11 @@ package com.example.git_test.model.exercises;
 
 import android.content.Context;
 
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
+
 import com.example.git_test.R;
-import com.example.git_test.model.dayTrain.CardSourceDayTrain;
-import com.example.git_test.model.trainRecyclerView.CardDataTrain;
+import com.example.git_test.model.viewmodel.HistoryViewModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,14 +14,25 @@ import java.util.List;
 
 public class CardSourceImplExercises implements CardSourceExersises {
 
+
     private List<CardExercises> cardsEXERSISES;
 
+    private HistoryViewModel HistoryViewModel;
+    public synchronized HistoryViewModel getSampleLifecycleListenerHistoryViewModell() {
+        if (HistoryViewModel == null) {
+            HistoryViewModel = new ViewModelProvider((ViewModelStoreOwner) this).get(HistoryViewModel.class);
+        }
+        return HistoryViewModel;
+    }
+
+
+
+  //  String Exersice_ = getSampleLifecycleListenerHistoryViewModell().getAllHistoryExercise().get(1).getExersice_().toString();
+ //   String Exersice_2 = Exersice_;
 
 
     public CardSourceImplExercises(Context context) {
 
-
-        //    this.context = context;
 
         cardsEXERSISES = new ArrayList<>(Arrays.asList(
                 new CardExercises(
@@ -34,13 +47,21 @@ public class CardSourceImplExercises implements CardSourceExersises {
                 ),
 
                 new CardExercises(
-                        "name21111111111111111111",
+                        "name31111111111111111111",
                         "descr111111111111111111111111111111111",
                         R.drawable.day_train_three_day_split
                 )
         ));
+
+
+
+
     }
-        @Override
+
+
+
+
+    @Override
         public CardExercises getCardData ( int position){
             return cardsEXERSISES.get(position);
         }

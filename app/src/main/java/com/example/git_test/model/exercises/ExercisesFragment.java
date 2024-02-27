@@ -84,8 +84,18 @@ public class ExercisesFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.fragment_Recycle_view_exercises);
 
-        List ExersisesList = getSampleLifecycleListenerHistoryViewModel().getAllHistoryExercise();
-        List<CardExercises> ExersisesListArray1;
+        List ExersisesList = getSampleLifecycleListenerHistoryViewModel().getAllHistory();
+        CardSourceExersises ExersisesListArray1;
+
+        for (int i  = 0; i<ExersisesList.size();i++){
+
+            String Exersice_;
+            Exersice_ = getSampleLifecycleListenerHistoryViewModel().getAllHistoryExercise().get(i).getExersice_().toString();
+            String Exersice_2 = Exersice_;
+        }
+
+
+
 
        /*
         ExersisesListArray1 = new ArrayList(Arrays.asList(
@@ -93,19 +103,22 @@ public class ExercisesFragment extends Fragment {
         ));
 */
 
-        ExersisesListArray1 = new ArrayList(Arrays.asList(
+   /*
+        ExersisesListArray1 = new CardSourceExersises(Arrays.asList(
                 new CardExercises(
-                        "name1",
-                        "descr1",
-                       1
+                        "name21111111111111111111",
+                        "descr111111111111111111111111111111111",
+                        R.drawable.day_train_three_day_split
                 )
         ));
 
+        cardSource = ExersisesListArray1;
+*/
 
-        cardSource =new CardSourceImplExercises(getActivity().getApplicationContext());
+        cardSource = new CardSourceImplExercises(getActivity().getApplicationContext());
 
+/*
 
-        /*
         cardSource = new CardSourceExersises() {
             @Override
             public CardExercises getCardData(int position) {
@@ -114,17 +127,17 @@ public class ExercisesFragment extends Fragment {
 
             @Override
             public void deliteCardData(int position) {
-
+                ExersisesListArray1.remove(position);
             }
 
             @Override
             public void updateCardData(int position, CardExercises CardExercises) {
-
+                ExersisesListArray1.set(position, CardExercises);
             }
 
             @Override
             public void addCardData(CardExercises CardExercises) {
-
+                ExersisesListArray1.add(CardExercises);
             }
 
             @Override
@@ -138,8 +151,8 @@ public class ExercisesFragment extends Fragment {
             }
         };
 
+*/
 
-        */
 
 
 
